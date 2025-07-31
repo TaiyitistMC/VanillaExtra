@@ -17,6 +17,6 @@ public class ModLanguageProviderEn extends LanguageProvider {
         add(ModBlocks.LAND_KELP.get(), "Land Kelp");
         add(ModBlocks.LAND_KELP_PLANT.get(), "Land Kelp");
         add("itemGroup.vainllaextra", "Vanilla Extra");
-        add(ModItems.DIRED_LAND_KELP.get(), "Dired Land Kelp");
+        add(ModItems.DRIED_LAND_KELP.get(), "Dired Land Kelp");
     }
 }

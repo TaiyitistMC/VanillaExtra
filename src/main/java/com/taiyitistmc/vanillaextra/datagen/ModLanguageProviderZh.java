@@ -16,7 +16,7 @@ public class ModLanguageProviderZh extends LanguageProvider {
     protected void addTranslations() {
         add(ModBlocks.LAND_KELP.get(), "陆生海带");
         add(ModBlocks.LAND_KELP_PLANT.get(), "陆生海带");
-        add(ModItems.DIRED_LAND_KELP.get(), "陆生海带干");
+        add(ModItems.DRIED_LAND_KELP.get(), "陆生海带干");
         add("itemGroup.vainllaextra", "Vanilla Extra");
     }
 }

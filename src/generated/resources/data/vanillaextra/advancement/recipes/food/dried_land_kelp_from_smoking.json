@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "vanillaextra:dried_kelp_from_blasting"
+        "recipe": "vanillaextra:dried_land_kelp_from_smoking"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "vanillaextra:dried_kelp_from_blasting"
+      "vanillaextra:dried_land_kelp_from_smoking"
     ]
   }
 }

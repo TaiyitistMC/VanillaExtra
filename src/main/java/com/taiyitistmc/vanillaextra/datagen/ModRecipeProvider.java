@@ -2,6 +2,7 @@ package com.taiyitistmc.vanillaextra.datagen;
 
 import com.taiyitistmc.vanillaextra.VanillaExtra;
 import com.taiyitistmc.vanillaextra.init.ModBlocks;
+import com.taiyitistmc.vanillaextra.init.ModItems;
 import com.taiyitistmc.vanillaextra.util.Helpers;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -9,7 +10,6 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 
@@ -23,7 +23,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
-        heatRecipe(ModBlocks.LAND_KELP.get(), RecipeCategory.FOOD, Items.DRIED_KELP, 0.1F, 200, recipeOutput);
+        heatRecipe(ModBlocks.LAND_KELP.get(), RecipeCategory.FOOD, ModItems.DRIED_LAND_KELP.get(), 0.1F, 200, recipeOutput);
     }
 
     private void heatRecipe(ItemLike materialItem, RecipeCategory category, ItemLike finalItem, float exp, int cookingTime, RecipeOutput recipeOutput) {

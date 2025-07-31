@@ -10,8 +10,8 @@ public class ModItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(VanillaExtra.MODID);
 
-    public static final DeferredItem<Item> DIRED_LAND_KELP =
-            registerSimpleItem("dired_land_kelp", new Item.Properties().food(Foods.BAKED_POTATO));
+    public static final DeferredItem<Item> DRIED_LAND_KELP =
+            registerSimpleItem("dried_land_kelp", new Item.Properties().food(Foods.BAKED_POTATO));
 
     public static DeferredItem<Item> register(String name, Item item) {
         return ITEMS.register(name, () -> item);
