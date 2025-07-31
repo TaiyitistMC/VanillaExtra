@@ -20,10 +20,7 @@
               "provider": {
                 "type": "minecraft:simple_state_provider",
                 "state": {
-                  "Name": "vanillaextra:land_kelp",
-                  "Properties": {
-                    "age": "0"
-                  }
+                  "Name": "vanillaextra:land_kelp_plant"
                 }
               }
             }
@@ -44,10 +41,7 @@
               {
                 "type": "minecraft:would_survive",
                 "state": {
-                  "Name": "vanillaextra:land_kelp",
-                  "Properties": {
-                    "age": "0"
-                  }
+                  "Name": "vanillaextra:land_kelp_plant"
                 }
               },
               {

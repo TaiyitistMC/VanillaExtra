@@ -34,11 +34,11 @@ public class ModConfiguredFeatureProvider {
                         0,
                         PlacementUtils.inlinePlaced(
                                 Feature.BLOCK_COLUMN,
-                                BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4), BlockStateProvider.simple(ModBlocks.LAND_KELP.get())),
+                                BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4), BlockStateProvider.simple(ModBlocks.LAND_KELP_PLANT.get())),
                                 BlockPredicateFilter.forPredicate(
                                         BlockPredicate.allOf(
                                                 BlockPredicate.ONLY_IN_AIR_PREDICATE,
-                                                BlockPredicate.wouldSurvive(ModBlocks.LAND_KELP.get().defaultBlockState(), BlockPos.ZERO),
+                                                BlockPredicate.wouldSurvive(ModBlocks.LAND_KELP_PLANT.get().defaultBlockState(), BlockPos.ZERO),
                                                 BlockPredicate.anyOf(
                                                         BlockPredicate.matchesFluids(new BlockPos(1, -1, 0), Fluids.WATER, Fluids.FLOWING_WATER),
                                                         BlockPredicate.matchesFluids(new BlockPos(-1, -1, 0), Fluids.WATER, Fluids.FLOWING_WATER),
