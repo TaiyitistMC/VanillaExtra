@@ -1,6 +1,7 @@
 package com.taiyitistmc.vanillaextra.datagen;
 
 import com.taiyitistmc.vanillaextra.VanillaExtra;
+import com.taiyitistmc.vanillaextra.datagen.advancement.ModAdvancementProvider;
 import com.taiyitistmc.vanillaextra.datagen.levelgen.ModBiomeModiferProvider;
 import com.taiyitistmc.vanillaextra.datagen.levelgen.ModConfiguredFeatureProvider;
 import com.taiyitistmc.vanillaextra.datagen.levelgen.ModPlacedFeatureProvider;
@@ -44,5 +45,6 @@ public class ModDataGenerator {
         event.addProvider(new DatapackBuiltinEntriesProvider(pack,
                         lookUp, BUILDER,
                         Set.of(VanillaExtra.MODID)));
+        event.addProvider(new ModAdvancementProvider(pack, lookUp, helper));
     }
 }

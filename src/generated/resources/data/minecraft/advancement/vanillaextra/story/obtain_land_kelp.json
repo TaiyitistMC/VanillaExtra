@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "land_kelp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillaextra:land_kelp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.vanillaextra.story.obtain_land_kelp.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "vanillaextra:land_kelp"
+    },
+    "title": {
+      "translate": "advancements.vanillaextra.story.obtain_land_kelp.title"
+    }
+  },
+  "requirements": [
+    [
+      "land_kelp"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

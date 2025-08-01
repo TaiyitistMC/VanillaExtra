@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:vanillaextra/story/obtain_land_kelp",
+  "criteria": {
+    "dried_land_kelp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillaextra:dried_land_kelp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "land_kelp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillaextra:land_kelp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.vanillaextra.story.obtain_dried_land_kelp.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "vanillaextra:dried_land_kelp"
+    },
+    "title": {
+      "translate": "advancements.vanillaextra.story.obtain_dried_land_kelp.title"
+    }
+  },
+  "requirements": [
+    [
+      "land_kelp"
+    ],
+    [
+      "dried_land_kelp"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

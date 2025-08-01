@@ -1,4 +1,8 @@
 {
+  "advancements.vanillaextra.story.obtain_dried_land_kelp.description": "Delicious Food that cooked from Land Kelp.",
+  "advancements.vanillaextra.story.obtain_dried_land_kelp.title": "Delicious Dried Land Kelp,a kind of Food.",
+  "advancements.vanillaextra.story.obtain_kelp.description": "A Special Kind of Kelp that growing in Land,it can grow to 6 block heights, is a delicious crop.",
+  "advancements.vanillaextra.story.obtain_kelp.title": "A Special Kind of Kelp,Land Kelp",
   "block.vanillaextra.land_kelp": "Land Kelp",
   "block.vanillaextra.land_kelp_plant": "Land Kelp",
   "item.vanillaextra.dried_land_kelp": "Dired Land Kelp",
