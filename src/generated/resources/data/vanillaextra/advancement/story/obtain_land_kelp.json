@@ -12,6 +12,7 @@
     }
   },
   "display": {
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
     "description": {
       "translate": "advancements.vanillaextra.story.obtain_land_kelp.description"
     },

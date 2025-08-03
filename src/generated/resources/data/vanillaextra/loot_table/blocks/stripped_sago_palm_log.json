@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "vanillaextra:stripped_sago_palm_log"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "vanillaextra:blocks/stripped_sago_palm_log"
+}

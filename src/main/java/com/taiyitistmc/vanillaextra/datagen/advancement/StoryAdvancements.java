@@ -10,6 +10,7 @@ import net.minecraft.advancements.AdvancementType;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -31,13 +32,13 @@ public class StoryAdvancements implements AdvancementProvider.AdvancementGenerat
                         displayItem,
                         Component.translatable("advancements.vanillaextra.story." + "obtain_" + Helpers.unwrapName(displayItem.asItem().getDefaultInstance().toString()) + ".title"),
                         Component.translatable("advancements.vanillaextra.story." + "obtain_" + Helpers.unwrapName(displayItem.asItem().getDefaultInstance().toString()) + ".description"),
-                        null,
+                        ResourceLocation.withDefaultNamespace("textures/gui/advancements/backgrounds/stone.png"),
                         AdvancementType.TASK,
                         true,
                         true,
                         false
                 )
                 .addCriterion(Helpers.unwrapName(displayItem.asItem().getDefaultInstance().toString()), InventoryChangeTrigger.TriggerInstance.hasItems(displayItem))
-                .save(consumer, VanillaExtra.MODID + "/story/obtain_" + Helpers.unwrapName(displayItem.asItem().getDefaultInstance().toString()));
+                .save(consumer, Helpers.identifier("story/obtain_" + Helpers.unwrapName(displayItem.asItem().getDefaultInstance().toString())).toString());
     }
 }

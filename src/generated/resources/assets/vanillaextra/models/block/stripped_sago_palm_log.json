@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "vanillaextra:block/stripped_sago_palm_log_top",
+    "side": "vanillaextra:block/stripped_sago_palm_log"
+  }
+}

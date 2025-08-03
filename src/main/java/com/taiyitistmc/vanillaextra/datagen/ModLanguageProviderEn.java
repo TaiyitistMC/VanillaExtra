@@ -18,9 +18,15 @@ public class ModLanguageProviderEn extends LanguageProvider {
         add(ModBlocks.LAND_KELP_PLANT.get(), "Land Kelp");
         add("itemGroup.vainllaextra", "Vanilla Extra");
         add(ModItems.DRIED_LAND_KELP.get(), "Dired Land Kelp");
-        add("advancements.vanillaextra.story.obtain_kelp.title", "A Special Kind of Kelp,Land Kelp");
-        add("advancements.vanillaextra.story.obtain_kelp.description", "A Special Kind of Kelp that growing in Land,it can grow to 6 block heights, is a delicious crop.");
-        add("advancements.vanillaextra.story.obtain_dried_land_kelp.title", "Delicious Dried Land Kelp,a kind of Food.");
-        add("advancements.vanillaextra.story.obtain_dried_land_kelp.description", "Delicious Food that cooked from Land Kelp.");
+        add(ModBlocks.SAGO_PALM_LEAVES.get(), "Sago Palm Leaves");
+        add(ModBlocks.SAGO_PALM_LOG.get(), "Sago Palm Log");
+        add(ModBlocks.SAGO_PALM_PLANKS.get(), "Sago Palm Planks");
+        add(ModBlocks.SAGO_PALM_SAPLING.get(), "Sago Palm Sapling");
+        add(ModBlocks.STRIPPED_SAGO_PALM_LOG.get(), "Stripped Sago Palm Log");
+        add(ModItems.SAGO.get(), "Sago");
+        add("advancements.vanillaextra.story.obtain_land_kelp.title", "A Special Kind of Kelp,Land Kelp");
+        add("advancements.vanillaextra.story.obtain_land_kelp.description", "A Special Kind of Kelp that growing in Land,it can grow to 6 block heights, is a delicious crop");
+        add("advancements.vanillaextra.story.obtain_dried_land_kelp.title", "Delicious Dried Land Kelp,a kind of Food");
+        add("advancements.vanillaextra.story.obtain_dried_land_kelp.description", "Delicious Food that cooked from Land Kelp");
     }
 }

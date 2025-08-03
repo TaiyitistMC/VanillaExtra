@@ -9,12 +9,18 @@ import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.BiasedToBottomInt;
+import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.BlockColumnConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
 import net.minecraft.world.level.material.Fluids;
 
@@ -22,6 +28,8 @@ public class ModConfiguredFeatureProvider {
 
     public static final ResourceKey<ConfiguredFeature<?,?>> LAND_KELP =
             register("land_kelp");
+    public static final ResourceKey<ConfiguredFeature<?,?>> SAGO_PALM_TREE =
+            register("sago_palm_tree");
 
     public static void configuredFeatures(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         FeatureUtils.register(
@@ -50,9 +58,18 @@ public class ModConfiguredFeatureProvider {
                         )
                 )
         );
+        FeatureUtils.register(context, SAGO_PALM_TREE, Feature.TREE, createSagoPalmTree().build());
     }
 
     private static ResourceKey<ConfiguredFeature<?, ?>> register(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, Helpers.identifier(name));
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createSagoPalmTree() {
+        return createStraightBlobTree(ModBlocks.SAGO_PALM_LOG.get(), ModBlocks.SAGO_PALM_LEAVES.get(), 9, 3, 0, 2).ignoreVines();
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block logBlock, Block leavesBlock, int baseHeight, int heightRandA, int heightRandB, int radius) {
+        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(logBlock), new StraightTrunkPlacer(baseHeight, heightRandA, heightRandB), BlockStateProvider.simple(leavesBlock), new BlobFoliagePlacer(ConstantInt.of(radius), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1));
     }
 }

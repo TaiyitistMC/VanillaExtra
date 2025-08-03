@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:vanillaextra/story/obtain_land_kelp",
+  "parent": "vanillaextra:story/obtain_land_kelp",
   "criteria": {
     "dried_land_kelp": {
       "conditions": {
@@ -23,6 +23,7 @@
     }
   },
   "display": {
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
     "description": {
       "translate": "advancements.vanillaextra.story.obtain_dried_land_kelp.description"
     },

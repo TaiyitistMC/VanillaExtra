@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "vanillaextra:sago_palm_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "vanillaextra:sago_palm_planks"
+  }
+}

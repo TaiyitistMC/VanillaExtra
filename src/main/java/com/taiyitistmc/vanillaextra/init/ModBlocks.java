@@ -3,13 +3,30 @@ package com.taiyitistmc.vanillaextra.init;
 import com.taiyitistmc.vanillaextra.VanillaExtra;
 import com.taiyitistmc.vanillaextra.block.LandKelpBlock;
 import com.taiyitistmc.vanillaextra.block.LandKelpPlantBlock;
+import com.taiyitistmc.vanillaextra.datagen.levelgen.ModConfiguredFeatureProvider;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.Optional;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -17,6 +34,12 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(VanillaExtra.MODID);
     public static final DeferredBlock<Block> LAND_KELP = register("land_kelp", LandKelpBlock::new, new Item.Properties().food(Foods.POTATO));
     public static final DeferredBlock<Block> LAND_KELP_PLANT = register("land_kelp_plant", LandKelpPlantBlock::new);
+    public static final DeferredBlock<Block> SAGO_PALM_LEAVES = register("sago_palm_leaves", () -> leaves(SoundType.GRASS));
+    public static final DeferredBlock<Block> SAGO_PALM_LOG = register("sago_palm_log", () -> log(MapColor.COLOR_ORANGE, MapColor.STONE));
+    public static final DeferredBlock<Block> SAGO_PALM_PLANKS = register("sago_palm_planks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+    public static final DeferredBlock<Block> SAGO_PALM_SAPLING = register("sago_palm_sapling", () -> sapling("sago_palm_sapling", ModConfiguredFeatureProvider.SAGO_PALM_TREE));
+    public static final DeferredBlock<Block> STRIPPED_SAGO_PALM_LOG = register("stripped_sago_palm_log", () -> log(MapColor.COLOR_ORANGE, MapColor.STONE));
 
     public static DeferredBlock<Block> register(String name, BlockBehaviour.Properties properties) {
         var block = BLOCKS.registerSimpleBlock(name, properties);
@@ -34,5 +57,25 @@ public class ModBlocks {
         var block = BLOCKS.register(name, sup);
         ModItems.ITEMS.registerSimpleBlockItem(block, properties);
         return block;
+    }
+
+    private static Block leaves(SoundType soundType) {
+        return new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).randomTicks().sound(soundType).noOcclusion().isValidSpawn(Blocks::ocelotOrParrot).isSuffocating(ModBlocks::never).isViewBlocking(ModBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(ModBlocks::never));
+    }
+
+    private static Block log(MapColor topMapColor, MapColor sideMapColor) {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor((mapColor) -> mapColor.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? topMapColor : sideMapColor).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
+    }
+
+    private static Block sapling(String name, ResourceKey<ConfiguredFeature<?, ?>> tree) {
+        return sapling(new TreeGrower(name, Optional.empty(), Optional.of(tree), Optional.empty()));
+    }
+
+    private static Block sapling(TreeGrower treeGrower) {
+        return new SaplingBlock(treeGrower, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY));
+    }
+
+    private static boolean never(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
+        return false;
     }
 }

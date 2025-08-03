@@ -1,10 +1,15 @@
 {
-  "advancements.vanillaextra.story.obtain_dried_land_kelp.description": "烤制的路生海带干，非常美味.",
-  "advancements.vanillaextra.story.obtain_dried_land_kelp.title": "美味的陆生海带干,一种食物.",
-  "advancements.vanillaextra.story.obtain_land_kelp.description": "一种登上陆地的特殊海带,可以长到6格高,是美味的农作物.",
-  "advancements.vanillaextra.story.obtain_land_kelp.title": "特殊的海带,陆生海带.",
+  "advancements.vanillaextra.story.obtain_dried_land_kelp.description": "烤制的陆生海带干，非常美味",
+  "advancements.vanillaextra.story.obtain_dried_land_kelp.title": "美味的陆生海带干,一种食物",
+  "advancements.vanillaextra.story.obtain_land_kelp.description": "一种登上陆地的特殊海带,可以长到6格高,是美味的农作物",
+  "advancements.vanillaextra.story.obtain_land_kelp.title": "特殊的海带,陆生海带",
   "block.vanillaextra.land_kelp": "陆生海带",
   "block.vanillaextra.land_kelp_plant": "陆生海带",
+  "block.vanillaextra.sago_palm_log": "西米棕榈原木",
+  "block.vanillaextra.sago_palm_planks": "西米棕榈木板",
+  "block.vanillaextra.sago_palm_sapling": "西米棕榈树苗",
+  "block.vanillaextra.stripped_sago_palm_log": "去皮西米棕榈原木",
   "item.vanillaextra.dried_land_kelp": "陆生海带干",
+  "item.vanillaextra.sago": "西米面包",
   "itemGroup.vainllaextra": "Vanilla Extra"
 }

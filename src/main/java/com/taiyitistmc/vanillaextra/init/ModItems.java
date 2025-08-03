@@ -12,6 +12,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> DRIED_LAND_KELP =
             registerSimpleItem("dried_land_kelp", new Item.Properties().food(Foods.BAKED_POTATO));
+    public static final DeferredItem<Item> SAGO =
+            registerSimpleItem("sago", new Item.Properties().food(Foods.POTATO));
 
     public static DeferredItem<Item> register(String name, Item item) {
         return ITEMS.register(name, () -> item);

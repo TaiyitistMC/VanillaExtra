@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_stripped_sago_palm_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillaextra:stripped_sago_palm_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillaextra:sago_from_campfire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stripped_sago_palm_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillaextra:sago_from_campfire"
+    ]
+  }
+}

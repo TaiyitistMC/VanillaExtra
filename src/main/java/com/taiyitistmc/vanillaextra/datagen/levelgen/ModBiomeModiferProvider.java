@@ -10,6 +10,7 @@ import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
@@ -17,6 +18,8 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 public class ModBiomeModiferProvider {
 
     public static final ResourceKey<BiomeModifier> ADD_LAND_KELP = register("add_land_kelp");
+    public static final ResourceKey<BiomeModifier> ADD_SAGO_PALM_TREE = register("add_sago_palm_tree");
+    public static final ResourceKey<BiomeModifier> ADD_SAGO_PALM_TREES = register("add_sago_palm_trees");
 
     public static void addBiomeModifiers(BootstrapContext<BiomeModifier> context) {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
@@ -24,6 +27,14 @@ public class ModBiomeModiferProvider {
         context.register(ADD_LAND_KELP, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(features.getOrThrow(ModPlacedFeatureProvider.LAND_KELP_PLACED)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+        context.register(ADD_SAGO_PALM_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_WET),
+                HolderSet.direct(features.getOrThrow(ModPlacedFeatureProvider.SAGO_PALM_TREE_PLACED)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+        context.register(ADD_SAGO_PALM_TREES, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_WET),
+                HolderSet.direct(features.getOrThrow(ModPlacedFeatureProvider.SAGO_PALM_TREES_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
     }
 

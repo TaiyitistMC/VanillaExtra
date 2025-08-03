@@ -18,5 +18,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModBlocks.LAND_KELP.get().asItem());
         simpleBlockItem(ModBlocks.LAND_KELP_PLANT.get());
         basicItem(ModItems.DRIED_LAND_KELP.get());
+        simpleBlockItem(ModBlocks.SAGO_PALM_LOG.get());
+        simpleBlockItem(ModBlocks.STRIPPED_SAGO_PALM_LOG.get());
+        basicItem(ModBlocks.SAGO_PALM_SAPLING.asItem());
+        basicItem(ModItems.SAGO.get());
     }
 }

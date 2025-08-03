@@ -18,9 +18,14 @@ public class ModLanguageProviderZh extends LanguageProvider {
         add(ModBlocks.LAND_KELP_PLANT.get(), "陆生海带");
         add(ModItems.DRIED_LAND_KELP.get(), "陆生海带干");
         add("itemGroup.vainllaextra", "Vanilla Extra");
-        add("advancements.vanillaextra.story.obtain_land_kelp.title", "特殊的海带,陆生海带.");
-        add("advancements.vanillaextra.story.obtain_land_kelp.description", "一种登上陆地的特殊海带,可以长到6格高,是美味的农作物.");
-        add("advancements.vanillaextra.story.obtain_dried_land_kelp.title", "美味的陆生海带干,一种食物.");
-        add("advancements.vanillaextra.story.obtain_dried_land_kelp.description", "烤制的路生海带干，非常美味.");
+        add(ModBlocks.SAGO_PALM_LOG.get(), "西米棕榈原木");
+        add(ModBlocks.SAGO_PALM_PLANKS.get(), "西米棕榈木板");
+        add(ModBlocks.SAGO_PALM_SAPLING.get(), "西米棕榈树苗");
+        add(ModBlocks.STRIPPED_SAGO_PALM_LOG.get(), "去皮西米棕榈原木");
+        add(ModItems.SAGO.get(), "西米面包");
+        add("advancements.vanillaextra.story.obtain_land_kelp.title", "特殊的海带,陆生海带");
+        add("advancements.vanillaextra.story.obtain_land_kelp.description", "一种登上陆地的特殊海带,可以长到6格高,是美味的农作物");
+        add("advancements.vanillaextra.story.obtain_dried_land_kelp.title", "美味的陆生海带干,一种食物");
+        add("advancements.vanillaextra.story.obtain_dried_land_kelp.description", "烤制的陆生海带干，非常美味");
     }
 }
