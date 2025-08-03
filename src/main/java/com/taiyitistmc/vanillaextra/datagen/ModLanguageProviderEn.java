@@ -37,6 +37,8 @@ public class ModLanguageProviderEn extends LanguageProvider {
         add(ModItems.COOKED_BAT_WING.get(), "Cooke Bat Wing");
         add(ModItems.LLAMA_MEAT.get(), "Llama Meat");
         add(ModItems.COOKED_LLAMA_MEAT.get(), "Cooked Llama Meat");
+        add(ModItems.HUMAN_MEAT.get(), "Human Meat");
+        add(ModItems.COOKED_HUMAN_MEAT.get(), "Cooked Human Meat");
         add("advancements.vanillaextra.story.obtain_land_kelp.title", "A Special Kind of Kelp,Land Kelp");
         add("advancements.vanillaextra.story.obtain_land_kelp.description", "A Special Kind of Kelp that growing in Land,it can grow to 6 block heights, is a delicious crop");
         add("advancements.vanillaextra.story.obtain_dried_land_kelp.title", "Delicious Dried Land Kelp,a kind of Food");

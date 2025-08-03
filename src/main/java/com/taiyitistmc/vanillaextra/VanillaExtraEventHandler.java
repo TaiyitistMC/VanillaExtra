@@ -53,6 +53,9 @@ public class VanillaExtraEventHandler {
         initEntitySimpleDropLootTable(event, EntityType.GLOW_SQUID, ModItems.SQUID_RAW, registries);
         initEntitySimpleDropLootTable(event, EntityType.BAT, ModItems.BAT_WING, registries);
         initEntitySimpleDropLootTable(event, EntityType.LLAMA, ModItems.LLAMA_MEAT, registries);
+        initEntitySimpleDropLootTable(event, EntityType.VILLAGER, ModItems.HUMAN_MEAT, registries);
+        initEntitySimpleDropLootTable(event, EntityType.PILLAGER, ModItems.HUMAN_MEAT, registries);
+        initEntitySimpleDropLootTable(event, EntityType.PLAYER, ModItems.HUMAN_MEAT, registries);
     }
 
     private static void initEntitySimpleDropLootTable(LootTableLoadEvent event, EntityType<?> entityType, ItemLike dropItem, HolderLookup.Provider registries) {

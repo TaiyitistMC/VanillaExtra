@@ -52,6 +52,7 @@ public class ModRecipeProvider extends RecipeProvider {
         heatRecipe(ModItems.SQUID_RAW.get(), RecipeCategory.FOOD, ModItems.SQUID_COOKED.get(), 0.1F, 200, recipeOutput);
         heatRecipe(ModItems.BAT_WING.get(), RecipeCategory.FOOD, ModItems.COOKED_BAT_WING.get(), 0.1F, 200, recipeOutput);
         heatRecipe(ModItems.LLAMA_MEAT.get(), RecipeCategory.FOOD, ModItems.COOKED_LLAMA_MEAT.get(), 0.1F, 200, recipeOutput);
+        heatRecipe(ModItems.HUMAN_MEAT.get(), RecipeCategory.FOOD, ModItems.COOKED_HUMAN_MEAT.get(), 0.1F, 200, recipeOutput);
     }
 
     protected void heatRecipe(ItemLike materialItem, RecipeCategory category, ItemLike finalItem, float exp, int cookingTime, RecipeOutput recipeOutput) {
