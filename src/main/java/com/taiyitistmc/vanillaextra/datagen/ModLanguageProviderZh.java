@@ -21,6 +21,7 @@ public class ModLanguageProviderZh extends LanguageProvider {
         add(ModBlocks.SAGO_PALM_LOG.get(), "西米棕榈原木");
         add(ModBlocks.SAGO_PALM_PLANKS.get(), "西米棕榈木板");
         add(ModBlocks.SAGO_PALM_SAPLING.get(), "西米棕榈树苗");
+        add(ModBlocks.SAGO_PALM_LEAVES.get(), "西米棕榈树叶");
         add(ModBlocks.STRIPPED_SAGO_PALM_LOG.get(), "去皮西米棕榈原木");
         add(ModItems.SAGO.get(), "西米");
         add(ModItems.BACON.get(), "培根");
