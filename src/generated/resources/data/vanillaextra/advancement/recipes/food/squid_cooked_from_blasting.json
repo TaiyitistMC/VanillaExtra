@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_squid_raw": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillaextra:squid_raw"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillaextra:squid_cooked_from_blasting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_squid_raw"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillaextra:squid_cooked_from_blasting"
+    ]
+  }
+}

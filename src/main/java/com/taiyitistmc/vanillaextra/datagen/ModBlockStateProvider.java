@@ -19,13 +19,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        crossBlock(ModBlocks.LAND_KELP.get());
-        crossBlock(ModBlocks.LAND_KELP_PLANT.get());
-        crossBlock(ModBlocks.SAGO_PALM_SAPLING.get());
-        logBlock((RotatedPillarBlock) ModBlocks.SAGO_PALM_LOG.get());
-        logBlock((RotatedPillarBlock) ModBlocks.STRIPPED_SAGO_PALM_LOG.get());
-        simpleBlockWithItem(ModBlocks.SAGO_PALM_PLANKS.get(), cubeAll(ModBlocks.SAGO_PALM_PLANKS.get()));
-        simpleBlockWithItem(ModBlocks.SAGO_PALM_LEAVES.get(), cubeAll(ModBlocks.SAGO_PALM_LEAVES.get()));
+        ModBlocks.BLOCKS.getEntries().forEach(blockDeferredHolder -> {
+            if (blockDeferredHolder.get() instanceof RotatedPillarBlock pillarBlock) {
+                logBlock(pillarBlock);
+            }else if (blockDeferredHolder.get().getDescriptionId().contains("kelp") || blockDeferredHolder.get().getDescriptionId().contains("sapling")) {
+                crossBlock(blockDeferredHolder.get());
+            }else {
+                simpleBlockWithItem(blockDeferredHolder.get(), cubeAll(blockDeferredHolder.get()));
+            }
+        });
     }
 
     public void crossBlock(Block block) {

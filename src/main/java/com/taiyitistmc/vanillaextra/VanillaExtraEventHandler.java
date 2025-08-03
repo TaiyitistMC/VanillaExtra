@@ -49,6 +49,10 @@ public class VanillaExtraEventHandler {
         var registries = event.getRegistries();
         initEntitySimpleDropLootTable(event, EntityType.WOLF, ModItems.WOLF_MEAT, registries);
         initEntitySimpleDropLootTable(event, EntityType.HORSE, ModItems.HORSE_MEAT, registries);
+        initEntitySimpleDropLootTable(event, EntityType.SQUID, ModItems.SQUID_RAW, registries);
+        initEntitySimpleDropLootTable(event, EntityType.GLOW_SQUID, ModItems.SQUID_RAW, registries);
+        initEntitySimpleDropLootTable(event, EntityType.BAT, ModItems.BAT_WING, registries);
+        initEntitySimpleDropLootTable(event, EntityType.LLAMA, ModItems.LLAMA_MEAT, registries);
     }
 
     private static void initEntitySimpleDropLootTable(LootTableLoadEvent event, EntityType<?> entityType, ItemLike dropItem, HolderLookup.Provider registries) {
@@ -71,7 +75,7 @@ public class VanillaExtraEventHandler {
         return AnyOfCondition.anyOf(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().flags(net.minecraft.advancements.critereon.EntityFlagsPredicate.Builder.flags().setOnFire(true))), LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.DIRECT_ATTACKER, EntityPredicate.Builder.entity().equipment(net.minecraft.advancements.critereon.EntityEquipmentPredicate.Builder.equipment().mainhand(net.minecraft.advancements.critereon.ItemPredicate.Builder.item().withSubPredicate(ItemSubPredicates.ENCHANTMENTS, ItemEnchantmentsPredicate.enchantments(List.of(new EnchantmentPredicate(registrylookup.getOrThrow(EnchantmentTags.SMELTS_LOOT), MinMaxBounds.Ints.ANY))))))));
     }
 
-    private static ResourceKey genEntityDrops(EntityType type) {
+    private static ResourceKey<?> genEntityDrops(EntityType<?> type) {
         return type.getDefaultLootTable();
     }
 }

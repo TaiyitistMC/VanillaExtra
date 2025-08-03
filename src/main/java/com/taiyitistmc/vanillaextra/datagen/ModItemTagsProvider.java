@@ -41,5 +41,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
             }
         });
         tag(ItemTags.MEAT).add(ModItems.BACON.get());
+        tag(ItemTags.MEAT).add(ModItems.SQUID_COOKED.get());
+        tag(ItemTags.MEAT).add(ModItems.SQUID_RAW.get());
+        tag(ItemTags.MEAT).add(ModItems.BAT_WING.get());
+        tag(ItemTags.MEAT).add(ModItems.COOKED_BAT_WING.get());
     }
 }

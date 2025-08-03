@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "vanillaextra:squid_raw"
+  },
+  "result": {
+    "count": 1,
+    "id": "vanillaextra:squid_cooked"
+  }
+}

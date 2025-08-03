@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_llama_meat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillaextra:llama_meat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillaextra:cooked_llama_meat_from_blasting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_llama_meat"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillaextra:cooked_llama_meat_from_blasting"
+    ]
+  }
+}
