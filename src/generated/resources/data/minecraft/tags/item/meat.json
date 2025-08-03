@@ -1,5 +1,9 @@
 {
   "values": [
+    "vanillaextra:wolf_meat",
+    "vanillaextra:cooked_wolf_meat",
+    "vanillaextra:horse_meat",
+    "vanillaextra:cooked_horse_meat",
     "vanillaextra:bacon"
   ]
 }

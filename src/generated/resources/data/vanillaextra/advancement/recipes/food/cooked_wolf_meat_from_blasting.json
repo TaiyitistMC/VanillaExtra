@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillaextra:cooked_wolf_meat_from_blasting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wolf_meat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillaextra:wolf_meat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wolf_meat"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillaextra:cooked_wolf_meat_from_blasting"
+    ]
+  }
+}

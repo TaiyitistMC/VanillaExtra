@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_horse_meat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillaextra:horse_meat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillaextra:cooked_horse_meat_from_campfire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_horse_meat"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillaextra:cooked_horse_meat_from_campfire"
+    ]
+  }
+}

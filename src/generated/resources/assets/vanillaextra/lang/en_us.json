@@ -13,7 +13,11 @@
   "item.vanillaextra.bacon": "Bacon",
   "item.vanillaextra.bacon_and_egg": "Bacon And Egg",
   "item.vanillaextra.cooked_bacon": "Cooked Bacon",
+  "item.vanillaextra.cooked_horse_meat": "Cooked Horse Meat",
+  "item.vanillaextra.cooked_wolf_meat": "Cooked Wolf Meat",
   "item.vanillaextra.dried_land_kelp": "Dired Land Kelp",
+  "item.vanillaextra.horse_meat": "Horse Meat",
   "item.vanillaextra.sago": "Sago",
+  "item.vanillaextra.wolf_meat": "Wolf Meat",
   "itemGroup.vainllaextra": "Vanilla Extra"
 }

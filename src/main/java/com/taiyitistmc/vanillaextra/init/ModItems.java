@@ -18,6 +18,10 @@ public class ModItems {
     public static final DeferredItem<Item> BACON = registerFood("bacon", Foods.PORKCHOP);
     public static final DeferredItem<Item> COOKED_BACON = registerFood("cooked_bacon", Foods.COOKED_PORKCHOP);
     public static final DeferredItem<Item> BACON_AND_EGG = registerFood("bacon_and_egg", Foods.COOKED_BEEF);
+    public static final DeferredItem<Item> WOLF_MEAT = registerFood("wolf_meat", Foods.BEEF);
+    public static final DeferredItem<Item> COOKED_WOLF_MEAT = registerFood("cooked_wolf_meat", Foods.COOKED_BEEF);
+    public static final DeferredItem<Item> HORSE_MEAT = registerFood("horse_meat", Foods.BEEF);
+    public static final DeferredItem<Item> COOKED_HORSE_MEAT = registerFood("cooked_horse_meat", Foods.COOKED_BEEF);
 
     public static DeferredItem<Item> register(String name, Item item) {
         return ITEMS.register(name, () -> item);

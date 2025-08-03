@@ -12,7 +12,11 @@
   "item.vanillaextra.bacon": "培根",
   "item.vanillaextra.bacon_and_egg": "培根煎蛋",
   "item.vanillaextra.cooked_bacon": "熟培根",
+  "item.vanillaextra.cooked_horse_meat": "熟马肉",
+  "item.vanillaextra.cooked_wolf_meat": "熟狼肉",
   "item.vanillaextra.dried_land_kelp": "陆生海带干",
-  "item.vanillaextra.sago": "西米面包",
+  "item.vanillaextra.horse_meat": "马肉",
+  "item.vanillaextra.sago": "西米",
+  "item.vanillaextra.wolf_meat": "狼肉",
   "itemGroup.vainllaextra": "Vanilla Extra"
 }

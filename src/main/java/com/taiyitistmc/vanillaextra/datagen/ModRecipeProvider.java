@@ -47,6 +47,8 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(recipeOutput,
                         Helpers.identifier(getItemName(ModItems.BACON_AND_EGG.get())));
         heatRecipe(ModItems.BACON.get(), RecipeCategory.FOOD, ModItems.COOKED_BACON.get(), 0.1F, 200, recipeOutput);
+        heatRecipe(ModItems.WOLF_MEAT.get(), RecipeCategory.FOOD, ModItems.COOKED_WOLF_MEAT.get(), 0.1F, 200, recipeOutput);
+        heatRecipe(ModItems.HORSE_MEAT.get(), RecipeCategory.FOOD, ModItems.COOKED_HORSE_MEAT.get(), 0.1F, 200, recipeOutput);
     }
 
     protected void heatRecipe(ItemLike materialItem, RecipeCategory category, ItemLike finalItem, float exp, int cookingTime, RecipeOutput recipeOutput) {

@@ -4,6 +4,8 @@ import com.taiyitistmc.vanillaextra.VanillaExtra;
 import com.taiyitistmc.vanillaextra.init.ModBlocks;
 import com.taiyitistmc.vanillaextra.init.ModItems;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
@@ -15,15 +17,13 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        basicItem(ModBlocks.LAND_KELP.get().asItem());
-        simpleBlockItem(ModBlocks.LAND_KELP_PLANT.get());
-        basicItem(ModItems.DRIED_LAND_KELP.get());
-        simpleBlockItem(ModBlocks.SAGO_PALM_LOG.get());
-        simpleBlockItem(ModBlocks.STRIPPED_SAGO_PALM_LOG.get());
-        basicItem(ModBlocks.SAGO_PALM_SAPLING.asItem());
-        basicItem(ModItems.SAGO.get());
-        basicItem(ModItems.BACON.get());
-        basicItem(ModItems.COOKED_BACON.get());
-        basicItem(ModItems.BACON_AND_EGG.get());
+        ModItems.ITEMS.getEntries().forEach(itemDeferredHolder -> {
+            boolean isBlockItem = itemDeferredHolder.get() instanceof BlockItem && !(itemDeferredHolder.get().getDefaultInstance().is(ModBlocks.LAND_KELP.get().asItem())) && !(((BlockItem) itemDeferredHolder.get()).getDescriptionId().contains("sapling"));
+            if (isBlockItem) {
+                simpleBlockItem(Block.byItem(itemDeferredHolder.get()));
+            } else {
+                basicItem(itemDeferredHolder.get());
+            }
+        });
     }
 }
