@@ -22,5 +22,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlockItem(ModBlocks.STRIPPED_SAGO_PALM_LOG.get());
         basicItem(ModBlocks.SAGO_PALM_SAPLING.asItem());
         basicItem(ModItems.SAGO.get());
+        basicItem(ModItems.BACON.get());
+        basicItem(ModItems.COOKED_BACON.get());
+        basicItem(ModItems.BACON_AND_EGG.get());
     }
 }

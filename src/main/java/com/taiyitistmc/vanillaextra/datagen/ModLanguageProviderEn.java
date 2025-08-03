@@ -24,6 +24,9 @@ public class ModLanguageProviderEn extends LanguageProvider {
         add(ModBlocks.SAGO_PALM_SAPLING.get(), "Sago Palm Sapling");
         add(ModBlocks.STRIPPED_SAGO_PALM_LOG.get(), "Stripped Sago Palm Log");
         add(ModItems.SAGO.get(), "Sago");
+        add(ModItems.BACON.get(), "Bacon");
+        add(ModItems.COOKED_BACON.get(), "Cooked Bacon");
+        add(ModItems.BACON_AND_EGG.get(), "Bacon And Egg");
         add("advancements.vanillaextra.story.obtain_land_kelp.title", "A Special Kind of Kelp,Land Kelp");
         add("advancements.vanillaextra.story.obtain_land_kelp.description", "A Special Kind of Kelp that growing in Land,it can grow to 6 block heights, is a delicious crop");
         add("advancements.vanillaextra.story.obtain_dried_land_kelp.title", "Delicious Dried Land Kelp,a kind of Food");

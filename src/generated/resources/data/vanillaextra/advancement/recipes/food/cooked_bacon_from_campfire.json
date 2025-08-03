@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bacon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillaextra:bacon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillaextra:cooked_bacon_from_campfire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bacon"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillaextra:cooked_bacon_from_campfire"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "vanillaextra:bacon"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillaextra:bacon_and_egg"
+  }
+}

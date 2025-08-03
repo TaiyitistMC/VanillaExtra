@@ -15,9 +15,7 @@ public class ModCreativeModeTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> VANILLA_EXTRA = CREATIVE_MODE_TABS.register("vanilla_extra", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.vainllaextra")).withTabsBefore(CreativeModeTabs.COMBAT).icon(
             () -> ModBlocks.LAND_KELP.get().asItem().getDefaultInstance()).displayItems((parameters, output) -> {
                 ModBlocks.BLOCKS.getEntries().forEach(blockDeferredHolder -> {
-                    if (!blockDeferredHolder.get().defaultBlockState().is(ModBlocks.LAND_KELP_PLANT)) {
-                        output.accept(blockDeferredHolder.get());
-                    }
+                    output.accept(blockDeferredHolder.get());
                 });
                 ModItems.ITEMS.getEntries().forEach(itemDeferredHolder -> {
                     output.accept(itemDeferredHolder.get());

@@ -35,6 +35,18 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(recipeOutput,
                         Helpers.identifier(getItemName(Items.BREAD) +
                                 "_from_" + getItemName(ModItems.SAGO.get())));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.BACON.get(), 2)
+                .requires(Items.PORKCHOP)
+                .unlockedBy("has_bacon", has(ModItems.SAGO.get()))
+                .save(recipeOutput,
+                        Helpers.identifier(getItemName(ModItems.BACON.get())));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.BACON_AND_EGG.get())
+                .requires(Items.EGG)
+                .requires(ModItems.BACON.get())
+                .unlockedBy("has_bacon", has(ModItems.SAGO.get()))
+                .save(recipeOutput,
+                        Helpers.identifier(getItemName(ModItems.BACON_AND_EGG.get())));
+        heatRecipe(ModItems.BACON.get(), RecipeCategory.FOOD, ModItems.COOKED_BACON.get(), 0.1F, 200, recipeOutput);
     }
 
     protected void heatRecipe(ItemLike materialItem, RecipeCategory category, ItemLike finalItem, float exp, int cookingTime, RecipeOutput recipeOutput) {
