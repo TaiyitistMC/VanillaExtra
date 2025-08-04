@@ -59,6 +59,12 @@ public class ModBlocks {
         return block;
     }
 
+    public static <B extends Block> DeferredBlock<B> registerFruit(String name, Supplier<B> sup, String uuid) {
+        var block = BLOCKS.register(name, sup);
+        ModItems.ITEMS.registerSimpleBlockItem(block);
+        return block;
+    }
+
     private static Block leaves(SoundType soundType) {
         return new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).randomTicks().sound(soundType).noOcclusion().isValidSpawn(Blocks::ocelotOrParrot).isSuffocating(ModBlocks::never).isViewBlocking(ModBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(ModBlocks::never));
     }

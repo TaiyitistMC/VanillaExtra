@@ -22,9 +22,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         ModBlocks.BLOCKS.getEntries().forEach(blockDeferredHolder -> {
             if (blockDeferredHolder.get() instanceof RotatedPillarBlock pillarBlock) {
                 logBlock(pillarBlock);
-            }else if (blockDeferredHolder.get().getDescriptionId().contains("kelp") || blockDeferredHolder.get().getDescriptionId().contains("sapling")) {
+            } else if (blockDeferredHolder.get().getDescriptionId().contains("kelp") || blockDeferredHolder.get().getDescriptionId().contains("sapling")) {
                 crossBlock(blockDeferredHolder.get());
-            }else {
+            } else {
                 simpleBlockWithItem(blockDeferredHolder.get(), cubeAll(blockDeferredHolder.get()));
             }
         });
@@ -36,8 +36,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     public ModelFile cubeAll(Block block) {
         return this.models().cubeAll(this.getName(block), this.blockTexture(block));
-
     }
+
     public ModelFile cross(Block block) {
         return this.models().cross(this.getName(block), this.blockTexture(block));
     }

@@ -18,11 +18,12 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
     protected void generate() {
         this.dropSelf(ModBlocks.LAND_KELP.get());
         this.dropOther(ModBlocks.LAND_KELP_PLANT.get(), ModBlocks.LAND_KELP.get());
-        this.dropSelf(ModBlocks.SAGO_PALM_LOG.get());
-        this.dropSelf(ModBlocks.SAGO_PALM_SAPLING.get());
-        this.dropSelf(ModBlocks.SAGO_PALM_PLANKS.get());
+        ModBlocks.BLOCKS.getEntries().forEach(blockDeferredHolder -> {
+            if (!blockDeferredHolder.get().getDescriptionId().contains("leaves") && !blockDeferredHolder.get().getDescriptionId().contains("kelp")) {
+                dropSelf(blockDeferredHolder.get());
+            }
+        });
         this.leavesDrop(ModBlocks.SAGO_PALM_LEAVES.get(), ModBlocks.SAGO_PALM_SAPLING.get());
-        this.dropSelf(ModBlocks.STRIPPED_SAGO_PALM_LOG.get());
     }
 
     @Override

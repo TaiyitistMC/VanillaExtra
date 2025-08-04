@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "vanillaextra:item/sago_palm_sapling"
+    "layer0": "vanillaextra:block/sago_palm_sapling"
   }
 }
