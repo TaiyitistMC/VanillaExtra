@@ -40,6 +40,11 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
     public static final DeferredBlock<Block> SAGO_PALM_SAPLING = register("sago_palm_sapling", () -> sapling("sago_palm_sapling", ModConfiguredFeatureProvider.SAGO_PALM_TREE));
     public static final DeferredBlock<Block> STRIPPED_SAGO_PALM_LOG = register("stripped_sago_palm_log", () -> log(MapColor.COLOR_ORANGE, MapColor.STONE));
+    public static final DeferredBlock<Block> PEACH_LEAVES = register("peach_leaves", () -> leaves(SoundType.GRASS));
+    public static final DeferredBlock<Block> PEACH_LOG = register("peach_log", () -> log(MapColor.COLOR_ORANGE, MapColor.STONE));
+    public static final DeferredBlock<Block> PEACH_PLANKS = register("peach_planks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+    public static final DeferredBlock<Block> PEACH_SAPLING = register("peach_sapling", () -> sapling("peach_sapling", ModConfiguredFeatureProvider.PEACH_TREE));
 
     public static DeferredBlock<Block> register(String name, BlockBehaviour.Properties properties) {
         var block = BLOCKS.registerSimpleBlock(name, properties);

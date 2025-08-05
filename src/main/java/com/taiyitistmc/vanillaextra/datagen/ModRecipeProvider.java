@@ -28,6 +28,7 @@ public class ModRecipeProvider extends RecipeProvider {
     protected void buildRecipes(RecipeOutput recipeOutput) {
         heatRecipe(ModBlocks.LAND_KELP.get(), RecipeCategory.FOOD, ModItems.DRIED_LAND_KELP.get(), 0.1F, 200, recipeOutput);
         planksFromLogs(recipeOutput, ModBlocks.SAGO_PALM_PLANKS.get(), ModBlocks.SAGO_PALM_LOG.get(), 4);
+        planksFromLogs(recipeOutput, ModBlocks.PEACH_PLANKS.get(), ModBlocks.PEACH_LOG.get(), 4);
         heatRecipe(ModBlocks.STRIPPED_SAGO_PALM_LOG.get(), RecipeCategory.FOOD, ModItems.SAGO.get(), 0.1F, 200, 4, recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, Items.BREAD).define('#', ModItems.SAGO.get())
                 .pattern("###")

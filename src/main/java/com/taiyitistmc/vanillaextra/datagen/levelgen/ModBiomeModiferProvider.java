@@ -20,6 +20,8 @@ public class ModBiomeModiferProvider {
     public static final ResourceKey<BiomeModifier> ADD_LAND_KELP = register("add_land_kelp");
     public static final ResourceKey<BiomeModifier> ADD_SAGO_PALM_TREE = register("add_sago_palm_tree");
     public static final ResourceKey<BiomeModifier> ADD_SAGO_PALM_TREES = register("add_sago_palm_trees");
+    public static final ResourceKey<BiomeModifier> ADD_PEACH_TREE = register("add_peach_tree");
+    public static final ResourceKey<BiomeModifier> ADD_PEACH_TREES = register("add_peach_trees");
 
     public static void addBiomeModifiers(BootstrapContext<BiomeModifier> context) {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
@@ -35,6 +37,14 @@ public class ModBiomeModiferProvider {
         context.register(ADD_SAGO_PALM_TREES, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_WET),
                 HolderSet.direct(features.getOrThrow(ModPlacedFeatureProvider.SAGO_PALM_TREES_PLACED)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+        context.register(ADD_PEACH_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+                HolderSet.direct(features.getOrThrow(ModPlacedFeatureProvider.PEACH_TREE_PLACED)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+        context.register(ADD_PEACH_TREES, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+                HolderSet.direct(features.getOrThrow(ModPlacedFeatureProvider.PEACH_TREES_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
     }
 

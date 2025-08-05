@@ -30,6 +30,8 @@ public class ModConfiguredFeatureProvider {
             register("land_kelp");
     public static final ResourceKey<ConfiguredFeature<?,?>> SAGO_PALM_TREE =
             register("sago_palm_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> PEACH_TREE =
+            register("peach_tree");
 
     public static void configuredFeatures(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         FeatureUtils.register(
@@ -59,6 +61,7 @@ public class ModConfiguredFeatureProvider {
                 )
         );
         FeatureUtils.register(context, SAGO_PALM_TREE, Feature.TREE, createSagoPalmTree().build());
+        FeatureUtils.register(context, PEACH_TREE, Feature.TREE, createPeachTree().build());
     }
 
     private static ResourceKey<ConfiguredFeature<?, ?>> register(String name) {
@@ -67,6 +70,10 @@ public class ModConfiguredFeatureProvider {
 
     private static TreeConfiguration.TreeConfigurationBuilder createSagoPalmTree() {
         return createStraightBlobTree(ModBlocks.SAGO_PALM_LOG.get(), ModBlocks.SAGO_PALM_LEAVES.get(), 9, 3, 0, 2).ignoreVines();
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createPeachTree() {
+        return createStraightBlobTree(ModBlocks.PEACH_LOG.get(), ModBlocks.PEACH_LEAVES.get(), 4, 2, 0, 2).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block logBlock, Block leavesBlock, int baseHeight, int heightRandA, int heightRandB, int radius) {

@@ -3,7 +3,9 @@ package com.taiyitistmc.vanillaextra.datagen;
 import com.taiyitistmc.vanillaextra.VanillaExtra;
 import com.taiyitistmc.vanillaextra.init.ModBlocks;
 import com.taiyitistmc.vanillaextra.init.ModItems;
+import com.taiyitistmc.vanillaextra.util.Helpers;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.BlockItem;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
 public class ModLanguageProviderEn extends LanguageProvider {
@@ -14,34 +16,44 @@ public class ModLanguageProviderEn extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add(ModBlocks.LAND_KELP.get(), "Land Kelp");
-        add(ModBlocks.LAND_KELP_PLANT.get(), "Land Kelp");
         add("itemGroup.vainllaextra", "Vanilla Extra");
-        add(ModItems.DRIED_LAND_KELP.get(), "Dired Land Kelp");
-        add(ModBlocks.SAGO_PALM_LEAVES.get(), "Sago Palm Leaves");
-        add(ModBlocks.SAGO_PALM_LOG.get(), "Sago Palm Log");
-        add(ModBlocks.SAGO_PALM_PLANKS.get(), "Sago Palm Planks");
-        add(ModBlocks.SAGO_PALM_SAPLING.get(), "Sago Palm Sapling");
-        add(ModBlocks.STRIPPED_SAGO_PALM_LOG.get(), "Stripped Sago Palm Log");
-        add(ModItems.SAGO.get(), "Sago");
-        add(ModItems.BACON.get(), "Bacon");
-        add(ModItems.COOKED_BACON.get(), "Cooked Bacon");
-        add(ModItems.BACON_AND_EGG.get(), "Bacon And Egg");
-        add(ModItems.WOLF_MEAT.get(), "Wolf Meat");
-        add(ModItems.COOKED_WOLF_MEAT.get(), "Cooked Wolf Meat");
-        add(ModItems.HORSE_MEAT.get(), "Horse Meat");
-        add(ModItems.COOKED_HORSE_MEAT.get(), "Cooked Horse Meat");
-        add(ModItems.SQUID_RAW.get(), "Raw Squid");
-        add(ModItems.SQUID_COOKED.get(), "Cooked Squid");
-        add(ModItems.BAT_WING.get(), "Bat Wing");
-        add(ModItems.COOKED_BAT_WING.get(), "Cooke Bat Wing");
-        add(ModItems.LLAMA_MEAT.get(), "Llama Meat");
-        add(ModItems.COOKED_LLAMA_MEAT.get(), "Cooked Llama Meat");
-        add(ModItems.HUMAN_MEAT.get(), "Human Meat");
-        add(ModItems.COOKED_HUMAN_MEAT.get(), "Cooked Human Meat");
+        ModBlocks.BLOCKS.getEntries().forEach(blockDeferredHolder -> {
+            add(blockDeferredHolder.get(), formatFieldName(Helpers.unwrapName(blockDeferredHolder.get().asItem().getDefaultInstance().toString())));
+        });
+        ModItems.ITEMS.getEntries().forEach(itemDeferredHolder -> {
+            if (!(itemDeferredHolder.get() instanceof BlockItem)) {
+                add(itemDeferredHolder.get(),
+                        formatFieldName(Helpers.unwrapName(itemDeferredHolder.get().getDefaultInstance().toString())));
+            }
+        });
         add("advancements.vanillaextra.story.obtain_land_kelp.title", "A Special Kind of Kelp,Land Kelp");
         add("advancements.vanillaextra.story.obtain_land_kelp.description", "A Special Kind of Kelp that growing in Land,it can grow to 6 block heights, is a delicious crop");
         add("advancements.vanillaextra.story.obtain_dried_land_kelp.title", "Delicious Dried Land Kelp,a kind of Food");
         add("advancements.vanillaextra.story.obtain_dried_land_kelp.description", "Delicious Food that cooked from Land Kelp");
+    }
+
+    private static String formatFieldName(String input) {
+        if (input == null || input.isEmpty()) {
+            return input;
+        }
+
+        StringBuilder result = new StringBuilder();
+        boolean nextUpper = true;
+
+        for (char c : input.toCharArray()) {
+            if (c == '_') {
+                result.append(' ');
+                nextUpper = true;
+            } else {
+                if (nextUpper) {
+                    result.append(Character.toUpperCase(c));
+                    nextUpper = false;
+                } else {
+                    result.append(Character.toLowerCase(c));
+                }
+            }
+        }
+
+        return result.toString();
     }
 }

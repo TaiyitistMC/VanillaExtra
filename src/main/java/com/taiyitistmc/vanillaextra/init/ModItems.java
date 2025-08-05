@@ -30,6 +30,7 @@ public class ModItems {
     public static final DeferredItem<Item> COOKED_LLAMA_MEAT = registerFood("cooked_llama_meat", Foods.COOKED_PORKCHOP);
     public static final DeferredItem<Item> HUMAN_MEAT = registerFood("human_meat", Foods.PORKCHOP);
     public static final DeferredItem<Item> COOKED_HUMAN_MEAT = registerFood("cooked_human_meat", Foods.COOKED_PORKCHOP);
+    public static final DeferredItem<Item> PEACH = registerFood("peach", Foods.APPLE);
 
     public static DeferredItem<Item> register(String name, Item item) {
         return ITEMS.register(name, () -> item);
