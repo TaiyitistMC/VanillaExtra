@@ -2,7 +2,6 @@ package com.taiyitistmc.vanillaextra.entity;
 
 import com.taiyitistmc.vanillaextra.entity.ai.goal.FriendlyZombieFollowCaravanGoal;
 import com.taiyitistmc.vanillaextra.init.ModEntities;
-import com.taiyitistmc.vanillaextra.init.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -11,44 +10,29 @@ import net.minecraft.server.level.ServerEntity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.BreedGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.FollowOwnerGoal;
 import net.minecraft.world.entity.ai.goal.FollowParentGoal;
 import net.minecraft.world.entity.ai.goal.LeapAtTargetGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.SitWhenOrderedToGoal;
 import net.minecraft.world.entity.ai.goal.TemptGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
-import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
-import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
-import net.minecraft.world.entity.decoration.ArmorStand;
-import net.minecraft.world.entity.monster.Creeper;
-import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.gameevent.GameEvent;
-import net.neoforged.neoforge.event.EventHooks;
 import org.jetbrains.annotations.Nullable;
 
-public class FriendlyZombie extends TamableAnimal {
+public class FriendlyZombie extends AbstractHorse {
 
     @Nullable
     private FriendlyZombie caravanHead;
@@ -59,9 +43,8 @@ public class FriendlyZombie extends TamableAnimal {
         return new FriendlyZombie(ModEntities.FRIENDLY_ZOMBIE.get(), level);
     }
 
-    public FriendlyZombie(EntityType<? extends TamableAnimal> entityType, Level level) {
+    public FriendlyZombie(EntityType<? extends AbstractHorse> entityType, Level level) {
         super(entityType, level);
-        this.setTame(false, false);
     }
 
     public static AttributeSupplier.Builder registerAttributes() {
@@ -70,11 +53,8 @@ public class FriendlyZombie extends TamableAnimal {
 
     @Override
     protected void registerGoals() {
-        this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
-        this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(4, new LeapAtTargetGoal(this, 0.4F));
-        this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
         this.goalSelector.addGoal(4, new BreedGoal(this, 1.0));
         this.goalSelector.addGoal(2, new FriendlyZombieFollowCaravanGoal(this, 2.0999999046325684));
         this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
@@ -125,83 +105,8 @@ public class FriendlyZombie extends TamableAnimal {
     }
 
     @Override
-    public InteractionResult mobInteract(Player player, InteractionHand hand) {
-        ItemStack itemstack = player.getItemInHand(hand);
-        if (!this.level().isClientSide || this.isBaby() && this.isFood(itemstack)) {
-            if (this.isTame()) {
-                if (this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
-                    FoodProperties foodproperties = itemstack.getFoodProperties(this);
-                    float f = foodproperties != null ? (float) foodproperties.nutrition() : 1.0F;
-                    this.heal(2.0F * f);
-                    itemstack.consume(1, player);
-                    this.gameEvent(GameEvent.EAT);
-                    return InteractionResult.sidedSuccess(this.level().isClientSide());
-                }
-            } else if (itemstack.is(ModItems.BLACK_DOG_BLOOD)) {
-                itemstack.consume(1, player);
-                this.tryToTame(player);
-                return InteractionResult.SUCCESS;
-            } else {
-                return super.mobInteract(player, hand);
-            }
-        }
-        boolean flag = this.isOwnedBy(player) || this.isTame() || itemstack.is(ModItems.BLACK_DOG_BLOOD) && !this.isTame();
-        return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
-    }
-
-    private void tryToTame(Player player) {
-        if (this.random.nextInt(3) == 0 && !EventHooks.onAnimalTame(this, player)) {
-            this.tame(player);
-            this.navigation.stop();
-            this.setTarget(null);
-            this.level().broadcastEntityEvent(this, (byte)7);
-        } else {
-            this.level().broadcastEntityEvent(this, (byte)6);
-        }
-    }
-
-    @Override
     public @Nullable AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-        var zombie = ModEntities.FRIENDLY_ZOMBIE.get().create(serverLevel);
-        if (this.isTame()) {
-            zombie.setOwnerUUID(this.getOwnerUUID());
-            zombie.setTame(true, true);
-        }
-        return zombie;
-    }
-
-    @Override
-    public boolean wantsToAttack(LivingEntity target, LivingEntity owner) {
-        if (!(target instanceof Ghast) && !(target instanceof ArmorStand)) {
-            if (!(target instanceof FriendlyZombie)) {
-                if (target instanceof Player player) {
-                    if (owner instanceof Player player1) {
-                        if (!player1.canHarmPlayer(player)) {
-                            return false;
-                        }
-                    }
-                }
-
-                if (target instanceof AbstractHorse abstracthorse) {
-                    if (abstracthorse.isTamed()) {
-                        return false;
-                    }
-                }
-
-                if (target instanceof TamableAnimal tamableanimal) {
-                    if (tamableanimal.isTame()) {
-                        return false;
-                    }
-                }
-
-                return true;
-            } else {
-                FriendlyZombie zombie = (FriendlyZombie)target;
-                return !zombie.isTame() || zombie.getOwner() != owner;
-            }
-        } else {
-            return false;
-        }
+        return ModEntities.FRIENDLY_ZOMBIE.get().create(serverLevel);
     }
 
     @Override
