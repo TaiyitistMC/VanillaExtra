@@ -10,6 +10,8 @@ import net.minecraft.server.level.ServerEntity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
@@ -23,16 +25,19 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.TemptGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
-import net.minecraft.world.entity.animal.horse.AbstractHorse;
+import net.minecraft.world.entity.animal.horse.AbstractChestedHorse;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
-public class FriendlyZombie extends AbstractHorse {
+public class FriendlyZombie extends AbstractChestedHorse {
 
     @Nullable
     private FriendlyZombie caravanHead;
@@ -43,8 +48,11 @@ public class FriendlyZombie extends AbstractHorse {
         return new FriendlyZombie(ModEntities.FRIENDLY_ZOMBIE.get(), level);
     }
 
-    public FriendlyZombie(EntityType<? extends AbstractHorse> entityType, Level level) {
+    public FriendlyZombie(EntityType<? extends AbstractChestedHorse> entityType, Level level) {
         super(entityType, level);
+        setTamed(true);
+        this.setChest(true);
+        this.createInventory();
     }
 
     public static AttributeSupplier.Builder registerAttributes() {
@@ -55,13 +63,42 @@ public class FriendlyZombie extends AbstractHorse {
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(4, new LeapAtTargetGoal(this, 0.4F));
-        this.goalSelector.addGoal(4, new BreedGoal(this, 1.0));
+        this.goalSelector.addGoal(4, new BreedGoal(this, 1.0, FriendlyZombie.class));
         this.goalSelector.addGoal(2, new FriendlyZombieFollowCaravanGoal(this, 2.0999999046325684));
         this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1.0));
         this.goalSelector.addGoal(5, new TemptGoal(this, 1.25, (itemStack) -> itemStack.is(Items.ROTTEN_FLESH), false));
         this.goalSelector.addGoal(6, new FollowParentGoal(this, 1.0));
+    }
+
+    @Override
+    public InteractionResult mobInteract(Player player, InteractionHand hand) {
+        ItemStack itemstack = player.getItemInHand(hand);
+        if (this.isFood(itemstack)) {
+            int i = this.getAge();
+            if (!this.level().isClientSide && i == 0 && this.canFallInLove()) {
+                this.usePlayerItem(player, hand, itemstack);
+                this.setInLove(player);
+                return InteractionResult.SUCCESS;
+            }
+
+            if (this.isBaby()) {
+                this.usePlayerItem(player, hand, itemstack);
+                this.ageUp(getSpeedUpSecondsWhenFeeding(-i), true);
+                return InteractionResult.sidedSuccess(this.level().isClientSide);
+            }
+
+            if (this.level().isClientSide) {
+                return InteractionResult.CONSUME;
+            }
+        }
+        if (player.isSecondaryUseActive()) {
+            this.openCustomInventoryScreen(player);
+            return InteractionResult.sidedSuccess(this.level().isClientSide);
+        }else {
+            return InteractionResult.SUCCESS;
+        }
     }
 
     public void leaveCaravan() {
@@ -136,5 +173,23 @@ public class FriendlyZombie extends AbstractHorse {
     @Override
     public Packet<ClientGamePacketListener> getAddEntityPacket(ServerEntity entity) {
         return new ClientboundAddEntityPacket(this, entity);
+    }
+
+    @Override
+    protected void dropEquipment() {
+        if (this.hasChest()) {
+            if (!this.level().isClientSide) {
+                if (this.inventory != null) {
+                    for(int i = 0; i < this.inventory.getContainerSize(); ++i) {
+                        ItemStack itemstack = this.inventory.getItem(i);
+                        if (!itemstack.isEmpty() && !EnchantmentHelper.has(itemstack, EnchantmentEffectComponents.PREVENT_EQUIPMENT_DROP)) {
+                            this.spawnAtLocation(itemstack);
+                        }
+                    }
+                }
+            }
+
+            this.setChest(false);
+        }
     }
 }

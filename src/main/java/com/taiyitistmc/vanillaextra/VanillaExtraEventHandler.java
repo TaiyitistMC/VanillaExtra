@@ -54,6 +54,7 @@ public class VanillaExtraEventHandler {
             if (item.is(ModItems.PEACH_WOOD_SWORD)) {
                 FriendlyZombie zombie = FriendlyZombie.createZombie(level);
                 zombie.setPos(entity.position());
+                zombie.setOwnerUUID(player.getUUID());
                 level.addFreshEntity(zombie);
             }
         }
