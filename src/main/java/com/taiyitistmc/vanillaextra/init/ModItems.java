@@ -1,13 +1,17 @@
 package com.taiyitistmc.vanillaextra.init;
 
 import com.taiyitistmc.vanillaextra.VanillaExtra;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -36,9 +40,14 @@ public class ModItems {
     public static final DeferredItem<Item> COOKED_HUMAN_MEAT = registerFood("cooked_human_meat", Foods.COOKED_PORKCHOP);
     public static final DeferredItem<Item> PEACH = registerFood("peach", Foods.APPLE);
     public static final DeferredItem<Item> PEACH_WOOD_SWORD = registerSword("peach_wood_sword", Tiers.WOOD, 4, -2.4F);
+    public static final DeferredItem<Item> BLACK_DOG_SPAWN_EGG = registerSpawnEgg("black_dog_spawn_egg", ModEntities.BLACK_DOG,1315860, 4672845);
 
     public static DeferredItem<Item> register(String name, Item item) {
         return ITEMS.register(name, () -> item);
+    }
+
+    public static <T extends EntityType<? extends Mob>> DeferredItem<Item> registerSpawnEgg(String name, DeferredHolder<EntityType<? extends Entity>, T> entity, int backgroundColor, int highlightColor) {
+        return ITEMS.registerItem(name, properties -> new DeferredSpawnEggItem(entity, backgroundColor, highlightColor, new Item.Properties()));
     }
 
     public static DeferredItem<Item> registerFood(String name, FoodProperties food) {

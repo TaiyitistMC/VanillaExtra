@@ -1,5 +1,7 @@
 package com.taiyitistmc.vanillaextra;
 
+import com.taiyitistmc.vanillaextra.entity.BlackDog;
+import com.taiyitistmc.vanillaextra.init.ModEntities;
 import com.taiyitistmc.vanillaextra.init.ModItems;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.EntityPredicate;
@@ -11,8 +13,10 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -26,6 +30,7 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.LootTableLoadEvent;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 
 import java.util.List;
 
@@ -34,9 +39,15 @@ import java.util.List;
 public class VanillaExtraEventHandler {
 
     @SubscribeEvent
+    public static void onEntitySpawn(RegisterSpawnPlacementsEvent event) {
+        event.register(ModEntities.BLACK_DOG.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, BlackDog::checkBlackDogSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
+    }
+
+    @SubscribeEvent
     public static void onLootTableLoad(LootTableLoadEvent event) {
         var registries = event.getRegistries();
         initEntitySimpleDropLootTable(event, EntityType.WOLF, ModItems.WOLF_MEAT, registries);
+        initEntitySimpleDropLootTable(event, ModEntities.BLACK_DOG.get(), ModItems.WOLF_MEAT, registries);
         initEntitySimpleDropLootTable(event, EntityType.HORSE, ModItems.HORSE_MEAT, registries);
         initEntitySimpleDropLootTable(event, EntityType.SQUID, ModItems.SQUID_RAW, registries);
         initEntitySimpleDropLootTable(event, EntityType.GLOW_SQUID, ModItems.SQUID_RAW, registries);

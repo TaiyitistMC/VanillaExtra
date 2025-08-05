@@ -2,6 +2,7 @@ package com.taiyitistmc.vanillaextra.datagen;
 
 import com.taiyitistmc.vanillaextra.VanillaExtra;
 import com.taiyitistmc.vanillaextra.init.ModBlocks;
+import com.taiyitistmc.vanillaextra.init.ModEntities;
 import com.taiyitistmc.vanillaextra.init.ModItems;
 import com.taiyitistmc.vanillaextra.util.Helpers;
 import net.minecraft.data.PackOutput;
@@ -25,6 +26,9 @@ public class ModLanguageProviderEn extends LanguageProvider {
                 add(itemDeferredHolder.get(),
                         formatFieldName(Helpers.unwrapName(itemDeferredHolder.get().getDefaultInstance().toString())));
             }
+        });
+        ModEntities.ENTITIES.getEntries().forEach(entityTypeDeferredHolder -> {
+            add(entityTypeDeferredHolder.get(), formatFieldName(Helpers.unwrapName(entityTypeDeferredHolder.get().toString().substring(5))));
         });
         add("advancements.vanillaextra.story.obtain_land_kelp.title", "A Special Kind of Kelp,Land Kelp");
         add("advancements.vanillaextra.story.obtain_land_kelp.description", "A Special Kind of Kelp that growing in Land,it can grow to 6 block heights, is a delicious crop");

@@ -31,6 +31,8 @@ public class ModItemModelProvider extends ItemModelProvider {
                 simpleBlockItem(Block.byItem(itemDeferredHolder.get()));
             } else if (itemDeferredHolder.get().getDescriptionId().contains("sapling")) {
                 blockCustomItem(itemDeferredHolder.get());
+            } else if (itemDeferredHolder.get().getDescriptionId().contains("spawn_egg")) {
+                spawnEggItem(itemDeferredHolder.get());
             } else {
                 basicItem(itemDeferredHolder.get());
             }
