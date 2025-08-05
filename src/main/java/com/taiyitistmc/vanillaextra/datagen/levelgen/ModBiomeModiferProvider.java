@@ -56,7 +56,7 @@ public class ModBiomeModiferProvider {
                 GenerationStep.Decoration.VEGETAL_DECORATION));
         context.register(ADD_BLACK_DOG, new BiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
-                List.of(new MobSpawnSettings.SpawnerData(ModEntities.BLACK_DOG.get(), 40, 1, 2))
+                List.of(new MobSpawnSettings.SpawnerData(ModEntities.BLACK_DOG.get(), 12, 1, 2))
         ));
     }
 

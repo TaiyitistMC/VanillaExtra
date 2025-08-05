@@ -14,6 +14,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -31,12 +33,27 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.LootTableLoadEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.neoforged.neoforge.event.entity.player.AttackEntityEvent;
 
 import java.util.List;
 
 @SuppressWarnings("removal")
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = VanillaExtra.MODID)
 public class VanillaExtraEventHandler {
+
+    @SubscribeEvent
+    public static void onPlayerAttack(AttackEntityEvent event) {
+        var entity = event.getTarget();
+        var player = event.getEntity();
+        var item = player.getMainHandItem();
+        boolean canHoldDogBlood = entity instanceof BlackDog && item.is(Items.BOWL);
+        if (canHoldDogBlood) {
+            if (!player.getAbilities().instabuild) {
+                item.shrink(1);
+            }
+            player.getInventory().add(new ItemStack(ModItems.BLACK_DOG_BLOOD.get()));
+        }
+    }
 
     @SubscribeEvent
     public static void onEntitySpawn(RegisterSpawnPlacementsEvent event) {

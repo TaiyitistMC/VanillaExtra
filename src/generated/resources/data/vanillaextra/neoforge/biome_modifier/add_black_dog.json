@@ -5,6 +5,6 @@
     "type": "vanillaextra:black_dog",
     "maxCount": 2,
     "minCount": 1,
-    "weight": 40
+    "weight": 12
   }
 }
