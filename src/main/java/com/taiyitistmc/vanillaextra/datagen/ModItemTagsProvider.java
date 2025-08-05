@@ -36,6 +36,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                     if (blockDeferredHolder.get().getDescriptionId().contains("leaves")) {
                         tag(ItemTags.LEAVES).add(blockDeferredHolder.get().asItem());
                     }
+                    if (blockDeferredHolder.get().getDescriptionId().contains("sword")) {
+                        tag(ItemTags.SWORDS).add(blockDeferredHolder.get().asItem());
+                    }
                 }
         );
         ModItems.ITEMS.getEntries().forEach(itemDeferredHolder -> {

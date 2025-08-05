@@ -54,6 +54,7 @@ public class ModRecipeProvider extends RecipeProvider {
         heatRecipe(ModItems.BAT_WING.get(), RecipeCategory.FOOD, ModItems.COOKED_BAT_WING.get(), 0.1F, 200, recipeOutput);
         heatRecipe(ModItems.LLAMA_MEAT.get(), RecipeCategory.FOOD, ModItems.COOKED_LLAMA_MEAT.get(), 0.1F, 200, recipeOutput);
         heatRecipe(ModItems.HUMAN_MEAT.get(), RecipeCategory.FOOD, ModItems.COOKED_HUMAN_MEAT.get(), 0.1F, 200, recipeOutput);
+        swordFromMaterial(recipeOutput, ModItems.PEACH_WOOD_SWORD.get(), ModBlocks.PEACH_PLANKS.get());
     }
 
     protected void heatRecipe(ItemLike materialItem, RecipeCategory category, ItemLike finalItem, float exp, int cookingTime, RecipeOutput recipeOutput) {
@@ -79,6 +80,18 @@ public class ModRecipeProvider extends RecipeProvider {
 
     protected static void planksFromLogs(RecipeOutput recipeOutput, ItemLike planks, ItemLike log, int result) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks, result).requires(log).group("planks").unlockedBy("has_logs", has(log)).save(recipeOutput);
+    }
+
+    protected static void swordFromMaterial(RecipeOutput recipeOutput, ItemLike sword, ItemLike material) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, sword)
+                .define('#', material)
+                .define('A', Items.STICK)
+                .pattern("  #")
+                .pattern(" # ")
+                .pattern("A  ")
+                .unlockedBy("has_" + Helpers.unwrapName(material.asItem().getDefaultInstance().toString()), has(material))
+                .save(recipeOutput,
+                        Helpers.identifier(getItemName(sword)));
     }
 
 }
