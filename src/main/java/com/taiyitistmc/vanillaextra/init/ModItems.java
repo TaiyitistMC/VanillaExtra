@@ -62,6 +62,8 @@ public class ModItems {
             registerSpawnEgg("black_dog_spawn_egg", ModEntities.BLACK_DOG,1315860, 4672845);
     public static final DeferredItem<Item> BLACK_DOG_BLOOD =
             ITEMS.registerItem("black_dog_blood", properties -> new BlackBloodItem());
+    public static final DeferredItem<Item> FRIENDLY_ZOMBIE_SPAWN_EGG =
+            registerSpawnEgg("friendly_zombie_spawn_egg", ModEntities.FRIENDLY_ZOMBIE,44975, 7969893);
 
     public static <T extends EntityType<? extends Mob>> DeferredItem<Item> registerSpawnEgg(String name, DeferredHolder<EntityType<? extends Entity>, T> entity, int backgroundColor, int highlightColor) {
         return ITEMS.registerItem(name, properties -> new DeferredSpawnEggItem(entity, backgroundColor, highlightColor, new Item.Properties()));

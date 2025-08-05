@@ -2,7 +2,9 @@ package com.taiyitistmc.vanillaextra.client;
 
 import com.taiyitistmc.vanillaextra.VanillaExtra;
 import com.taiyitistmc.vanillaextra.client.renderer.BlackDogRenderer;
+import com.taiyitistmc.vanillaextra.client.renderer.FriendlyZombieRenderer;
 import com.taiyitistmc.vanillaextra.entity.BlackDog;
+import com.taiyitistmc.vanillaextra.entity.FriendlyZombie;
 import com.taiyitistmc.vanillaextra.init.ModBlocks;
 import com.taiyitistmc.vanillaextra.init.ModEntities;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -24,12 +26,15 @@ public class VanillaExtraClient {
     @SubscribeEvent
     public static void registerEntityAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.BLACK_DOG.get(), BlackDog.registerAttributes().build());
+        event.put(ModEntities.FRIENDLY_ZOMBIE.get(), FriendlyZombie.registerAttributes().build());
     }
 
     @SubscribeEvent
     public static void registerEntityRenderer(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.BLACK_DOG.get(),
                 BlackDogRenderer::new);
+        event.registerEntityRenderer(ModEntities.FRIENDLY_ZOMBIE.get(),
+                FriendlyZombieRenderer::new);
     }
 
     @SubscribeEvent

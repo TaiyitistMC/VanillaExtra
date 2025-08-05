@@ -1,6 +1,7 @@
 package com.taiyitistmc.vanillaextra;
 
 import com.taiyitistmc.vanillaextra.entity.BlackDog;
+import com.taiyitistmc.vanillaextra.entity.FriendlyZombie;
 import com.taiyitistmc.vanillaextra.init.ModEntities;
 import com.taiyitistmc.vanillaextra.init.ModItems;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
@@ -14,6 +15,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -33,6 +35,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.LootTableLoadEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.player.AttackEntityEvent;
 
 import java.util.List;
@@ -40,6 +43,21 @@ import java.util.List;
 @SuppressWarnings("removal")
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = VanillaExtra.MODID)
 public class VanillaExtraEventHandler {
+
+    @SubscribeEvent
+    public static void onEntityDeath(LivingDeathEvent event) {
+        var entity = event.getEntity();
+        var level = entity.level();
+        var attacker = entity.getLastHurtByMob();
+        if (attacker instanceof Player player) {
+            var item = player.getMainHandItem();
+            if (item.is(ModItems.PEACH_WOOD_SWORD)) {
+                FriendlyZombie zombie = FriendlyZombie.createZombie(level);
+                zombie.setPos(entity.position());
+                level.addFreshEntity(zombie);
+            }
+        }
+    }
 
     @SubscribeEvent
     public static void onPlayerAttack(AttackEntityEvent event) {
@@ -64,7 +82,6 @@ public class VanillaExtraEventHandler {
     public static void onLootTableLoad(LootTableLoadEvent event) {
         var registries = event.getRegistries();
         initEntitySimpleDropLootTable(event, EntityType.WOLF, ModItems.WOLF_MEAT, registries);
-        initEntitySimpleDropLootTable(event, ModEntities.BLACK_DOG.get(), ModItems.WOLF_MEAT, registries);
         initEntitySimpleDropLootTable(event, EntityType.HORSE, ModItems.HORSE_MEAT, registries);
         initEntitySimpleDropLootTable(event, EntityType.SQUID, ModItems.SQUID_RAW, registries);
         initEntitySimpleDropLootTable(event, EntityType.GLOW_SQUID, ModItems.SQUID_RAW, registries);

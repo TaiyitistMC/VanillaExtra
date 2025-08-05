@@ -4,8 +4,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.WritableRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ProblemReporter;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.ValidationContext;
@@ -23,7 +21,8 @@ public class ModLootTableProvider extends LootTableProvider {
 
     static List<SubProviderEntry> subProviderEntries() {
         return List.of(
-                new SubProviderEntry(ModBlockLootProvider::new, LootContextParamSets.BLOCK)
+                new SubProviderEntry(ModBlockLoot::new, LootContextParamSets.BLOCK),
+                new SubProviderEntry(ModEntityLoot::new, LootContextParamSets.ENTITY)
         );
     }
 

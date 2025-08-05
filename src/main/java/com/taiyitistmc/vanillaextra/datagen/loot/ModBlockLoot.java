@@ -5,9 +5,7 @@ import com.taiyitistmc.vanillaextra.init.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.data.loot.packs.VanillaBlockLoot;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
@@ -22,9 +20,9 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 
 import java.util.Set;
 
-public class ModBlockLootProvider extends BlockLootSubProvider {
+public class ModBlockLoot extends BlockLootSubProvider {
 
-    protected ModBlockLootProvider(HolderLookup.Provider registries) {
+    protected ModBlockLoot(HolderLookup.Provider registries) {
         super(Set.of(), FeatureFlags.DEFAULT_FLAGS, registries);
     }
 
