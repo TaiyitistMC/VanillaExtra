@@ -23,8 +23,7 @@ public class ModItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(VanillaExtra.MODID);
 
-    public static final DeferredItem<Item> DRIED_LAND_KELP =
-            registerFood("dried_land_kelp", Foods.BAKED_POTATO);
+    // Foods
     public static final DeferredItem<Item> SAGO =
             registerFood("sago", Foods.POTATO);
     public static final DeferredItem<Item> BACON =
@@ -59,16 +58,28 @@ public class ModItems {
             registerFood("cooked_human_meat", Foods.COOKED_PORKCHOP);
     public static final DeferredItem<Item> PEACH =
             registerFood("peach", Foods.APPLE);
-    public static final DeferredItem<Item> PEACH_WOOD_SWORD =
-            registerSword("peach_wood_sword", Tiers.WOOD, 4, -2.4F);
-    public static final DeferredItem<Item> BLACK_DOG_SPAWN_EGG =
-            registerSpawnEgg("black_dog_spawn_egg", ModEntities.BLACK_DOG,1315860, 4672845);
     public static final DeferredItem<Item> BLACK_DOG_BLOOD =
             ITEMS.registerItem("black_dog_blood", properties -> new BlackBloodItem());
+    public static final DeferredItem<Item> ENDERMAN_MEAT =
+            registerFood("enderman_meat", Foods.PORKCHOP);
+    public static final DeferredItem<Item> COOKED_ENDERMAN_MEAT =
+            registerFood("cooked_enderman_meat", Foods.COOKED_PORKCHOP);
+
+    // Tools
+    public static final DeferredItem<Item> PEACH_WOOD_SWORD =
+            registerSword("peach_wood_sword", Tiers.WOOD, 4, -2.4F);
+
+    // SpawnEggs
+    public static final DeferredItem<Item> BLACK_DOG_SPAWN_EGG =
+            registerSpawnEgg("black_dog_spawn_egg", ModEntities.BLACK_DOG,1315860, 4672845);
     public static final DeferredItem<Item> FRIENDLY_ZOMBIE_SPAWN_EGG =
             registerSpawnEgg("friendly_zombie_spawn_egg", ModEntities.FRIENDLY_ZOMBIE,44975, 7969893);
     public static final DeferredItem<Item> FRIENDLY_SKELETON_SPAWN_EGG =
             registerSpawnEgg("friendly_skeleton_spawn_egg", ModEntities.FRIENDLY_SKELETON,12698049, 4802889);
+
+    // Plants
+    public static final DeferredItem<Item> DRIED_LAND_KELP =
+            registerFood("dried_land_kelp", Foods.BAKED_POTATO);
     public static final DeferredItem<Item> IRON_ORE_SEEDS =
             ITEMS.registerItem("iron_ore_seeds", item ->
                     new ItemNameBlockItem(ModBlocks.IRON_ORE_STEM.get(), new Item.Properties()));

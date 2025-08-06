@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_enderman_meat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillaextra:enderman_meat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillaextra:cooked_enderman_meat_from_blasting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_enderman_meat"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillaextra:cooked_enderman_meat_from_blasting"
+    ]
+  }
+}

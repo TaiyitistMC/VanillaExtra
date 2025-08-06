@@ -77,6 +77,8 @@ public class ModLanguageProviderZh extends LanguageProvider {
         add(ModBlocks.COPPER_ORE_STEM.get(), "铜矿石茎");
         add(ModBlocks.ATTACHED_COPPER_ORE_STEM.get(), "附着的铜矿石茎");
         add(ModItems.COPPER_ORE_SEEDS.get(), "铜矿石种子");
+        add(ModItems.ENDERMAN_MEAT.get(), "末影人肉");
+        add(ModItems.COOKED_ENDERMAN_MEAT.get(), "熟末影人肉");
         add("advancements.vanillaextra.story.obtain_land_kelp.title", "特殊的海带,陆生海带");
         add("advancements.vanillaextra.story.obtain_land_kelp.description", "一种登上陆地的特殊海带,可以长到6格高,是美味的农作物");
         add("advancements.vanillaextra.story.obtain_dried_land_kelp.title", "美味的陆生海带干,一种食物");

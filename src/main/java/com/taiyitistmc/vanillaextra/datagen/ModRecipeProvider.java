@@ -54,6 +54,7 @@ public class ModRecipeProvider extends RecipeProvider {
         heatRecipe(ModItems.BAT_WING.get(), RecipeCategory.FOOD, ModItems.COOKED_BAT_WING.get(), 0.1F, 200, recipeOutput);
         heatRecipe(ModItems.LLAMA_MEAT.get(), RecipeCategory.FOOD, ModItems.COOKED_LLAMA_MEAT.get(), 0.1F, 200, recipeOutput);
         heatRecipe(ModItems.HUMAN_MEAT.get(), RecipeCategory.FOOD, ModItems.COOKED_HUMAN_MEAT.get(), 0.1F, 200, recipeOutput);
+        heatRecipe(ModItems.ENDERMAN_MEAT.get(), RecipeCategory.FOOD, ModItems.COOKED_ENDERMAN_MEAT.get(), 0.1F, 200, recipeOutput);
         swordFromMaterial(recipeOutput, ModItems.PEACH_WOOD_SWORD.get(), ModBlocks.PEACH_PLANKS.get());
         orePlantRecipe(recipeOutput, ModItems.GOLD_ORE_SEEDS, Items.GOLD_BLOCK);
         orePlantRecipe(recipeOutput, ModItems.IRON_ORE_SEEDS, Items.IRON_BLOCK);

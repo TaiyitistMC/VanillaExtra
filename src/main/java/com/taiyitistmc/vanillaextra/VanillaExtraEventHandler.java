@@ -99,6 +99,7 @@ public class VanillaExtraEventHandler {
         initEntitySimpleDropLootTable(event, EntityType.VILLAGER, ModItems.HUMAN_MEAT, registries);
         initEntitySimpleDropLootTable(event, EntityType.PILLAGER, ModItems.HUMAN_MEAT, registries);
         initEntitySimpleDropLootTable(event, EntityType.PLAYER, ModItems.HUMAN_MEAT, registries);
+        initEntitySimpleDropLootTable(event, EntityType.ENDERMAN, ModItems.ENDERMAN_MEAT, registries);
     }
 
     private static void initEntitySimpleDropLootTable(LootTableLoadEvent event, EntityType<?> entityType, ItemLike dropItem, HolderLookup.Provider registries) {
