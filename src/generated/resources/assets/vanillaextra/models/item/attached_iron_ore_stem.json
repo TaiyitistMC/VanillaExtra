@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "vanillaextra:block/attached_iron_ore_stem"
+    "layer0": "vanillaextra:block/attached_ore_stem"
   }
 }

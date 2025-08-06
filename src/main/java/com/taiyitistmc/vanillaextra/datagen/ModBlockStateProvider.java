@@ -101,14 +101,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
     public ModelFile stem(Block block, int num) {
         return this.models()
                 .withExistingParent(getName(block) + "_stage" + num, "minecraft:block/stem_growth" + num)
-                .texture("stem", "block/" + getName(block));
+                .texture("stem", "block/ore_stem");
     }
 
     public ModelFile stemFruit(Block block) {
         return this.models()
                 .withExistingParent(getName(block), "minecraft:block/stem_fruit")
-                .texture("stem","block/" + Helpers.unwrapName(block.asItem().getDefaultInstance().toString().substring(9)))
-                .texture("upperstem", "block/" + getName(block));
+                .texture("stem","block/attached_ore_stem")
+                .texture("upperstem", "block/ore_stem");
     }
 
     public ModelFile cross(Block block) {

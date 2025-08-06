@@ -13,14 +13,19 @@ import com.taiyitistmc.vanillaextra.entity.FriendlyZombie;
 import com.taiyitistmc.vanillaextra.init.ModBlocks;
 import com.taiyitistmc.vanillaextra.init.ModEntities;
 import com.taiyitistmc.vanillaextra.init.ModEntityModelLayers;
+import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.core.BlockPos;
 import net.minecraft.util.FastColor;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.ColorResolver;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.EventPriority;
@@ -38,11 +43,12 @@ public class VanillaExtraClient {
 
     @SubscribeEvent
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
-        event.register((blockState, blockAndTintGetter, blockPos, i) ->
-                blockAndTintGetter.getBlockTint(blockPos, (biome, v, v1) ->
-                        FastColor.ARGB32.opaque(1315860)),
+        event.register((blockState, blockAndTintGetter, blockPos, i) -> FastColor.ARGB32.opaque(1315860),
                 ModBlocks.COAL_ORE_STEM.get(),
                 ModBlocks.ATTACHED_COAL_ORE_STEM.get());
+        event.register((blockState, blockAndTintGetter, blockPos, i) -> FastColor.ARGB32.opaque(16382457),
+                ModBlocks.IRON_ORE_STEM.get(),
+                ModBlocks.ATTACHED_IRON_ORE_STEM.get());
     }
 
     @SubscribeEvent

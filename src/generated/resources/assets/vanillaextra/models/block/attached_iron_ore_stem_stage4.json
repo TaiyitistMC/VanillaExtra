@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/stem_growth4",
   "textures": {
-    "stem": "vanillaextra:block/attached_iron_ore_stem"
+    "stem": "vanillaextra:block/ore_stem"
   }
 }

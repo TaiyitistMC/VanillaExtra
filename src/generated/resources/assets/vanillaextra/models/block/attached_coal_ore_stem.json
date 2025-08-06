@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/stem_fruit",
   "textures": {
-    "stem": "vanillaextra:block/coal_ore_stem",
-    "upperstem": "vanillaextra:block/attached_coal_ore_stem"
+    "stem": "vanillaextra:block/attached_ore_stem",
+    "upperstem": "vanillaextra:block/ore_stem"
   }
 }

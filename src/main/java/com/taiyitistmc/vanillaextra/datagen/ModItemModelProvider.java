@@ -41,7 +41,7 @@ public class ModItemModelProvider extends ItemModelProvider {
             } else if (itemDeferredHolder.get().getDescriptionId().contains("spawn_egg")) {
                 spawnEggItem(itemDeferredHolder.get());
             } else if (itemDeferredHolder.get().getDescriptionId().contains("stem")) {
-                blockCustomItem(itemDeferredHolder.get());
+                blockStemItem(itemDeferredHolder.get());
             } else {
                 basicItem(itemDeferredHolder.get());
             }
@@ -54,5 +54,23 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     public ItemModelBuilder blockCustomItem(ResourceLocation item) {
         return this.getBuilder(item.toString()).parent(new ModelFile.UncheckedModelFile("item/generated")).texture("layer0", ResourceLocation.fromNamespaceAndPath(item.getNamespace(), "block/" + item.getPath()));
+    }
+
+    public ItemModelBuilder blockStemItem(Item item) {
+        return this.blockStemItem(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item)));
+    }
+
+    public ItemModelBuilder blockStemItem(ResourceLocation item) {
+        if (item.getPath().contains("stem") && !item.getPath().contains("attached")) {
+            return this.getBuilder(item.toString())
+                    .parent(new ModelFile.UncheckedModelFile("item/generated")).texture("layer0",
+                            ResourceLocation.fromNamespaceAndPath(item.getNamespace(),
+                                    "block/ore_stem"));
+        } else {
+            return this.getBuilder(item.toString())
+                    .parent(new ModelFile.UncheckedModelFile("item/generated")).texture("layer0",
+                            ResourceLocation.fromNamespaceAndPath(item.getNamespace(),
+                                    "block/attached_ore_stem"));
+        }
     }
 }
