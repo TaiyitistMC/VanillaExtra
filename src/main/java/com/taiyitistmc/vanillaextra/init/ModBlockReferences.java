@@ -14,6 +14,12 @@ public class ModBlockReferences {
     public static final ResourceKey<Block> COAL_ORE = createVanillaKey("coal_ore");
     public static final ResourceKey<Block> COAL_ORE_STEM = createKey("coal_ore_stem");
     public static final ResourceKey<Block> ATTACHED_COAL_ORE_STEM = createKey("attached_coal_ore_stem");
+    public static final ResourceKey<Block> GOLD_ORE = createVanillaKey("gold_ore");
+    public static final ResourceKey<Block> GOLD_ORE_STEM = createKey("gold_ore_stem");
+    public static final ResourceKey<Block> ATTACHED_GOLD_ORE_STEM = createKey("attached_gold_ore_stem");
+    public static final ResourceKey<Block> LAPIS_ORE = createVanillaKey("lapis_ore");
+    public static final ResourceKey<Block> LAPIS_ORE_STEM = createKey("lapis_ore_stem");
+    public static final ResourceKey<Block> ATTACHED_LAPIS_ORE_STEM = createKey("attached_lapis_ore_stem");
 
     private static ResourceKey<Block> createKey(String id) {
         return ResourceKey.create(Registries.BLOCK, Helpers.identifier(id));

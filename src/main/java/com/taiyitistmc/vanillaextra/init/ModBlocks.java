@@ -56,6 +56,14 @@ public class ModBlocks {
             () -> new OreStemBlock(ModBlockReferences.COAL_ORE, ModBlockReferences.ATTACHED_COAL_ORE_STEM, ModItemReferences.COAL_ORE_SEEDS));
     public static final DeferredBlock<Block> ATTACHED_COAL_ORE_STEM = register("attached_coal_ore_stem",
             () -> new OreAttachedStemBlock(ModBlockReferences.COAL_ORE_STEM, ModBlockReferences.COAL_ORE, ModItemReferences.COAL_ORE_SEEDS));
+    public static final DeferredBlock<Block> GOLD_ORE_STEM = register("gold_ore_stem",
+            () -> new OreStemBlock(ModBlockReferences.GOLD_ORE, ModBlockReferences.ATTACHED_GOLD_ORE_STEM, ModItemReferences.GOLD_ORE_SEEDS));
+    public static final DeferredBlock<Block> ATTACHED_GOLD_ORE_STEM = register("attached_gold_ore_stem",
+            () -> new OreAttachedStemBlock(ModBlockReferences.GOLD_ORE_STEM, ModBlockReferences.GOLD_ORE, ModItemReferences.GOLD_ORE_SEEDS));
+    public static final DeferredBlock<Block> LAPIS_ORE_STEM = register("lapis_ore_stem",
+            () -> new OreStemBlock(ModBlockReferences.LAPIS_ORE, ModBlockReferences.ATTACHED_LAPIS_ORE_STEM, ModItemReferences.LAPIS_ORE_SEEDS));
+    public static final DeferredBlock<Block> ATTACHED_LAPIS_ORE_STEM = register("attached_lapis_ore_stem",
+            () -> new OreAttachedStemBlock(ModBlockReferences.LAPIS_ORE_STEM, ModBlockReferences.LAPIS_ORE, ModItemReferences.LAPIS_ORE_SEEDS));
 
     public static DeferredBlock<Block> register(String name, BlockBehaviour.Properties properties) {
         var block = BLOCKS.registerSimpleBlock(name, properties);

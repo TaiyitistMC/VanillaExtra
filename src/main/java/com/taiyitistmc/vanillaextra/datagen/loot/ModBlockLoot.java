@@ -43,6 +43,8 @@ public class ModBlockLoot extends BlockLootSubProvider {
         });
         this.stemDrop(ModBlocks.IRON_ORE_STEM.get(), ModBlocks.ATTACHED_IRON_ORE_STEM.get(), ModItems.IRON_ORE_SEEDS);
         this.stemDrop(ModBlocks.COAL_ORE_STEM.get(), ModBlocks.ATTACHED_COAL_ORE_STEM.get(), ModItems.COAL_ORE_SEEDS);
+        this.stemDrop(ModBlocks.GOLD_ORE_STEM.get(), ModBlocks.ATTACHED_GOLD_ORE_STEM.get(), ModItems.GOLD_ORE_SEEDS);
+        this.stemDrop(ModBlocks.LAPIS_ORE_STEM.get(), ModBlocks.ATTACHED_LAPIS_ORE_STEM.get(), ModItems.LAPIS_ORE_SEEDS);
         this.leavesDrop(ModBlocks.SAGO_PALM_LEAVES.get(), ModBlocks.SAGO_PALM_SAPLING.get());
         this.leavesWithFruitDrops(ModBlocks.PEACH_LEAVES.get(), ModBlocks.PEACH_SAPLING.get(), ModItems.PEACH.get());
     }

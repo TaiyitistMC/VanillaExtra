@@ -13,7 +13,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
-import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -73,6 +72,10 @@ public class ModItems {
             ITEMS.registerItem("iron_ore_seeds", item -> new ItemNameBlockItem(ModBlocks.IRON_ORE_STEM.get(), new Item.Properties()));
     public static final DeferredItem<Item> COAL_ORE_SEEDS =
             ITEMS.registerItem("coal_ore_seeds", item -> new ItemNameBlockItem(ModBlocks.COAL_ORE_STEM.get(), new Item.Properties()));
+    public static final DeferredItem<Item> GOLD_ORE_SEEDS =
+            ITEMS.registerItem("gold_ore_seeds", item -> new ItemNameBlockItem(ModBlocks.GOLD_ORE_STEM.get(), new Item.Properties()));
+    public static final DeferredItem<Item> LAPIS_ORE_SEEDS =
+            ITEMS.registerItem("lapis_ore_seeds", item -> new ItemNameBlockItem(ModBlocks.LAPIS_ORE_STEM.get(), new Item.Properties()));
 
     public static <T extends EntityType<? extends Mob>> DeferredItem<Item> registerSpawnEgg(String name, DeferredHolder<EntityType<? extends Entity>, T> entity, int backgroundColor, int highlightColor) {
         return ITEMS.registerItem(name, properties -> new DeferredSpawnEggItem(entity, backgroundColor, highlightColor, new Item.Properties()));
