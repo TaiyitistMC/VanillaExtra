@@ -107,8 +107,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     public ModelFile stemFruit(Block block) {
         return this.models()
                 .withExistingParent(getName(block), "minecraft:block/stem_fruit")
-                .texture("stem","block/attached_ore_stem")
-                .texture("upperstem", "block/ore_stem");
+                .texture("stem","block/ore_stem")
+                .texture("upperstem", "block/attached_ore_stem");
     }
 
     public ModelFile cross(Block block) {

@@ -55,6 +55,20 @@ public class ModRecipeProvider extends RecipeProvider {
         heatRecipe(ModItems.LLAMA_MEAT.get(), RecipeCategory.FOOD, ModItems.COOKED_LLAMA_MEAT.get(), 0.1F, 200, recipeOutput);
         heatRecipe(ModItems.HUMAN_MEAT.get(), RecipeCategory.FOOD, ModItems.COOKED_HUMAN_MEAT.get(), 0.1F, 200, recipeOutput);
         swordFromMaterial(recipeOutput, ModItems.PEACH_WOOD_SWORD.get(), ModBlocks.PEACH_PLANKS.get());
+        orePlantRecipe(recipeOutput, ModItems.GOLD_ORE_SEEDS, Items.GOLD_BLOCK);
+        orePlantRecipe(recipeOutput, ModItems.IRON_ORE_SEEDS, Items.IRON_BLOCK);
+    }
+
+    protected void orePlantRecipe(RecipeOutput recipeOutput, ItemLike seed, ItemLike gem) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, seed)
+                .define('S', gem)
+                .define('B', Items.WHEAT_SEEDS)
+                .pattern("SSS")
+                .pattern("SBS")
+                .pattern("SSS")
+                .unlockedBy("has_" + getItemName(gem), has(gem))
+                .save(recipeOutput,
+                        Helpers.identifier(getItemName(seed)));
     }
 
     protected void heatRecipe(ItemLike materialItem, RecipeCategory category, ItemLike finalItem, float exp, int cookingTime, RecipeOutput recipeOutput) {
