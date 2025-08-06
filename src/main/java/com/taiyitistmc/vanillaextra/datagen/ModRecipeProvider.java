@@ -57,6 +57,12 @@ public class ModRecipeProvider extends RecipeProvider {
         swordFromMaterial(recipeOutput, ModItems.PEACH_WOOD_SWORD.get(), ModBlocks.PEACH_PLANKS.get());
         orePlantRecipe(recipeOutput, ModItems.GOLD_ORE_SEEDS, Items.GOLD_BLOCK);
         orePlantRecipe(recipeOutput, ModItems.IRON_ORE_SEEDS, Items.IRON_BLOCK);
+        orePlantRecipe(recipeOutput, ModItems.COAL_ORE_SEEDS, Items.COAL_BLOCK);
+        orePlantRecipe(recipeOutput, ModItems.DIAMOND_ORE_SEEDS, Items.DIAMOND_BLOCK);
+        orePlantRecipe(recipeOutput, ModItems.LAPIS_ORE_SEEDS, Items.LAPIS_BLOCK);
+        orePlantRecipe(recipeOutput, ModItems.REDSTONE_ORE_SEEDS, Items.REDSTONE_BLOCK);
+        orePlantRecipe(recipeOutput, ModItems.EMERALD_ORE_SEEDS, Items.EMERALD_BLOCK);
+        orePlantRecipe(recipeOutput, ModItems.COPPER_ORE_SEEDS, Items.COPPER_BLOCK);
     }
 
     protected void orePlantRecipe(RecipeOutput recipeOutput, ItemLike seed, ItemLike gem) {

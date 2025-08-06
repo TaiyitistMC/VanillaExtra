@@ -3,6 +3,7 @@ package com.taiyitistmc.vanillaextra.init;
 import com.taiyitistmc.vanillaextra.VanillaExtra;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -15,10 +16,16 @@ public class ModCreativeModeTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> VANILLA_EXTRA = CREATIVE_MODE_TABS.register("vanilla_extra", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.vainllaextra")).withTabsBefore(CreativeModeTabs.COMBAT).icon(
             () -> ModBlocks.LAND_KELP.get().asItem().getDefaultInstance()).displayItems((parameters, output) -> {
                 ModBlocks.BLOCKS.getEntries().forEach(blockDeferredHolder -> {
-                    output.accept(blockDeferredHolder.get());
+                    if (!blockDeferredHolder.get().getDescriptionId().contains("stem")) {
+                        output.accept(blockDeferredHolder.get());
+                    }
                 });
                 ModItems.ITEMS.getEntries().forEach(itemDeferredHolder -> {
-                    output.accept(itemDeferredHolder.get());
+                    if ((itemDeferredHolder.get() instanceof BlockItem blockItem) && !blockItem.getDescriptionId().contains("stem")) {
+                        output.accept(itemDeferredHolder.get());
+                    } else if (!(itemDeferredHolder.get() instanceof BlockItem)) {
+                        output.accept(itemDeferredHolder.get());
+                    }
                 });
     }).build());
 }

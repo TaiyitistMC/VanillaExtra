@@ -64,6 +64,22 @@ public class ModBlocks {
             () -> new OreStemBlock("lapis_ore", Blocks.LAPIS_ORE));
     public static final DeferredBlock<Block> ATTACHED_LAPIS_ORE_STEM = register("attached_lapis_ore_stem",
             () -> new OreAttachedStemBlock("lapis_ore", Blocks.LAPIS_ORE));
+    public static final DeferredBlock<Block> DIAMOND_ORE_STEM = register("diamond_ore_stem",
+            () -> new OreStemBlock("diamond_ore", Blocks.DIAMOND_ORE));
+    public static final DeferredBlock<Block> ATTACHED_DIAMOND_ORE_STEM = register("attached_diamond_ore_stem",
+            () -> new OreAttachedStemBlock("diamond_ore", Blocks.DIAMOND_ORE));
+    public static final DeferredBlock<Block> EMERALD_ORE_STEM = register("emerald_ore_stem",
+            () -> new OreStemBlock("emerald_ore", Blocks.EMERALD_ORE));
+    public static final DeferredBlock<Block> ATTACHED_EMERALD_ORE_STEM = register("attached_emerald_ore_stem",
+            () -> new OreAttachedStemBlock("emerald_ore", Blocks.EMERALD_ORE));
+    public static final DeferredBlock<Block> REDSTONE_ORE_STEM = register("redstone_ore_stem",
+            () -> new OreStemBlock("redstone_ore", Blocks.EMERALD_ORE));
+    public static final DeferredBlock<Block> ATTACHED_REDSTONE_ORE_STEM = register("attached_redstone_ore_stem",
+            () -> new OreAttachedStemBlock("redstone_ore", Blocks.EMERALD_ORE));
+    public static final DeferredBlock<Block> COPPER_ORE_STEM = register("copper_ore_stem",
+            () -> new OreStemBlock("copper_ore", Blocks.COPPER_ORE));
+    public static final DeferredBlock<Block> ATTACHED_COPPER_ORE_STEM = register("attached_copper_ore_stem",
+            () -> new OreAttachedStemBlock("copper_ore", Blocks.COPPER_ORE));
 
     public static DeferredBlock<Block> register(String name, BlockBehaviour.Properties properties) {
         var block = BLOCKS.registerSimpleBlock(name, properties);

@@ -2,6 +2,7 @@ package com.taiyitistmc.vanillaextra.init;
 
 import com.taiyitistmc.vanillaextra.VanillaExtra;
 import com.taiyitistmc.vanillaextra.item.BlackBloodItem;
+import com.taiyitistmc.vanillaextra.item.TemplateSeedsItem;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -69,13 +70,29 @@ public class ModItems {
     public static final DeferredItem<Item> FRIENDLY_SKELETON_SPAWN_EGG =
             registerSpawnEgg("friendly_skeleton_spawn_egg", ModEntities.FRIENDLY_SKELETON,12698049, 4802889);
     public static final DeferredItem<Item> IRON_ORE_SEEDS =
-            ITEMS.registerItem("iron_ore_seeds", item -> new ItemNameBlockItem(ModBlocks.IRON_ORE_STEM.get(), new Item.Properties()));
+            ITEMS.registerItem("iron_ore_seeds", item ->
+                    new ItemNameBlockItem(ModBlocks.IRON_ORE_STEM.get(), new Item.Properties()));
     public static final DeferredItem<Item> COAL_ORE_SEEDS =
-            ITEMS.registerItem("coal_ore_seeds", item -> new ItemNameBlockItem(ModBlocks.COAL_ORE_STEM.get(), new Item.Properties()));
+            ITEMS.registerItem("coal_ore_seeds", item ->
+                    new ItemNameBlockItem(ModBlocks.COAL_ORE_STEM.get(), new Item.Properties()));
     public static final DeferredItem<Item> GOLD_ORE_SEEDS =
-            ITEMS.registerItem("gold_ore_seeds", item -> new ItemNameBlockItem(ModBlocks.GOLD_ORE_STEM.get(), new Item.Properties()));
+            ITEMS.registerItem("gold_ore_seeds", item ->
+                    new ItemNameBlockItem(ModBlocks.GOLD_ORE_STEM.get(), new Item.Properties()));
     public static final DeferredItem<Item> LAPIS_ORE_SEEDS =
-            ITEMS.registerItem("lapis_ore_seeds", item -> new ItemNameBlockItem(ModBlocks.LAPIS_ORE_STEM.get(), new Item.Properties()));
+            ITEMS.registerItem("lapis_ore_seeds", item ->
+                    new ItemNameBlockItem(ModBlocks.LAPIS_ORE_STEM.get(), new Item.Properties()));
+    public static final DeferredItem<Item> DIAMOND_ORE_SEEDS =
+            ITEMS.registerItem("diamond_ore_seeds", item ->
+                    new ItemNameBlockItem(ModBlocks.DIAMOND_ORE_STEM.get(), new Item.Properties()));
+    public static final DeferredItem<Item> REDSTONE_ORE_SEEDS =
+            ITEMS.registerItem("redstone_ore_seeds", item ->
+                    new ItemNameBlockItem(ModBlocks.REDSTONE_ORE_STEM.get(), new Item.Properties()));
+    public static final DeferredItem<Item> EMERALD_ORE_SEEDS =
+            ITEMS.registerItem("emerald_ore_seeds", item ->
+                    new ItemNameBlockItem(ModBlocks.EMERALD_ORE_STEM.get(), new Item.Properties()));
+    public static final DeferredItem<Item> COPPER_ORE_SEEDS =
+            ITEMS.registerItem("copper_ore_seeds", item ->
+                    new TemplateSeedsItem(ModBlocks.COPPER_ORE_STEM.get()));
 
     public static <T extends EntityType<? extends Mob>> DeferredItem<Item> registerSpawnEgg(String name, DeferredHolder<EntityType<? extends Entity>, T> entity, int backgroundColor, int highlightColor) {
         return ITEMS.registerItem(name, properties -> new DeferredSpawnEggItem(entity, backgroundColor, highlightColor, new Item.Properties()));

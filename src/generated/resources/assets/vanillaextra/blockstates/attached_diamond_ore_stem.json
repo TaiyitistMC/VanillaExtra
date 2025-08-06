@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "vanillaextra:block/attached_diamond_ore_stem",
+      "y": 180
+    },
+    "facing=north": {
+      "model": "vanillaextra:block/attached_diamond_ore_stem",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "vanillaextra:block/attached_diamond_ore_stem",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "vanillaextra:block/attached_diamond_ore_stem"
+    }
+  }
+}

@@ -13,6 +13,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 
+@SuppressWarnings("removal")
 @EventBusSubscriber(modid = VanillaExtra.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class Config {
     private static final ModConfigSpec.Builder BUILDER

@@ -65,6 +65,18 @@ public class ModLanguageProviderZh extends LanguageProvider {
         add(ModBlocks.LAPIS_ORE_STEM.get(), "青金石茎");
         add(ModBlocks.ATTACHED_LAPIS_ORE_STEM.get(), "附着的青金石茎");
         add(ModItems.LAPIS_ORE_SEEDS.get(), "青金石种子");
+        add(ModBlocks.DIAMOND_ORE_STEM.get(), "钻石茎");
+        add(ModBlocks.ATTACHED_DIAMOND_ORE_STEM.get(), "附着的钻石茎");
+        add(ModItems.DIAMOND_ORE_SEEDS.get(), "钻石种子");
+        add(ModBlocks.REDSTONE_ORE_STEM.get(), "红石茎");
+        add(ModBlocks.ATTACHED_REDSTONE_ORE_STEM.get(), "附着的红石茎");
+        add(ModItems.REDSTONE_ORE_SEEDS.get(), "红石种子");
+        add(ModBlocks.EMERALD_ORE_STEM.get(), "绿宝石茎");
+        add(ModBlocks.ATTACHED_EMERALD_ORE_STEM.get(), "附着的绿宝石茎");
+        add(ModItems.EMERALD_ORE_SEEDS.get(), "绿宝石种子");
+        add(ModBlocks.COPPER_ORE_STEM.get(), "铜矿石茎");
+        add(ModBlocks.ATTACHED_COPPER_ORE_STEM.get(), "附着的铜矿石茎");
+        add(ModItems.COPPER_ORE_SEEDS.get(), "铜矿石种子");
         add("advancements.vanillaextra.story.obtain_land_kelp.title", "特殊的海带,陆生海带");
         add("advancements.vanillaextra.story.obtain_land_kelp.description", "一种登上陆地的特殊海带,可以长到6格高,是美味的农作物");
         add("advancements.vanillaextra.story.obtain_dried_land_kelp.title", "美味的陆生海带干,一种食物");

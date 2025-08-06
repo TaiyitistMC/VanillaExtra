@@ -13,6 +13,7 @@ import com.taiyitistmc.vanillaextra.entity.FriendlyZombie;
 import com.taiyitistmc.vanillaextra.init.ModBlocks;
 import com.taiyitistmc.vanillaextra.init.ModEntities;
 import com.taiyitistmc.vanillaextra.init.ModEntityModelLayers;
+import com.taiyitistmc.vanillaextra.init.ModItems;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -44,9 +45,21 @@ public class VanillaExtraClient {
         event.register((blockState, blockAndTintGetter, blockPos, i) -> FastColor.ARGB32.opaque(16579584),
                 ModBlocks.GOLD_ORE_STEM.get(),
                 ModBlocks.ATTACHED_GOLD_ORE_STEM.get());
-        event.register((blockState, blockAndTintGetter, blockPos, i) -> FastColor.ARGB32.opaque(44975),
+        event.register((blockState, blockAndTintGetter, blockPos, i) -> FastColor.ARGB32.opaque(686780),
                 ModBlocks.LAPIS_ORE_STEM.get(),
                 ModBlocks.ATTACHED_LAPIS_ORE_STEM.get());
+        event.register((blockState, blockAndTintGetter, blockPos, i) -> FastColor.ARGB32.opaque(44975),
+                ModBlocks.DIAMOND_ORE_STEM.get(),
+                ModBlocks.ATTACHED_DIAMOND_ORE_STEM.get());
+        event.register((blockState, blockAndTintGetter, blockPos, i) -> FastColor.ARGB32.opaque(5349438),
+                ModBlocks.EMERALD_ORE_STEM.get(),
+                ModBlocks.ATTACHED_EMERALD_ORE_STEM.get());
+        event.register((blockState, blockAndTintGetter, blockPos, i) -> FastColor.ARGB32.opaque(11013646),
+                ModBlocks.REDSTONE_ORE_STEM.get(),
+                ModBlocks.ATTACHED_REDSTONE_ORE_STEM.get());
+        event.register((blockState, blockAndTintGetter, blockPos, i) -> FastColor.ARGB32.opaque(15826224),
+                ModBlocks.COPPER_ORE_STEM.get(),
+                ModBlocks.ATTACHED_COPPER_ORE_STEM.get());
     }
 
     @SubscribeEvent
@@ -60,9 +73,22 @@ public class VanillaExtraClient {
         event.register((itemStack, i) -> FastColor.ARGB32.opaque(16579584),
                 ModBlocks.GOLD_ORE_STEM.get(),
                 ModBlocks.ATTACHED_GOLD_ORE_STEM.get());
-        event.register((itemStack, i)  -> FastColor.ARGB32.opaque(44975),
+        event.register((itemStack, i)  -> FastColor.ARGB32.opaque(686780),
                 ModBlocks.LAPIS_ORE_STEM.get(),
                 ModBlocks.ATTACHED_LAPIS_ORE_STEM.get());
+        event.register((itemStack, i) -> FastColor.ARGB32.opaque(44975),
+                ModBlocks.DIAMOND_ORE_STEM.get(),
+                ModBlocks.ATTACHED_DIAMOND_ORE_STEM.get());
+        event.register((itemStack, i) -> FastColor.ARGB32.opaque(5349438),
+                ModBlocks.EMERALD_ORE_STEM.get(),
+                ModBlocks.ATTACHED_EMERALD_ORE_STEM.get());
+        event.register((itemStack, i) -> FastColor.ARGB32.opaque(11013646),
+                ModBlocks.REDSTONE_ORE_STEM.get(),
+                ModBlocks.ATTACHED_REDSTONE_ORE_STEM.get());
+        event.register((itemStack, i) -> FastColor.ARGB32.opaque(15826224),
+                ModBlocks.COPPER_ORE_STEM.get(),
+                ModBlocks.ATTACHED_COPPER_ORE_STEM.get(),
+                ModItems.COPPER_ORE_SEEDS.get());
     }
 
     @SubscribeEvent

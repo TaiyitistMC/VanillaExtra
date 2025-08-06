@@ -5,6 +5,7 @@ import com.taiyitistmc.vanillaextra.block.OreAttachedStemBlock;
 import com.taiyitistmc.vanillaextra.block.OreStemBlock;
 import com.taiyitistmc.vanillaextra.init.ModBlocks;
 import com.taiyitistmc.vanillaextra.init.ModItems;
+import com.taiyitistmc.vanillaextra.item.TemplateSeedsItem;
 import com.taiyitistmc.vanillaextra.util.Helpers;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -42,6 +43,8 @@ public class ModItemModelProvider extends ItemModelProvider {
                 spawnEggItem(itemDeferredHolder.get());
             } else if (itemDeferredHolder.get().getDescriptionId().contains("stem")) {
                 blockStemItem(itemDeferredHolder.get());
+            } else if (itemDeferredHolder.get() instanceof TemplateSeedsItem) {
+                templateSeedsItem(itemDeferredHolder.get());
             } else {
                 basicItem(itemDeferredHolder.get());
             }
@@ -58,6 +61,18 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     public ItemModelBuilder blockStemItem(Item item) {
         return this.blockStemItem(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item)));
+    }
+
+    public ItemModelBuilder templateSeedsItem(Item item) {
+        return this.templateSeedsItem(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item)));
+    }
+
+    public ItemModelBuilder templateSeedsItem(ResourceLocation item) {
+        return this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0",
+                        ResourceLocation.fromNamespaceAndPath(item.getNamespace(),
+                                "item/template_seeds"));
     }
 
     public ItemModelBuilder blockStemItem(ResourceLocation item) {
