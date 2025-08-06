@@ -51,6 +51,8 @@ public class ModLanguageProviderZh extends LanguageProvider {
         add(ModItems.BLACK_DOG_BLOOD.get(), "黑狗血");
         add(ModEntities.FRIENDLY_ZOMBIE.get(), "友好的僵尸");
         add(ModItems.FRIENDLY_ZOMBIE_SPAWN_EGG.get(), "友好的僵尸刷怪蛋");
+        add(ModEntities.FRIENDLY_SKELETON.get(), "友好的骷髅");
+        add(ModItems.FRIENDLY_SKELETON_SPAWN_EGG.get(), "友好的骷髅刷怪蛋");
         add("advancements.vanillaextra.story.obtain_land_kelp.title", "特殊的海带,陆生海带");
         add("advancements.vanillaextra.story.obtain_land_kelp.description", "一种登上陆地的特殊海带,可以长到6格高,是美味的农作物");
         add("advancements.vanillaextra.story.obtain_dried_land_kelp.title", "美味的陆生海带干,一种食物");

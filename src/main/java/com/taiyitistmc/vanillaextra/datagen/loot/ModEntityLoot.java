@@ -4,7 +4,6 @@ import com.taiyitistmc.vanillaextra.init.ModEntities;
 import com.taiyitistmc.vanillaextra.init.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.EntityLootSubProvider;
-import net.minecraft.data.loot.packs.VanillaEntityLoot;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
@@ -33,6 +32,7 @@ public class ModEntityLoot extends EntityLootSubProvider {
     public void generate() {
         dropMeat(ModEntities.BLACK_DOG.get(), ModItems.WOLF_MEAT);
         rottenDrop(ModEntities.FRIENDLY_ZOMBIE.get());
+        this.add(ModEntities.FRIENDLY_SKELETON.get(), LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(Items.ARROW).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))).apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(0.0F, 1.0F))))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))).apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(0.0F, 1.0F))))));
     }
 
     protected void dropMeat(EntityType<?> entityType, ItemLike meat) {

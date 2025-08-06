@@ -2,6 +2,7 @@ package com.taiyitistmc.vanillaextra.init;
 
 import com.taiyitistmc.vanillaextra.VanillaExtra;
 import com.taiyitistmc.vanillaextra.entity.BlackDog;
+import com.taiyitistmc.vanillaextra.entity.FriendlySkeleton;
 import com.taiyitistmc.vanillaextra.entity.FriendlyZombie;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
@@ -29,6 +30,12 @@ public class ModEntities {
                     .sized(0.6F, 1.95F)
                     .eyeHeight(1.74F)
                     .passengerAttachments(2.0125F)
+                    .ridingOffset(-0.7F)
+                    .clientTrackingRange(8));
+    public static final DeferredHolder<EntityType<? extends Entity>, EntityType<FriendlySkeleton>> FRIENDLY_SKELETON =
+            register("friendly_skeleton", EntityType.Builder.of(FriendlySkeleton::new, MobCategory.CREATURE)
+                    .sized(0.6F, 1.99F)
+                    .eyeHeight(1.74F)
                     .ridingOffset(-0.7F)
                     .clientTrackingRange(8));
 

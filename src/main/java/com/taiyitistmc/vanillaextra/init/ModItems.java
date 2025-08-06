@@ -8,6 +8,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
@@ -64,6 +65,8 @@ public class ModItems {
             ITEMS.registerItem("black_dog_blood", properties -> new BlackBloodItem());
     public static final DeferredItem<Item> FRIENDLY_ZOMBIE_SPAWN_EGG =
             registerSpawnEgg("friendly_zombie_spawn_egg", ModEntities.FRIENDLY_ZOMBIE,44975, 7969893);
+    public static final DeferredItem<Item> FRIENDLY_SKELETON_SPAWN_EGG =
+            registerSpawnEgg("friendly_skeleton_spawn_egg", ModEntities.FRIENDLY_SKELETON,12698049, 4802889);
 
     public static <T extends EntityType<? extends Mob>> DeferredItem<Item> registerSpawnEgg(String name, DeferredHolder<EntityType<? extends Entity>, T> entity, int backgroundColor, int highlightColor) {
         return ITEMS.registerItem(name, properties -> new DeferredSpawnEggItem(entity, backgroundColor, highlightColor, new Item.Properties()));

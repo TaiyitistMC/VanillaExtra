@@ -1,7 +1,6 @@
 package com.taiyitistmc.vanillaextra.entity.ai.goal;
 
-import com.taiyitistmc.vanillaextra.entity.FriendlyZombie;
-import com.taiyitistmc.vanillaextra.init.ModEntities;
+import com.taiyitistmc.vanillaextra.entity.GroupFollowAnimal;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -12,69 +11,69 @@ import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.List;
 
-public class FriendlyZombieFollowCaravanGoal extends Goal {
+public class GroupFollowAnimalCaravanGoal extends Goal {
 
-    public final FriendlyZombie zombie;
+    public final GroupFollowAnimal animal;
     private double speedModifier;
     private static final int CARAVAN_LIMIT = 8;
     private int distCheckCounter;
 
-    public FriendlyZombieFollowCaravanGoal(FriendlyZombie zombie, double speedModifier) {
-        this.zombie = zombie;
+    public GroupFollowAnimalCaravanGoal(GroupFollowAnimal animal, double speedModifier) {
+        this.animal = animal;
         this.speedModifier = speedModifier;
         this.setFlags(EnumSet.of(Flag.MOVE));
     }
 
     @Override
     public boolean canUse() {
-        if (!this.zombie.isLeashed() && !this.zombie.inCaravan()) {
-            List<Entity> list = this.zombie.level().getEntities(this.zombie, this.zombie.getBoundingBox().inflate(9.0, 4.0, 9.0), (p_25505_) -> {
+        if (!this.animal.isLeashed() && !this.animal.inCaravan()) {
+            List<Entity> list = this.animal.level().getEntities(this.animal, this.animal.getBoundingBox().inflate(9.0, 4.0, 9.0), (p_25505_) -> {
                 EntityType<?> entitytype = p_25505_.getType();
-                return entitytype == ModEntities.FRIENDLY_ZOMBIE.get();
+                return entitytype == animal.getType();
             });
-            FriendlyZombie zombie1 = null;
+            GroupFollowAnimal animal1 = null;
             double d0 = Double.MAX_VALUE;
             Iterator<Entity> var5 = list.iterator();
 
             Entity entity1;
-            FriendlyZombie zombie2;
+            GroupFollowAnimal animal2;
             double d2;
             while(var5.hasNext()) {
                 entity1 = (Entity)var5.next();
-                zombie2 = (FriendlyZombie)entity1;
-                if (zombie2.inCaravan() && !zombie2.hasCaravanTail()) {
-                    d2 = this.zombie.distanceToSqr(zombie2);
+                animal2 = (GroupFollowAnimal)entity1;
+                if (animal2.inCaravan() && !animal2.hasCaravanTail()) {
+                    d2 = this.animal.distanceToSqr(animal2);
                     if (!(d2 > d0)) {
                         d0 = d2;
-                        zombie1 = zombie2;
+                        animal1 = animal2;
                     }
                 }
             }
 
-            if (zombie1 == null) {
+            if (animal1 == null) {
                 var5 = list.iterator();
 
                 while(var5.hasNext()) {
                     entity1 = (Entity)var5.next();
-                    zombie2 = (FriendlyZombie)entity1;
-                    if (zombie2.isLeashed() && !zombie2.hasCaravanTail()) {
-                        d2 = this.zombie.distanceToSqr(zombie2);
+                    animal2 = (GroupFollowAnimal)entity1;
+                    if (animal2.isLeashed() && !animal2.hasCaravanTail()) {
+                        d2 = this.animal.distanceToSqr(animal2);
                         if (!(d2 > d0)) {
                             d0 = d2;
-                            zombie1 = zombie2;
+                            animal1 = animal2;
                         }
                     }
                 }
             }
 
-            if (zombie1 == null) {
+            if (animal1 == null) {
                 return false;
             } else if (d0 < 4.0) {
                 return false;
-            } else if (!zombie1.isLeashed() && !this.firstIsLeashed(zombie1, 1)) {
+            } else if (!animal1.isLeashed() && !this.firstIsLeashed(animal1, 1)) {
                 return false;
             } else {
-                this.zombie.joinCaravan(zombie1);
+                this.animal.joinCaravan(animal1);
                 return true;
             }
         } else {
@@ -84,8 +83,8 @@ public class FriendlyZombieFollowCaravanGoal extends Goal {
 
     @Override
     public boolean canContinueToUse() {
-        if (this.zombie.inCaravan() && this.zombie.getCaravanHead().isAlive() && this.firstIsLeashed(this.zombie, 0)) {
-            double d0 = this.zombie.distanceToSqr(this.zombie.getCaravanHead());
+        if (this.animal.inCaravan() && this.animal.getCaravanHead().isAlive() && this.firstIsLeashed(this.animal, 0)) {
+            double d0 = this.animal.distanceToSqr(this.animal.getCaravanHead());
             if (d0 > 676.0) {
                 if (this.speedModifier <= 3.0) {
                     this.speedModifier *= 1.2;
@@ -110,31 +109,31 @@ public class FriendlyZombieFollowCaravanGoal extends Goal {
 
     @Override
     public void stop() {
-        this.zombie.leaveCaravan();
+        this.animal.leaveCaravan();
         this.speedModifier = 2.1;
     }
 
     @Override
     public void tick() {
-        if (this.zombie.inCaravan() && !(this.zombie.getLeashHolder() instanceof LeashFenceKnotEntity)) {
-            FriendlyZombie zombie1 = this.zombie.getCaravanHead();
-            double d0 = (double)this.zombie.distanceTo(zombie1);
+        if (this.animal.inCaravan() && !(this.animal.getLeashHolder() instanceof LeashFenceKnotEntity)) {
+            GroupFollowAnimal animal1 = this.animal.getCaravanHead();
+            double d0 = (double)this.animal.distanceTo(animal1);
             float f = 2.0F;
-            Vec3 vec3 = (new Vec3(zombie1.getX() - this.zombie.getX(), zombie1.getY() - this.zombie.getY(), zombie1.getZ() - this.zombie.getZ())).normalize().scale(Math.max(d0 - 2.0, 0.0));
-            this.zombie.getNavigation().moveTo(this.zombie.getX() + vec3.x, this.zombie.getY() + vec3.y, this.zombie.getZ() + vec3.z, this.speedModifier);
+            Vec3 vec3 = (new Vec3(animal1.getX() - this.animal.getX(), animal1.getY() - this.animal.getY(), animal1.getZ() - this.animal.getZ())).normalize().scale(Math.max(d0 - 2.0, 0.0));
+            this.animal.getNavigation().moveTo(this.animal.getX() + vec3.x, this.animal.getY() + vec3.y, this.animal.getZ() + vec3.z, this.speedModifier);
         }
 
     }
 
-    private boolean firstIsLeashed(FriendlyZombie zombie, int leashedQueuePosition) {
+    private boolean firstIsLeashed(GroupFollowAnimal animal, int leashedQueuePosition) {
         if (leashedQueuePosition > 8) {
             return false;
-        } else if (zombie.inCaravan()) {
+        } else if (animal.inCaravan()) {
             boolean var10000;
-            if (zombie.getCaravanHead().isLeashed()) {
+            if (animal.getCaravanHead().isLeashed()) {
                 var10000 = true;
             } else {
-                FriendlyZombie var10001 = zombie.getCaravanHead();
+                GroupFollowAnimal var10001 = animal.getCaravanHead();
                 ++leashedQueuePosition;
                 var10000 = this.firstIsLeashed(var10001, leashedQueuePosition);
             }

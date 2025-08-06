@@ -1,6 +1,7 @@
 package com.taiyitistmc.vanillaextra;
 
 import com.taiyitistmc.vanillaextra.entity.BlackDog;
+import com.taiyitistmc.vanillaextra.entity.FriendlySkeleton;
 import com.taiyitistmc.vanillaextra.entity.FriendlyZombie;
 import com.taiyitistmc.vanillaextra.init.ModEntities;
 import com.taiyitistmc.vanillaextra.init.ModItems;
@@ -15,6 +16,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.monster.Skeleton;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -52,10 +55,15 @@ public class VanillaExtraEventHandler {
         if (attacker instanceof Player player) {
             var item = player.getMainHandItem();
             if (item.is(ModItems.PEACH_WOOD_SWORD)) {
-                FriendlyZombie zombie = FriendlyZombie.createZombie(level);
-                zombie.setPos(entity.position());
-                zombie.setOwnerUUID(player.getUUID());
-                level.addFreshEntity(zombie);
+                if (entity instanceof Zombie) {
+                    FriendlyZombie zombie = FriendlyZombie.createZombie(level);
+                    zombie.setPos(entity.position());
+                    level.addFreshEntity(zombie);
+                } else if (entity instanceof Skeleton) {
+                    FriendlySkeleton skeleton = new FriendlySkeleton(ModEntities.FRIENDLY_SKELETON.get(), level);
+                    skeleton.setPos(entity.position());
+                    level.addFreshEntity(skeleton);
+                }
             }
         }
     }
