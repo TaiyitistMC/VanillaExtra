@@ -3,6 +3,8 @@ package com.taiyitistmc.vanillaextra.init;
 import com.taiyitistmc.vanillaextra.VanillaExtra;
 import com.taiyitistmc.vanillaextra.block.LandKelpBlock;
 import com.taiyitistmc.vanillaextra.block.LandKelpPlantBlock;
+import com.taiyitistmc.vanillaextra.block.OreAttachedStemBlock;
+import com.taiyitistmc.vanillaextra.block.OreStemBlock;
 import com.taiyitistmc.vanillaextra.datagen.levelgen.ModConfiguredFeatureProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -44,7 +46,16 @@ public class ModBlocks {
     public static final DeferredBlock<Block> PEACH_LOG = register("peach_log", () -> log(MapColor.COLOR_ORANGE, MapColor.STONE));
     public static final DeferredBlock<Block> PEACH_PLANKS = register("peach_planks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
-    public static final DeferredBlock<Block> PEACH_SAPLING = register("peach_sapling", () -> sapling("peach_sapling", ModConfiguredFeatureProvider.PEACH_TREE));
+    public static final DeferredBlock<Block> PEACH_SAPLING =
+            register("peach_sapling", () -> sapling("peach_sapling", ModConfiguredFeatureProvider.PEACH_TREE));
+    public static final DeferredBlock<Block> IRON_ORE_STEM = register("iron_ore_stem",
+            () -> new OreStemBlock(ModBlockReferences.IRON_ORE, ModBlockReferences.ATTACHED_IRON_ORE_STEM, ModItemReferences.IRON_ORE_SEEDS));
+    public static final DeferredBlock<Block> ATTACHED_IRON_ORE_STEM = register("attached_iron_ore_stem",
+            () -> new OreAttachedStemBlock(ModBlockReferences.IRON_ORE_STEM, ModBlockReferences.IRON_ORE, ModItemReferences.IRON_ORE_SEEDS));
+    public static final DeferredBlock<Block> COAL_ORE_STEM = register("coal_ore_stem",
+            () -> new OreStemBlock(ModBlockReferences.COAL_ORE, ModBlockReferences.ATTACHED_COAL_ORE_STEM, ModItemReferences.COAL_ORE_SEEDS));
+    public static final DeferredBlock<Block> ATTACHED_COAL_ORE_STEM = register("attached_coal_ore_stem",
+            () -> new OreAttachedStemBlock(ModBlockReferences.COAL_ORE_STEM, ModBlockReferences.COAL_ORE, ModItemReferences.COAL_ORE_SEEDS));
 
     public static DeferredBlock<Block> register(String name, BlockBehaviour.Properties properties) {
         var block = BLOCKS.registerSimpleBlock(name, properties);

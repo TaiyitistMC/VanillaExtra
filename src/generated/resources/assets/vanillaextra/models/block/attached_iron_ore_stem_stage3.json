@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/stem_growth3",
+  "textures": {
+    "stem": "vanillaextra:block/attached_iron_ore_stem"
+  }
+}

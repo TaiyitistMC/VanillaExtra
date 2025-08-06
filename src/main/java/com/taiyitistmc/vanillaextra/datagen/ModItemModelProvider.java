@@ -1,6 +1,8 @@
 package com.taiyitistmc.vanillaextra.datagen;
 
 import com.taiyitistmc.vanillaextra.VanillaExtra;
+import com.taiyitistmc.vanillaextra.block.OreAttachedStemBlock;
+import com.taiyitistmc.vanillaextra.block.OreStemBlock;
 import com.taiyitistmc.vanillaextra.init.ModBlocks;
 import com.taiyitistmc.vanillaextra.init.ModItems;
 import com.taiyitistmc.vanillaextra.util.Helpers;
@@ -26,13 +28,20 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         ModItems.ITEMS.getEntries().forEach(itemDeferredHolder -> {
-            boolean isBlockItem = itemDeferredHolder.get() instanceof BlockItem && !(itemDeferredHolder.get().getDefaultInstance().is(ModBlocks.LAND_KELP.get().asItem())) && !(itemDeferredHolder.get().getDescriptionId().contains("sapling"));
+            boolean isBlockItem =
+                    itemDeferredHolder.get() instanceof BlockItem blockItem
+                            && !(itemDeferredHolder.get().getDefaultInstance().is(ModBlocks.LAND_KELP.get().asItem()))
+                            && !(itemDeferredHolder.get().getDescriptionId().contains("sapling"))
+                            && !(blockItem.getBlock() instanceof OreStemBlock)
+                            && !(blockItem.getBlock() instanceof OreAttachedStemBlock);
             if (isBlockItem) {
                 simpleBlockItem(Block.byItem(itemDeferredHolder.get()));
             } else if (itemDeferredHolder.get().getDescriptionId().contains("sapling")) {
                 blockCustomItem(itemDeferredHolder.get());
             } else if (itemDeferredHolder.get().getDescriptionId().contains("spawn_egg")) {
                 spawnEggItem(itemDeferredHolder.get());
+            } else if (itemDeferredHolder.get().getDescriptionId().contains("stem")) {
+                blockCustomItem(itemDeferredHolder.get());
             } else {
                 basicItem(itemDeferredHolder.get());
             }

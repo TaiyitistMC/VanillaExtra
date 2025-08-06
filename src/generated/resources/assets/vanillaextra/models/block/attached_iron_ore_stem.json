@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/stem_fruit",
+  "textures": {
+    "stem": "vanillaextra:block/iron_ore_stem",
+    "upperstem": "vanillaextra:block/attached_iron_ore_stem"
+  }
+}

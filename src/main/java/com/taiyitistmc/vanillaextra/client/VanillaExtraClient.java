@@ -13,10 +13,14 @@ import com.taiyitistmc.vanillaextra.entity.FriendlyZombie;
 import com.taiyitistmc.vanillaextra.init.ModBlocks;
 import com.taiyitistmc.vanillaextra.init.ModEntities;
 import com.taiyitistmc.vanillaextra.init.ModEntityModelLayers;
+import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.util.FastColor;
+import net.minecraft.world.level.ColorResolver;
+import net.minecraft.world.level.biome.Biome;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.EventPriority;
@@ -24,12 +28,22 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 
 @SuppressWarnings({"removal", "deprecation"})
 @OnlyIn(Dist.CLIENT)
 @EventBusSubscriber(modid = VanillaExtra.MODID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.GAME)
 public class VanillaExtraClient {
+
+    @SubscribeEvent
+    public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+        event.register((blockState, blockAndTintGetter, blockPos, i) ->
+                blockAndTintGetter.getBlockTint(blockPos, (biome, v, v1) ->
+                        FastColor.ARGB32.opaque(1315860)),
+                ModBlocks.COAL_ORE_STEM.get(),
+                ModBlocks.ATTACHED_COAL_ORE_STEM.get());
+    }
 
     @SubscribeEvent
     public static void registerEntityAttributes(EntityAttributeCreationEvent event) {
@@ -65,6 +79,8 @@ public class VanillaExtraClient {
             } else if (blockDeferredHolder.get().getDescriptionId().contains("plant")) {
                 ItemBlockRenderTypes.setRenderLayer(blockDeferredHolder.get(), RenderType.cutout());
             } else if (blockDeferredHolder.get().getDescriptionId().contains("leaves")) {
+                ItemBlockRenderTypes.setRenderLayer(blockDeferredHolder.get(), RenderType.cutoutMipped());
+            } else if (blockDeferredHolder.get().getDescriptionId().contains("stem")) {
                 ItemBlockRenderTypes.setRenderLayer(blockDeferredHolder.get(), RenderType.cutoutMipped());
             }
         });

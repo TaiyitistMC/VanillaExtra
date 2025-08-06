@@ -53,6 +53,12 @@ public class ModLanguageProviderZh extends LanguageProvider {
         add(ModItems.FRIENDLY_ZOMBIE_SPAWN_EGG.get(), "友好的僵尸刷怪蛋");
         add(ModEntities.FRIENDLY_SKELETON.get(), "友好的骷髅");
         add(ModItems.FRIENDLY_SKELETON_SPAWN_EGG.get(), "友好的骷髅刷怪蛋");
+        add(ModBlocks.IRON_ORE_STEM.get(), "铁矿石茎");
+        add(ModBlocks.ATTACHED_IRON_ORE_STEM.get(), "附着的铁矿石茎");
+        add(ModItems.IRON_ORE_SEEDS.get(), "铁矿石种子");
+        add(ModBlocks.COAL_ORE_STEM.get(), "煤矿石茎");
+        add(ModBlocks.ATTACHED_COAL_ORE_STEM.get(), "附着的煤矿石茎");
+        add(ModItems.COAL_ORE_SEEDS.get(), "煤矿石种子");
         add("advancements.vanillaextra.story.obtain_land_kelp.title", "特殊的海带,陆生海带");
         add("advancements.vanillaextra.story.obtain_land_kelp.description", "一种登上陆地的特殊海带,可以长到6格高,是美味的农作物");
         add("advancements.vanillaextra.story.obtain_dried_land_kelp.title", "美味的陆生海带干,一种食物");

@@ -8,10 +8,12 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -67,6 +69,10 @@ public class ModItems {
             registerSpawnEgg("friendly_zombie_spawn_egg", ModEntities.FRIENDLY_ZOMBIE,44975, 7969893);
     public static final DeferredItem<Item> FRIENDLY_SKELETON_SPAWN_EGG =
             registerSpawnEgg("friendly_skeleton_spawn_egg", ModEntities.FRIENDLY_SKELETON,12698049, 4802889);
+    public static final DeferredItem<Item> IRON_ORE_SEEDS =
+            ITEMS.registerItem("iron_ore_seeds", item -> new ItemNameBlockItem(ModBlocks.IRON_ORE_STEM.get(), new Item.Properties()));
+    public static final DeferredItem<Item> COAL_ORE_SEEDS =
+            ITEMS.registerItem("coal_ore_seeds", item -> new ItemNameBlockItem(ModBlocks.COAL_ORE_STEM.get(), new Item.Properties()));
 
     public static <T extends EntityType<? extends Mob>> DeferredItem<Item> registerSpawnEgg(String name, DeferredHolder<EntityType<? extends Entity>, T> entity, int backgroundColor, int highlightColor) {
         return ITEMS.registerItem(name, properties -> new DeferredSpawnEggItem(entity, backgroundColor, highlightColor, new Item.Properties()));

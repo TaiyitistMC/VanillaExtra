@@ -7,6 +7,7 @@ import com.taiyitistmc.vanillaextra.init.ModItems;
 import com.taiyitistmc.vanillaextra.util.Helpers;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
 public class ModLanguageProviderEn extends LanguageProvider {
@@ -25,6 +26,8 @@ public class ModLanguageProviderEn extends LanguageProvider {
             if (!(itemDeferredHolder.get() instanceof BlockItem)) {
                 add(itemDeferredHolder.get(),
                         formatFieldName(Helpers.unwrapName(itemDeferredHolder.get().getDefaultInstance().toString())));
+            } else if (itemDeferredHolder.get() instanceof ItemNameBlockItem seedItem) {
+                add(seedItem, formatFieldName(Helpers.unwrapName(seedItem.getDefaultInstance().toString())));
             }
         });
         ModEntities.ENTITIES.getEntries().forEach(entityTypeDeferredHolder -> {

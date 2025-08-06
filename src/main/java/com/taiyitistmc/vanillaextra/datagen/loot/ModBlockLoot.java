@@ -1,11 +1,13 @@
 package com.taiyitistmc.vanillaextra.datagen.loot;
 
+import com.taiyitistmc.vanillaextra.block.OreStemBlock;
 import com.taiyitistmc.vanillaextra.init.ModBlocks;
 import com.taiyitistmc.vanillaextra.init.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
@@ -14,8 +16,11 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.providers.number.BinomialDistributionGenerator;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 
 import java.util.Set;
@@ -31,10 +36,13 @@ public class ModBlockLoot extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.LAND_KELP.get());
         this.dropOther(ModBlocks.LAND_KELP_PLANT.get(), ModBlocks.LAND_KELP.get());
         ModBlocks.BLOCKS.getEntries().forEach(blockDeferredHolder -> {
-            if (!blockDeferredHolder.get().getDescriptionId().contains("leaves") && !blockDeferredHolder.get().getDescriptionId().contains("kelp")) {
+            String id = blockDeferredHolder.get().getDescriptionId();
+            if (!id.contains("leaves") && !id.contains("kelp") && !id.contains("stem")) {
                 dropSelf(blockDeferredHolder.get());
             }
         });
+        this.stemDrop(ModBlocks.IRON_ORE_STEM.get(), ModBlocks.ATTACHED_IRON_ORE_STEM.get(), ModItems.IRON_ORE_SEEDS);
+        this.stemDrop(ModBlocks.COAL_ORE_STEM.get(), ModBlocks.ATTACHED_COAL_ORE_STEM.get(), ModItems.COAL_ORE_SEEDS);
         this.leavesDrop(ModBlocks.SAGO_PALM_LEAVES.get(), ModBlocks.SAGO_PALM_SAPLING.get());
         this.leavesWithFruitDrops(ModBlocks.PEACH_LEAVES.get(), ModBlocks.PEACH_SAPLING.get(), ModItems.PEACH.get());
     }
@@ -45,6 +53,27 @@ public class ModBlockLoot extends BlockLootSubProvider {
                 .stream()
                 .map(e -> (Block) e.value())
                 .toList();
+    }
+
+    protected void stemDrop(Block stem, Block attachStem, ItemLike seed) {
+        stemDrop(stem, seed);
+        attachStemDrop(attachStem, seed);
+    }
+
+    protected void stemDrop(Block stem, ItemLike seed) {
+        this.add(stem, factory -> this.createModStemDrops(stem, seed.asItem()));
+    }
+
+    protected void attachStemDrop(Block stem, ItemLike seed) {
+        this.add(stem, factory -> this.createModAttachStemDrops(stem, seed.asItem()));
+    }
+
+    public LootTable.Builder createModStemDrops(Block block, Item item) {
+        return LootTable.lootTable().withPool(this.applyExplosionDecay(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(item).apply(OreStemBlock.AGE.getPossibleValues(), (p_249795_) -> SetItemCountFunction.setCount(BinomialDistributionGenerator.binomial(3, (float)(p_249795_ + 1) / 15.0F)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(net.minecraft.advancements.critereon.StatePropertiesPredicate.Builder.properties().hasProperty(OreStemBlock.AGE, p_249795_)))))));
+    }
+
+    public LootTable.Builder createModAttachStemDrops(Block block, Item item) {
+        return LootTable.lootTable().withPool(this.applyExplosionDecay(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(item))));
     }
 
     protected void leavesDrop(Block leaves, Block sapling) {
