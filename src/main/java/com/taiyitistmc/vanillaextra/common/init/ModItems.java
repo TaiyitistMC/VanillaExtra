@@ -2,6 +2,7 @@ package com.taiyitistmc.vanillaextra.common.init;
 
 import com.taiyitistmc.vanillaextra.VanillaExtra;
 import com.taiyitistmc.vanillaextra.common.item.BlackBloodItem;
+import com.taiyitistmc.vanillaextra.common.item.PeachWoodSwordItem;
 import com.taiyitistmc.vanillaextra.common.item.TemplateSeedsItem;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -10,9 +11,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -66,7 +65,7 @@ public class ModItems {
 
     // Tools
     public static final DeferredItem<Item> PEACH_WOOD_SWORD =
-            registerSword("peach_wood_sword", Tiers.WOOD, 4, -2.4F);
+            ITEMS.registerItem("peach_wood_sword", properties -> new PeachWoodSwordItem());
 
     // SpawnEggs
     public static final DeferredItem<Item> BLACK_DOG_SPAWN_EGG =
@@ -116,10 +115,6 @@ public class ModItems {
 
     public static DeferredItem<Item> registerFood(String name, FoodProperties food) {
         return registerSimpleItem(name, new Item.Properties().food(food));
-    }
-
-    public static DeferredItem<Item> registerSword(String name, Tier tier, int attackDamage, float attackSpeed) {
-        return ITEMS.registerItem(name, item -> new SwordItem(tier, new Item.Properties().attributes(SwordItem.createAttributes(tier, attackDamage, attackSpeed))));
     }
 
     public static DeferredItem<Item> registerSimpleItem(String name, Item.Properties properties) {
