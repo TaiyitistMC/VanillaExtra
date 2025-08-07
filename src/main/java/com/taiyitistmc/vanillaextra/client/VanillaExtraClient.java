@@ -60,6 +60,12 @@ public class VanillaExtraClient {
         event.register((blockState, blockAndTintGetter, blockPos, i) -> FastColor.ARGB32.opaque(15826224),
                 ModBlocks.COPPER_ORE_STEM.get(),
                 ModBlocks.ATTACHED_COPPER_ORE_STEM.get());
+        event.register((blockState, blockAndTintGetter, blockPos, i) -> FastColor.ARGB32.opaque(7164733),
+                ModBlocks.ANCIENT_DEBRIS_STEM.get(),
+                ModBlocks.ATTACHED_ANCIENT_DEBRIS_STEM.get());
+        event.register((blockState, blockAndTintGetter, blockPos, i) -> FastColor.ARGB32.opaque(9725844),
+                ModBlocks.AMETHYST_STEM.get(),
+                ModBlocks.ATTACHED_AMETHYST_STEM.get());
     }
 
     @SubscribeEvent
@@ -89,6 +95,14 @@ public class VanillaExtraClient {
                 ModBlocks.COPPER_ORE_STEM.get(),
                 ModBlocks.ATTACHED_COPPER_ORE_STEM.get(),
                 ModItems.COPPER_ORE_SEEDS.get());
+        event.register((itemStack, i) -> FastColor.ARGB32.opaque(7164733),
+                ModBlocks.ANCIENT_DEBRIS_STEM.get(),
+                ModBlocks.ATTACHED_ANCIENT_DEBRIS_STEM.get(),
+                ModItems.ANCIENT_DEBRIS_SEEDS.get());
+        event.register((itemStack, i) -> FastColor.ARGB32.opaque(9725844),
+                ModBlocks.AMETHYST_STEM.get(),
+                ModBlocks.ATTACHED_AMETHYST_STEM.get(),
+                ModItems.AMETHYST_SEEDS.get());
     }
 
     @SubscribeEvent

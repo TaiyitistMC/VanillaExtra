@@ -64,6 +64,8 @@ public class ModRecipeProvider extends RecipeProvider {
         orePlantRecipe(recipeOutput, ModItems.REDSTONE_ORE_SEEDS, Items.REDSTONE_BLOCK);
         orePlantRecipe(recipeOutput, ModItems.EMERALD_ORE_SEEDS, Items.EMERALD_BLOCK);
         orePlantRecipe(recipeOutput, ModItems.COPPER_ORE_SEEDS, Items.COPPER_BLOCK);
+        orePlantRecipe(recipeOutput, ModItems.ANCIENT_DEBRIS_SEEDS, Items.NETHERITE_BLOCK);
+        orePlantRecipe(recipeOutput, ModItems.AMETHYST_SEEDS, Items.AMETHYST_BLOCK);
     }
 
     protected void orePlantRecipe(RecipeOutput recipeOutput, ItemLike seed, ItemLike gem) {

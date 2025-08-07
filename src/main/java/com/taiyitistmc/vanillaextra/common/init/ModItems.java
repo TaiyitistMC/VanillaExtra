@@ -103,6 +103,12 @@ public class ModItems {
     public static final DeferredItem<Item> COPPER_ORE_SEEDS =
             ITEMS.registerItem("copper_ore_seeds", item ->
                     new TemplateSeedsItem(ModBlocks.COPPER_ORE_STEM.get()));
+    public static final DeferredItem<Item> ANCIENT_DEBRIS_SEEDS =
+            ITEMS.registerItem("ancient_debris_seeds", item ->
+                    new TemplateSeedsItem(ModBlocks.ANCIENT_DEBRIS_STEM.get()));
+    public static final DeferredItem<Item> AMETHYST_SEEDS =
+            ITEMS.registerItem("amethyst_debris_seeds", item ->
+                    new TemplateSeedsItem(ModBlocks.AMETHYST_STEM.get()));
 
     public static <T extends EntityType<? extends Mob>> DeferredItem<Item> registerSpawnEgg(String name, DeferredHolder<EntityType<? extends Entity>, T> entity, int backgroundColor, int highlightColor) {
         return ITEMS.registerItem(name, properties -> new DeferredSpawnEggItem(entity, backgroundColor, highlightColor, new Item.Properties()));
