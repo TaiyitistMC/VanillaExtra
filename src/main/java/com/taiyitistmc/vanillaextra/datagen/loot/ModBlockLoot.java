@@ -1,8 +1,8 @@
 package com.taiyitistmc.vanillaextra.datagen.loot;
 
-import com.taiyitistmc.vanillaextra.block.OreStemBlock;
-import com.taiyitistmc.vanillaextra.init.ModBlocks;
-import com.taiyitistmc.vanillaextra.init.ModItems;
+import com.taiyitistmc.vanillaextra.common.block.OreStemBlock;
+import com.taiyitistmc.vanillaextra.common.init.ModBlocks;
+import com.taiyitistmc.vanillaextra.common.init.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;

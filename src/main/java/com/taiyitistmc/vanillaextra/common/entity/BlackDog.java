@@ -1,6 +1,6 @@
-package com.taiyitistmc.vanillaextra.entity;
+package com.taiyitistmc.vanillaextra.common.entity;
 
-import com.taiyitistmc.vanillaextra.init.ModEntities;
+import com.taiyitistmc.vanillaextra.common.init.ModEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;

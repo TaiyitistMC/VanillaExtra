@@ -1,6 +1,6 @@
-package com.taiyitistmc.vanillaextra.init;
+package com.taiyitistmc.vanillaextra.common.init;
 
-import com.taiyitistmc.vanillaextra.util.AxeItemHooks;
+import com.taiyitistmc.vanillaextra.common.util.AxeItemHooks;
 
 public class ModStrippables {
 

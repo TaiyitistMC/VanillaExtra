@@ -1,6 +1,6 @@
-package com.taiyitistmc.vanillaextra.entity.ai.goal;
+package com.taiyitistmc.vanillaextra.common.entity.ai.goal;
 
-import com.taiyitistmc.vanillaextra.entity.GroupFollowAnimal;
+import com.taiyitistmc.vanillaextra.common.entity.GroupFollowAnimal;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.goal.Goal;

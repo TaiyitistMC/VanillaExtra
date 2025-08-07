@@ -1,12 +1,11 @@
 package com.taiyitistmc.vanillaextra.datagen;
 
 import com.taiyitistmc.vanillaextra.VanillaExtra;
-import com.taiyitistmc.vanillaextra.block.OreAttachedStemBlock;
-import com.taiyitistmc.vanillaextra.block.OreStemBlock;
-import com.taiyitistmc.vanillaextra.init.ModBlocks;
-import com.taiyitistmc.vanillaextra.init.ModItems;
-import com.taiyitistmc.vanillaextra.item.TemplateSeedsItem;
-import com.taiyitistmc.vanillaextra.util.Helpers;
+import com.taiyitistmc.vanillaextra.common.block.OreAttachedStemBlock;
+import com.taiyitistmc.vanillaextra.common.block.OreStemBlock;
+import com.taiyitistmc.vanillaextra.common.init.ModBlocks;
+import com.taiyitistmc.vanillaextra.common.init.ModItems;
+import com.taiyitistmc.vanillaextra.common.item.TemplateSeedsItem;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;

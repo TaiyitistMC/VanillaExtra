@@ -1,8 +1,8 @@
-package com.taiyitistmc.vanillaextra.init;
+package com.taiyitistmc.vanillaextra.common.init;
 
 import com.taiyitistmc.vanillaextra.VanillaExtra;
-import com.taiyitistmc.vanillaextra.item.BlackBloodItem;
-import com.taiyitistmc.vanillaextra.item.TemplateSeedsItem;
+import com.taiyitistmc.vanillaextra.common.item.BlackBloodItem;
+import com.taiyitistmc.vanillaextra.common.item.TemplateSeedsItem;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -10,7 +10,6 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;

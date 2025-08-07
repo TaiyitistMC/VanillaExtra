@@ -1,6 +1,6 @@
 package com.taiyitistmc.vanillaextra.client.model;
 
-import com.taiyitistmc.vanillaextra.entity.FriendlyZombie;
+import com.taiyitistmc.vanillaextra.common.entity.FriendlyZombie;
 import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;

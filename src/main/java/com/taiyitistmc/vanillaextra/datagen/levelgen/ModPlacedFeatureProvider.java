@@ -1,15 +1,14 @@
 package com.taiyitistmc.vanillaextra.datagen.levelgen;
 
 import com.google.common.collect.ImmutableList;
-import com.taiyitistmc.vanillaextra.init.ModBlocks;
-import com.taiyitistmc.vanillaextra.util.Helpers;
+import com.taiyitistmc.vanillaextra.common.init.ModBlocks;
+import com.taiyitistmc.vanillaextra.common.util.Helpers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
-import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
@@ -32,12 +31,8 @@ public class ModPlacedFeatureProvider {
             register("land_kelp_placed");
     public static final ResourceKey<PlacedFeature> SAGO_PALM_TREE_PLACED =
             register("sago_palm_tree_placed");
-    public static final ResourceKey<PlacedFeature> SAGO_PALM_TREES_PLACED =
-            register("sago_palm_trees_placed");
     public static final ResourceKey<PlacedFeature> PEACH_TREE_PLACED =
             register("peach_tree_placed");
-    public static final ResourceKey<PlacedFeature> PEACH_TREES_PLACED =
-            register("peach_trees_placed");
 
     public static void placedFeature(BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> holderGetter = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -52,9 +47,7 @@ public class ModPlacedFeatureProvider {
                 List.of(RarityFilter.onAverageOnceEvery(14),
                         InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
         PlacementUtils.register(context, SAGO_PALM_TREE_PLACED, sago_plam_tree_holder, PlacementUtils.countExtra(0, 0.05F, 1), InSquarePlacement.spread(), placementmodifier, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(ModBlocks.SAGO_PALM_SAPLING.get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
-        PlacementUtils.register(context, SAGO_PALM_TREES_PLACED, sago_plam_tree_holder, VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
         PlacementUtils.register(context, PEACH_TREE_PLACED, peach_tree_holder, PlacementUtils.countExtra(5, 0.1F, 1), InSquarePlacement.spread(), placementmodifier, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(ModBlocks.PEACH_SAPLING.get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
-        PlacementUtils.register(context, PEACH_TREES_PLACED, peach_tree_holder, VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1)));
     }
 
     private static ResourceKey<PlacedFeature> register(String name) {

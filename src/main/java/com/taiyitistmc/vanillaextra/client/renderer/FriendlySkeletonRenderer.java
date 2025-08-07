@@ -1,7 +1,7 @@
 package com.taiyitistmc.vanillaextra.client.renderer;
 
 import com.taiyitistmc.vanillaextra.client.model.FriendlySkeletonModel;
-import com.taiyitistmc.vanillaextra.entity.FriendlySkeleton;
+import com.taiyitistmc.vanillaextra.common.entity.FriendlySkeleton;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

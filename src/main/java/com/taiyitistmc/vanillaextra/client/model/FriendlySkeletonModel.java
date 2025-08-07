@@ -1,7 +1,7 @@
 package com.taiyitistmc.vanillaextra.client.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.taiyitistmc.vanillaextra.entity.FriendlySkeleton;
+import com.taiyitistmc.vanillaextra.common.entity.FriendlySkeleton;
 import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;

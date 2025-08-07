@@ -1,10 +1,10 @@
 package com.taiyitistmc.vanillaextra;
 
-import com.taiyitistmc.vanillaextra.entity.BlackDog;
-import com.taiyitistmc.vanillaextra.entity.FriendlySkeleton;
-import com.taiyitistmc.vanillaextra.entity.FriendlyZombie;
-import com.taiyitistmc.vanillaextra.init.ModEntities;
-import com.taiyitistmc.vanillaextra.init.ModItems;
+import com.taiyitistmc.vanillaextra.common.entity.BlackDog;
+import com.taiyitistmc.vanillaextra.common.entity.FriendlySkeleton;
+import com.taiyitistmc.vanillaextra.common.entity.FriendlyZombie;
+import com.taiyitistmc.vanillaextra.common.init.ModEntities;
+import com.taiyitistmc.vanillaextra.common.init.ModItems;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.advancements.critereon.ItemEnchantmentsPredicate;

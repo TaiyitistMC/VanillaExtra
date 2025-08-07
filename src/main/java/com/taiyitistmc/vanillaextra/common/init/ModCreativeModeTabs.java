@@ -1,4 +1,4 @@
-package com.taiyitistmc.vanillaextra.init;
+package com.taiyitistmc.vanillaextra.common.init;
 
 import com.taiyitistmc.vanillaextra.VanillaExtra;
 import net.minecraft.core.registries.Registries;

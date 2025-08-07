@@ -1,13 +1,12 @@
 package com.taiyitistmc.vanillaextra.client.model;
 
 import com.google.common.collect.ImmutableList;
-import com.taiyitistmc.vanillaextra.entity.BlackDog;
+import com.taiyitistmc.vanillaextra.common.entity.BlackDog;
 import net.minecraft.client.model.ColorableAgeableListModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.CubeListBuilder;
-import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;

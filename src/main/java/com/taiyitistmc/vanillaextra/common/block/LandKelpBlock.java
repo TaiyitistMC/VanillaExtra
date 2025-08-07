@@ -1,7 +1,7 @@
-package com.taiyitistmc.vanillaextra.block;
+package com.taiyitistmc.vanillaextra.common.block;
 
 import com.mojang.serialization.MapCodec;
-import com.taiyitistmc.vanillaextra.init.ModBlocks;
+import com.taiyitistmc.vanillaextra.common.init.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;

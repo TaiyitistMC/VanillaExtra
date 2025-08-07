@@ -1,6 +1,6 @@
 package com.taiyitistmc.vanillaextra;
 
-import com.taiyitistmc.vanillaextra.init.ModStrippables;
+import com.taiyitistmc.vanillaextra.common.init.ModStrippables;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;

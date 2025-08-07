@@ -5,7 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import java.util.Map;
 
 import com.taiyitistmc.vanillaextra.client.model.BlackDogModel;
-import com.taiyitistmc.vanillaextra.entity.BlackDog;
+import com.taiyitistmc.vanillaextra.common.entity.BlackDog;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;

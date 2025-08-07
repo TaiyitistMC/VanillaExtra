@@ -1,6 +1,6 @@
-package com.taiyitistmc.vanillaextra.entity;
+package com.taiyitistmc.vanillaextra.common.entity;
 
-import com.taiyitistmc.vanillaextra.entity.ai.goal.GroupFollowAnimalCaravanGoal;
+import com.taiyitistmc.vanillaextra.common.entity.ai.goal.GroupFollowAnimalCaravanGoal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EntityType;

@@ -1,9 +1,8 @@
 package com.taiyitistmc.vanillaextra.datagen.advancement;
 
-import com.taiyitistmc.vanillaextra.VanillaExtra;
-import com.taiyitistmc.vanillaextra.init.ModBlocks;
-import com.taiyitistmc.vanillaextra.init.ModItems;
-import com.taiyitistmc.vanillaextra.util.Helpers;
+import com.taiyitistmc.vanillaextra.common.init.ModBlocks;
+import com.taiyitistmc.vanillaextra.common.init.ModItems;
+import com.taiyitistmc.vanillaextra.common.util.Helpers;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementType;

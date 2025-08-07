@@ -1,4 +1,4 @@
-package com.taiyitistmc.vanillaextra.item;
+package com.taiyitistmc.vanillaextra.common.item;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;

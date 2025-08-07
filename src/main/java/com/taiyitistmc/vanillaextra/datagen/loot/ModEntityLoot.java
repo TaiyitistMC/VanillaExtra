@@ -1,7 +1,7 @@
 package com.taiyitistmc.vanillaextra.datagen.loot;
 
-import com.taiyitistmc.vanillaextra.init.ModEntities;
-import com.taiyitistmc.vanillaextra.init.ModItems;
+import com.taiyitistmc.vanillaextra.common.init.ModEntities;
+import com.taiyitistmc.vanillaextra.common.init.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.world.entity.EntityType;

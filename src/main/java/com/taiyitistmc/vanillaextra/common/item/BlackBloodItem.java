@@ -1,4 +1,4 @@
-package com.taiyitistmc.vanillaextra.item;
+package com.taiyitistmc.vanillaextra.common.item;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;

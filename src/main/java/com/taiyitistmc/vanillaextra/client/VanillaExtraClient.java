@@ -7,31 +7,31 @@ import com.taiyitistmc.vanillaextra.client.model.FriendlyZombieModel;
 import com.taiyitistmc.vanillaextra.client.renderer.BlackDogRenderer;
 import com.taiyitistmc.vanillaextra.client.renderer.FriendlySkeletonRenderer;
 import com.taiyitistmc.vanillaextra.client.renderer.FriendlyZombieRenderer;
-import com.taiyitistmc.vanillaextra.entity.BlackDog;
-import com.taiyitistmc.vanillaextra.entity.FriendlySkeleton;
-import com.taiyitistmc.vanillaextra.entity.FriendlyZombie;
-import com.taiyitistmc.vanillaextra.init.ModBlocks;
-import com.taiyitistmc.vanillaextra.init.ModEntities;
-import com.taiyitistmc.vanillaextra.init.ModEntityModelLayers;
-import com.taiyitistmc.vanillaextra.init.ModItems;
+import com.taiyitistmc.vanillaextra.common.entity.BlackDog;
+import com.taiyitistmc.vanillaextra.common.entity.FriendlySkeleton;
+import com.taiyitistmc.vanillaextra.common.entity.FriendlyZombie;
+import com.taiyitistmc.vanillaextra.common.init.ModBlocks;
+import com.taiyitistmc.vanillaextra.common.init.ModEntities;
+import com.taiyitistmc.vanillaextra.common.init.ModEntityModelLayers;
+import com.taiyitistmc.vanillaextra.common.init.ModItems;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.util.FastColor;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 
-@SuppressWarnings({"removal", "deprecation"})
-@OnlyIn(Dist.CLIENT)
-@EventBusSubscriber(modid = VanillaExtra.MODID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.GAME)
+@SuppressWarnings("deprecation")
+@Mod(value = VanillaExtra.MODID, dist = Dist.CLIENT)
+@EventBusSubscriber(modid = VanillaExtra.MODID, value = Dist.CLIENT)
 public class VanillaExtraClient {
 
     @SubscribeEvent

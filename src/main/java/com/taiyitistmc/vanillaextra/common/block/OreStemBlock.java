@@ -1,6 +1,6 @@
-package com.taiyitistmc.vanillaextra.block;
+package com.taiyitistmc.vanillaextra.common.block;
 
-import com.taiyitistmc.vanillaextra.util.Helpers;
+import com.taiyitistmc.vanillaextra.common.util.Helpers;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StemBlock;

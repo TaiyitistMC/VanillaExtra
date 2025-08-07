@@ -1,6 +1,6 @@
-package com.taiyitistmc.vanillaextra.init;
+package com.taiyitistmc.vanillaextra.common.init;
 
-import com.taiyitistmc.vanillaextra.util.Helpers;
+import com.taiyitistmc.vanillaextra.common.util.Helpers;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 
 public class ModEntityModelLayers {

@@ -1,10 +1,10 @@
 package com.taiyitistmc.vanillaextra;
 
 import com.mojang.logging.LogUtils;
-import com.taiyitistmc.vanillaextra.init.ModBlocks;
-import com.taiyitistmc.vanillaextra.init.ModCreativeModeTabs;
-import com.taiyitistmc.vanillaextra.init.ModEntities;
-import com.taiyitistmc.vanillaextra.init.ModItems;
+import com.taiyitistmc.vanillaextra.common.init.ModBlocks;
+import com.taiyitistmc.vanillaextra.common.init.ModCreativeModeTabs;
+import com.taiyitistmc.vanillaextra.common.init.ModEntities;
+import com.taiyitistmc.vanillaextra.common.init.ModItems;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;

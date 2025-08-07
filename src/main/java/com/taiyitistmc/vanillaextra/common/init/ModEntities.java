@@ -1,9 +1,9 @@
-package com.taiyitistmc.vanillaextra.init;
+package com.taiyitistmc.vanillaextra.common.init;
 
 import com.taiyitistmc.vanillaextra.VanillaExtra;
-import com.taiyitistmc.vanillaextra.entity.BlackDog;
-import com.taiyitistmc.vanillaextra.entity.FriendlySkeleton;
-import com.taiyitistmc.vanillaextra.entity.FriendlyZombie;
+import com.taiyitistmc.vanillaextra.common.entity.BlackDog;
+import com.taiyitistmc.vanillaextra.common.entity.FriendlySkeleton;
+import com.taiyitistmc.vanillaextra.common.entity.FriendlyZombie;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;

@@ -1,7 +1,7 @@
 package com.taiyitistmc.vanillaextra.client.renderer;
 
 import com.taiyitistmc.vanillaextra.client.model.FriendlyZombieModel;
-import com.taiyitistmc.vanillaextra.entity.FriendlyZombie;
+import com.taiyitistmc.vanillaextra.common.entity.FriendlyZombie;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

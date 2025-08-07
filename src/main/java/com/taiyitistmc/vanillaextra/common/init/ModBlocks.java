@@ -1,10 +1,10 @@
-package com.taiyitistmc.vanillaextra.init;
+package com.taiyitistmc.vanillaextra.common.init;
 
 import com.taiyitistmc.vanillaextra.VanillaExtra;
-import com.taiyitistmc.vanillaextra.block.LandKelpBlock;
-import com.taiyitistmc.vanillaextra.block.LandKelpPlantBlock;
-import com.taiyitistmc.vanillaextra.block.OreAttachedStemBlock;
-import com.taiyitistmc.vanillaextra.block.OreStemBlock;
+import com.taiyitistmc.vanillaextra.common.block.LandKelpBlock;
+import com.taiyitistmc.vanillaextra.common.block.LandKelpPlantBlock;
+import com.taiyitistmc.vanillaextra.common.block.OreAttachedStemBlock;
+import com.taiyitistmc.vanillaextra.common.block.OreStemBlock;
 import com.taiyitistmc.vanillaextra.datagen.levelgen.ModConfiguredFeatureProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
