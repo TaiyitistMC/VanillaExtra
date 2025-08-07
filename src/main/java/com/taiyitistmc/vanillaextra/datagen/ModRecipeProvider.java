@@ -85,10 +85,10 @@ public class ModRecipeProvider extends RecipeProvider {
     private void heatRecipe(ItemLike materialItem, RecipeCategory category, ItemLike finalItem, float exp, int cookingTime, int count, RecipeOutput recipeOutput) {
         ItemStack item = finalItem.asItem().getDefaultInstance();
         item.setCount(count);
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(materialItem), category, item, exp, cookingTime).unlockedBy("has_" + Helpers.unwrapName(materialItem.asItem().getDefaultInstance().toString()), has(materialItem)).save(recipeOutput, Helpers.identifier(getSmeltingRecipeName(item.getItem())));
-        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(materialItem), category, item, exp, cookingTime).unlockedBy("has_" + Helpers.unwrapName(materialItem.asItem().getDefaultInstance().toString()), has(materialItem)).save(recipeOutput, Helpers.identifier(getCampfireRecipeName(item.getItem())));
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(materialItem), category, item, exp, cookingTime).unlockedBy("has_" + Helpers.unwrapName(materialItem.asItem().getDefaultInstance().toString()), has(materialItem)).save(recipeOutput, Helpers.identifier(getBlastingRecipeName(item.getItem())));
-        SimpleCookingRecipeBuilder.smoking(Ingredient.of(materialItem), category, item, exp, cookingTime).unlockedBy("has_" + Helpers.unwrapName(materialItem.asItem().getDefaultInstance().toString()), has(materialItem)).save(recipeOutput, Helpers.identifier(getSmokingRecipeName(item.getItem())));
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(materialItem), category, item, exp, cookingTime).unlockedBy("has_" + Helpers.getItemName(materialItem), has(materialItem)).save(recipeOutput, Helpers.identifier(getSmeltingRecipeName(item.getItem())));
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(materialItem), category, item, exp, cookingTime).unlockedBy("has_" + Helpers.getItemName(materialItem), has(materialItem)).save(recipeOutput, Helpers.identifier(getCampfireRecipeName(item.getItem())));
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(materialItem), category, item, exp, cookingTime).unlockedBy("has_" + Helpers.getItemName(materialItem), has(materialItem)).save(recipeOutput, Helpers.identifier(getBlastingRecipeName(item.getItem())));
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(materialItem), category, item, exp, cookingTime).unlockedBy("has_" + Helpers.getItemName(materialItem), has(materialItem)).save(recipeOutput, Helpers.identifier(getSmokingRecipeName(item.getItem())));
     }
 
     protected static String getSmokingRecipeName(ItemLike itemLike) {
@@ -110,7 +110,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("  #")
                 .pattern(" # ")
                 .pattern("A  ")
-                .unlockedBy("has_" + Helpers.unwrapName(material.asItem().getDefaultInstance().toString()), has(material))
+                .unlockedBy("has_" + Helpers.getItemName(material), has(material))
                 .save(recipeOutput,
                         Helpers.identifier(getItemName(sword)));
     }

@@ -29,15 +29,15 @@ public class StoryAdvancements implements AdvancementProvider.AdvancementGenerat
         return advancement
                 .display(
                         displayItem,
-                        Component.translatable("advancements.vanillaextra.story." + "obtain_" + Helpers.unwrapName(displayItem.asItem().getDefaultInstance().toString()) + ".title"),
-                        Component.translatable("advancements.vanillaextra.story." + "obtain_" + Helpers.unwrapName(displayItem.asItem().getDefaultInstance().toString()) + ".description"),
+                        Component.translatable("advancements.vanillaextra.story." + "obtain_" + Helpers.getItemName(displayItem) + ".title"),
+                        Component.translatable("advancements.vanillaextra.story." + "obtain_" + Helpers.getItemName(displayItem) + ".description"),
                         ResourceLocation.withDefaultNamespace("textures/gui/advancements/backgrounds/stone.png"),
                         AdvancementType.TASK,
                         true,
                         true,
                         false
                 )
-                .addCriterion(Helpers.unwrapName(displayItem.asItem().getDefaultInstance().toString()), InventoryChangeTrigger.TriggerInstance.hasItems(displayItem))
-                .save(consumer, Helpers.identifier("story/obtain_" + Helpers.unwrapName(displayItem.asItem().getDefaultInstance().toString())).toString());
+                .addCriterion(Helpers.getItemName(displayItem), InventoryChangeTrigger.TriggerInstance.hasItems(displayItem))
+                .save(consumer, Helpers.identifier("story/obtain_" + Helpers.getItemName(displayItem)).toString());
     }
 }

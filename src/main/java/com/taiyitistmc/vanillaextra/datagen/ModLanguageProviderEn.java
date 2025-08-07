@@ -20,18 +20,18 @@ public class ModLanguageProviderEn extends LanguageProvider {
     protected void addTranslations() {
         add("itemGroup.vainllaextra", "Vanilla Extra");
         ModBlocks.BLOCKS.getEntries().forEach(blockDeferredHolder -> {
-            add(blockDeferredHolder.get(), formatFieldName(Helpers.unwrapName(blockDeferredHolder.get().asItem().getDefaultInstance().toString())));
+            add(blockDeferredHolder.get(), formatFieldName(Helpers.getBlockName(blockDeferredHolder.get())));
         });
         ModItems.ITEMS.getEntries().forEach(itemDeferredHolder -> {
             if (!(itemDeferredHolder.get() instanceof BlockItem)) {
                 add(itemDeferredHolder.get(),
-                        formatFieldName(Helpers.unwrapName(itemDeferredHolder.get().getDefaultInstance().toString())));
+                        formatFieldName(Helpers.getItemName(itemDeferredHolder.get())));
             } else if (itemDeferredHolder.get() instanceof ItemNameBlockItem seedItem) {
-                add(seedItem, formatFieldName(Helpers.unwrapName(seedItem.getDefaultInstance().toString())));
+                add(seedItem, formatFieldName(Helpers.getItemName(itemDeferredHolder.get())));
             }
         });
         ModEntities.ENTITIES.getEntries().forEach(entityTypeDeferredHolder -> {
-            add(entityTypeDeferredHolder.get(), formatFieldName(Helpers.unwrapName(entityTypeDeferredHolder.get().toString().substring(5))));
+            add(entityTypeDeferredHolder.get(), formatFieldName(Helpers.getEntityName(entityTypeDeferredHolder.get())));
         });
         add("advancements.vanillaextra.story.obtain_land_kelp.title", "A Special Kind of Kelp,Land Kelp");
         add("advancements.vanillaextra.story.obtain_land_kelp.description", "A Special Kind of Kelp that growing in Land,it can grow to 6 block heights, is a delicious crop");

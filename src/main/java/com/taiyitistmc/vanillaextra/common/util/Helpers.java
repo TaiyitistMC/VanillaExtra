@@ -5,6 +5,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -13,10 +14,6 @@ public class Helpers {
 
     public static ResourceLocation identifier(String name) {
         return ResourceLocation.fromNamespaceAndPath(VanillaExtra.MODID, name);
-    }
-
-    public static String unwrapName(String name) {
-        return name.substring(15);
     }
 
     public static ResourceKey<Item> createModItemKey(String name) {
@@ -37,5 +34,9 @@ public class Helpers {
 
     public static String getItemName(ItemLike itemLike) {
         return BuiltInRegistries.ITEM.getKey(itemLike.asItem()).getPath();
+    }
+
+    public static String getEntityName(EntityType<?> entityType) {
+        return BuiltInRegistries.ENTITY_TYPE.getKey(entityType).getPath();
     }
 }
