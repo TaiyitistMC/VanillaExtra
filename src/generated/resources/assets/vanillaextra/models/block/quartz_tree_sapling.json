@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "vanillaextra:block/quartz_tree_sapling"
+  }
+}

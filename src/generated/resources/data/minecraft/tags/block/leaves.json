@@ -4,6 +4,13 @@
     "vanillaextra:peach_leaves",
     "vanillaextra:coal_tree_leaves",
     "vanillaextra:copper_tree_leaves",
-    "vanillaextra:diamond_tree_leaves"
+    "vanillaextra:diamond_tree_leaves",
+    "vanillaextra:emerald_tree_leaves",
+    "vanillaextra:gold_tree_leaves",
+    "vanillaextra:iron_tree_leaves",
+    "vanillaextra:lapis_tree_leaves",
+    "vanillaextra:redstone_tree_leaves",
+    "vanillaextra:quartz_tree_leaves",
+    "vanillaextra:netherite_tree_leaves"
   ]
 }

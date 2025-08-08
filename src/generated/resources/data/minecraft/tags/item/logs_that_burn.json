@@ -5,6 +5,13 @@
     "vanillaextra:peach_log",
     "vanillaextra:coal_tree_log",
     "vanillaextra:copper_tree_log",
-    "vanillaextra:diamond_tree_log"
+    "vanillaextra:diamond_tree_log",
+    "vanillaextra:emerald_tree_log",
+    "vanillaextra:gold_tree_log",
+    "vanillaextra:iron_tree_log",
+    "vanillaextra:lapis_tree_log",
+    "vanillaextra:redstone_tree_log",
+    "vanillaextra:quartz_tree_log",
+    "vanillaextra:netherite_tree_log"
   ]
 }

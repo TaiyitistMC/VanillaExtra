@@ -39,6 +39,20 @@ public class ModConfiguredFeatureProvider {
             register("copper_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> DIAMOND_TREE =
             register("diamond_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> EMERALD_TREE =
+            register("emerald_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> GOLD_TREE =
+            register("gold_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> IRON_TREE =
+            register("iron_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> LAPIS_TREE =
+            register("lapis_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> REDSTONE_TREE =
+            register("redstone_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> QUARTZ_TREE =
+            register("quartz_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> NETHERITE_TREE =
+            register("netherite_tree");
 
     public static void configuredFeatures(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         FeatureUtils.register(
@@ -72,6 +86,13 @@ public class ModConfiguredFeatureProvider {
         FeatureUtils.register(context, COAL_TREE, Feature.TREE, createOreTree(ModBlocks.COAL_TREE_LOG.get(), ModBlocks.COAL_TREE_LEAVES.get()).build());
         FeatureUtils.register(context, COPPER_TREE, Feature.TREE, createOreTree(ModBlocks.COPPER_TREE_LOG.get(), ModBlocks.COPPER_TREE_LEAVES.get()).build());
         FeatureUtils.register(context, DIAMOND_TREE, Feature.TREE, createOreTree(ModBlocks.DIAMOND_TREE_LOG.get(), ModBlocks.DIAMOND_TREE_LEAVES.get()).build());
+        FeatureUtils.register(context, EMERALD_TREE, Feature.TREE, createOreTree(ModBlocks.EMERALD_TREE_LOG.get(), ModBlocks.EMERALD_TREE_LEAVES.get()).build());
+        FeatureUtils.register(context, GOLD_TREE, Feature.TREE, createOreTree(ModBlocks.GOLD_TREE_LOG.get(), ModBlocks.GOLD_TREE_LEAVES.get()).build());
+        FeatureUtils.register(context, IRON_TREE, Feature.TREE, createOreTree(ModBlocks.IRON_TREE_LOG.get(), ModBlocks.IRON_TREE_LEAVES.get()).build());
+        FeatureUtils.register(context, LAPIS_TREE, Feature.TREE, createOreTree(ModBlocks.LAPIS_TREE_LOG.get(), ModBlocks.LAPIS_TREE_LEAVES.get()).build());
+        FeatureUtils.register(context, REDSTONE_TREE, Feature.TREE, createOreTree(ModBlocks.REDSTONE_TREE_LOG.get(), ModBlocks.REDSTONE_TREE_LEAVES.get()).build());
+        FeatureUtils.register(context, QUARTZ_TREE, Feature.TREE, createOreTree(ModBlocks.QUARTZ_TREE_LOG.get(), ModBlocks.QUARTZ_TREE_LEAVES.get()).build());
+        FeatureUtils.register(context, NETHERITE_TREE, Feature.TREE, createOreTree(ModBlocks.NETHERITE_TREE_LOG.get(), ModBlocks.NETHERITE_TREE_LEAVES.get()).build());
     }
 
     private static ResourceKey<ConfiguredFeature<?, ?>> register(String name) {

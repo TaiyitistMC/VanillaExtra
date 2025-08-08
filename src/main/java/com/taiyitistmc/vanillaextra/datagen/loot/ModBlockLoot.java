@@ -57,6 +57,13 @@ public class ModBlockLoot extends BlockLootSubProvider {
         this.leavesWithFruitDrops(ModBlocks.COAL_TREE_LEAVES.get(), ModBlocks.COAL_TREE_SAPLING.get(), Items.COAL);
         this.leavesWithFruitDrops(ModBlocks.COPPER_TREE_LEAVES.get(), ModBlocks.COPPER_TREE_SAPLING.get(), Items.COPPER_INGOT);
         this.leavesWithFruitDrops(ModBlocks.DIAMOND_TREE_LEAVES.get(), ModBlocks.DIAMOND_TREE_SAPLING.get(), Items.DIAMOND);
+        this.leavesWithFruitDrops(ModBlocks.EMERALD_TREE_LEAVES.get(), ModBlocks.EMERALD_TREE_SAPLING.get(), Items.EMERALD);
+        this.leavesWithFruitDrops(ModBlocks.GOLD_TREE_LEAVES.get(), ModBlocks.GOLD_TREE_SAPLING.get(), Items.GOLD_INGOT);
+        this.leavesWithFruitDrops(ModBlocks.IRON_TREE_LEAVES.get(), ModBlocks.IRON_TREE_SAPLING.get(), Items.IRON_INGOT);
+        this.leavesWithFruitDrops(ModBlocks.LAPIS_TREE_LEAVES.get(), ModBlocks.LAPIS_TREE_SAPLING.get(), Items.LAPIS_LAZULI);
+        this.leavesWithFruitDrops(ModBlocks.REDSTONE_TREE_LEAVES.get(), ModBlocks.REDSTONE_TREE_SAPLING.get(), Items.REDSTONE);
+        this.leavesWithFruitDrops(ModBlocks.QUARTZ_TREE_LEAVES.get(), ModBlocks.QUARTZ_TREE_SAPLING.get(), Items.QUARTZ);
+        this.leavesWithFruitDrops(ModBlocks.NETHERITE_TREE_LEAVES.get(), ModBlocks.NETHERITE_TREE_SAPLING.get(), Items.NETHERITE_INGOT);
     }
 
     @Override

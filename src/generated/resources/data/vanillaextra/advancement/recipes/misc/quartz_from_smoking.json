@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_quartz_tree_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillaextra:quartz_tree_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillaextra:quartz_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_quartz_tree_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillaextra:quartz_from_smoking"
+    ]
+  }
+}

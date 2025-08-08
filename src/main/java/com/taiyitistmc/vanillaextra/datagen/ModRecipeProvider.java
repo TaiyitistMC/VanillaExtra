@@ -62,6 +62,13 @@ public class ModRecipeProvider extends RecipeProvider {
         heatRecipe(ModBlocks.COAL_TREE_LOG.get(), RecipeCategory.MISC, Items.COAL, 0.1F, 200, recipeOutput);
         heatRecipe(ModBlocks.COPPER_TREE_LOG.get(), RecipeCategory.MISC, Items.COPPER_INGOT, 0.1F, 200, recipeOutput);
         heatRecipe(ModBlocks.DIAMOND_TREE_LOG.get(), RecipeCategory.MISC, Items.DIAMOND, 0.1F, 200, recipeOutput);
+        heatRecipe(ModBlocks.EMERALD_TREE_LOG.get(), RecipeCategory.MISC, Items.EMERALD, 0.1F, 200, recipeOutput);
+        heatRecipe(ModBlocks.GOLD_TREE_LOG.get(), RecipeCategory.MISC, Items.GOLD_INGOT, 0.1F, 200, recipeOutput);
+        heatRecipe(ModBlocks.IRON_TREE_LOG.get(), RecipeCategory.MISC, Items.IRON_INGOT, 0.1F, 200, recipeOutput);
+        heatRecipe(ModBlocks.LAPIS_TREE_LOG.get(), RecipeCategory.MISC, Items.LAPIS_LAZULI, 0.1F, 200, recipeOutput);
+        heatRecipe(ModBlocks.REDSTONE_TREE_LOG.get(), RecipeCategory.MISC, Items.REDSTONE, 0.1F, 200, recipeOutput);
+        heatRecipe(ModBlocks.QUARTZ_TREE_LOG.get(), RecipeCategory.MISC, Items.QUARTZ, 0.1F, 200, recipeOutput);
+        heatRecipe(ModBlocks.NETHERITE_TREE_LOG.get(), RecipeCategory.MISC, Items.NETHERITE_INGOT, 0.1F, 200, recipeOutput);
         swordFromMaterial(recipeOutput, ModItems.PEACH_WOOD_SWORD.get(), ModBlocks.PEACH_PLANKS.get());
         orePlantRecipe(recipeOutput, ModItems.GOLD_ORE_SEEDS, Items.GOLD_BLOCK);
         orePlantRecipe(recipeOutput, ModItems.IRON_ORE_SEEDS, Items.IRON_BLOCK);
@@ -76,6 +83,13 @@ public class ModRecipeProvider extends RecipeProvider {
         oreTreeSaplingRecipe(recipeOutput, ModBlocks.COAL_TREE_SAPLING, Items.COAL_BLOCK);
         oreTreeSaplingRecipe(recipeOutput, ModBlocks.COPPER_TREE_SAPLING, Items.COPPER_BLOCK);
         oreTreeSaplingRecipe(recipeOutput, ModBlocks.DIAMOND_TREE_SAPLING, Items.DIAMOND_BLOCK);
+        oreTreeSaplingRecipe(recipeOutput, ModBlocks.EMERALD_TREE_SAPLING, Items.EMERALD_BLOCK);
+        oreTreeSaplingRecipe(recipeOutput, ModBlocks.GOLD_TREE_SAPLING, Items.GOLD_BLOCK);
+        oreTreeSaplingRecipe(recipeOutput, ModBlocks.IRON_TREE_SAPLING, Items.IRON_BLOCK);
+        oreTreeSaplingRecipe(recipeOutput, ModBlocks.LAPIS_TREE_SAPLING, Items.LAPIS_BLOCK);
+        oreTreeSaplingRecipe(recipeOutput, ModBlocks.REDSTONE_TREE_SAPLING, Items.REDSTONE_BLOCK);
+        oreTreeSaplingRecipe(recipeOutput, ModBlocks.QUARTZ_TREE_SAPLING, Items.QUARTZ_BLOCK);
+        oreTreeSaplingRecipe(recipeOutput, ModBlocks.NETHERITE_TREE_SAPLING, Items.NETHERITE_BLOCK);
     }
 
     protected void orePlantRecipe(RecipeOutput recipeOutput, ItemLike seed, ItemLike gem) {

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "vanillaextra:block/netherite_tree_sapling"
+  }
+}

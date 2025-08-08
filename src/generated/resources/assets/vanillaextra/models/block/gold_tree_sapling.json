@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "vanillaextra:block/gold_tree_sapling"
+  }
+}
