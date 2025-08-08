@@ -110,5 +110,7 @@
   "item.vanillaextra.wild_boar_meat": "野猪肉",
   "item.vanillaextra.wild_boar_spawn_egg": "野猪刷怪蛋",
   "item.vanillaextra.wolf_meat": "狼肉",
-  "itemGroup.vainllaextra": "Vanilla Extra"
+  "itemGroup.vainllaextra.food": "Vanilla Extra食物",
+  "itemGroup.vainllaextra.misc": "Vanilla Extra杂项",
+  "itemGroup.vainllaextra.nature": "Vanilla Extra自然"
 }

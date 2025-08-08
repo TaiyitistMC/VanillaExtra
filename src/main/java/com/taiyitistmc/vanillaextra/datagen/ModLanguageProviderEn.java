@@ -18,7 +18,9 @@ public class ModLanguageProviderEn extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add("itemGroup.vainllaextra", "Vanilla Extra");
+        add("itemGroup.vainllaextra.misc", "Vanilla Extra Misc");
+        add("itemGroup.vainllaextra.food", "Vanilla Extra Food");
+        add("itemGroup.vainllaextra.nature", "Vanilla Extra Nature");
         ModBlocks.BLOCKS.getEntries().forEach(blockDeferredHolder -> {
             add(blockDeferredHolder.get(), formatFieldName(Helpers.getBlockName(blockDeferredHolder.get())));
         });

@@ -158,14 +158,14 @@ public class ModBlocks {
             () -> log(MapColor.QUARTZ, MapColor.STONE));
     public static final DeferredBlock<Block> QUARTZ_TREE_SAPLING =
             register("quartz_tree_sapling", () -> sapling("quartz_tree",
-                    ModConfiguredFeatureProvider.LAPIS_TREE));
+                    ModConfiguredFeatureProvider.QUARTZ_TREE));
     public static final DeferredBlock<Block> NETHERITE_TREE_LEAVES = register("netherite_tree_leaves",
             () -> leaves(SoundType.GRASS));
     public static final DeferredBlock<Block> NETHERITE_TREE_LOG = register("netherite_tree_log",
             () -> log(MapColor.NETHER, MapColor.STONE));
     public static final DeferredBlock<Block> NETHERITE_TREE_SAPLING =
             register("netherite_tree_sapling", () -> sapling("netherite_tree",
-                    ModConfiguredFeatureProvider.LAPIS_TREE));
+                    ModConfiguredFeatureProvider.NETHERITE_TREE));
 
     public static DeferredBlock<Block> register(String name, BlockBehaviour.Properties properties) {
         var block = BLOCKS.registerSimpleBlock(name, properties);

@@ -110,5 +110,7 @@
   "item.vanillaextra.wild_boar_meat": "Wild Boar Meat",
   "item.vanillaextra.wild_boar_spawn_egg": "Wild Boar Spawn Egg",
   "item.vanillaextra.wolf_meat": "Wolf Meat",
-  "itemGroup.vainllaextra": "Vanilla Extra"
+  "itemGroup.vainllaextra.food": "Vanilla Extra Food",
+  "itemGroup.vainllaextra.misc": "Vanilla Extra Misc",
+  "itemGroup.vainllaextra.nature": "Vanilla Extra Nature"
 }

@@ -18,7 +18,9 @@ public class ModLanguageProviderZh extends LanguageProvider {
         add(ModBlocks.LAND_KELP.get(), "陆生海带");
         add(ModBlocks.LAND_KELP_PLANT.get(), "陆生海带");
         add(ModItems.DRIED_LAND_KELP.get(), "陆生海带干");
-        add("itemGroup.vainllaextra", "Vanilla Extra");
+        add("itemGroup.vainllaextra.misc", "Vanilla Extra杂项");
+        add("itemGroup.vainllaextra.food", "Vanilla Extra食物");
+        add("itemGroup.vainllaextra.nature", "Vanilla Extra自然");
         add(ModBlocks.SAGO_PALM_LOG.get(), "西米棕榈原木");
         add(ModBlocks.SAGO_PALM_PLANKS.get(), "西米棕榈木板");
         add(ModBlocks.SAGO_PALM_SAPLING.get(), "西米棕榈树苗");
