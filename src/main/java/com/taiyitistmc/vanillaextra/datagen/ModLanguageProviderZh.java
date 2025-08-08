@@ -89,6 +89,10 @@ public class ModLanguageProviderZh extends LanguageProvider {
         add(ModItems.WILD_BOAR_SPAWN_EGG.get(), "野猪刷怪蛋");
         add(ModItems.WILD_BOAR_MEAT.get(), "野猪肉");
         add(ModItems.COOKED_WILD_BOAR_MEAT.get(), "熟野猪肉");
+        add(ModItems.OCELOT_MEAT.get(), "豹猫肉");
+        add(ModItems.COOKED_OCELOT_MEAT.get(), "熟豹猫肉");
+        add(ModItems.SPIDER_LEG.get(), "蜘蛛腿");
+        add(ModItems.COOKED_SPIDER_LEG.get(), "熟蜘蛛腿");
         add("advancements.vanillaextra.story.obtain_land_kelp.title", "特殊的海带,陆生海带");
         add("advancements.vanillaextra.story.obtain_land_kelp.description", "一种登上陆地的特殊海带,可以长到6格高,是美味的农作物");
         add("advancements.vanillaextra.story.obtain_dried_land_kelp.title", "美味的陆生海带干,一种食物");

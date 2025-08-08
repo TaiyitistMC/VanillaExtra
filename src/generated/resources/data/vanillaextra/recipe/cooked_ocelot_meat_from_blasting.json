@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "vanillaextra:ocelot_meat"
+  },
+  "result": {
+    "count": 1,
+    "id": "vanillaextra:cooked_ocelot_meat"
+  }
+}

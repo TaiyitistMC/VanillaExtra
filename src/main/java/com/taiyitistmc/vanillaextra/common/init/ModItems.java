@@ -66,6 +66,14 @@ public class ModItems {
             registerFood("wild_boar_meat", Foods.PORKCHOP);
     public static final DeferredItem<Item> COOKED_WILD_BOAR_MEAT =
             registerFood("cooked_wild_boar_meat", Foods.COOKED_PORKCHOP);
+    public static final DeferredItem<Item> OCELOT_MEAT =
+            registerFood("ocelot_meat", Foods.PORKCHOP);
+    public static final DeferredItem<Item> COOKED_OCELOT_MEAT =
+            registerFood("cooked_ocelot_meat", Foods.COOKED_PORKCHOP);
+    public static final DeferredItem<Item> SPIDER_LEG =
+            registerFood("spider_leg", Foods.POTATO);
+    public static final DeferredItem<Item> COOKED_SPIDER_LEG =
+            registerFood("cooked_spider_leg", Foods.BAKED_POTATO);
 
     // Tools
     public static final DeferredItem<Item> PEACH_WOOD_SWORD =

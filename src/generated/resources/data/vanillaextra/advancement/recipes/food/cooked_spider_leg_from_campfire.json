@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_spider_leg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillaextra:spider_leg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillaextra:cooked_spider_leg_from_campfire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_spider_leg"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillaextra:cooked_spider_leg_from_campfire"
+    ]
+  }
+}
