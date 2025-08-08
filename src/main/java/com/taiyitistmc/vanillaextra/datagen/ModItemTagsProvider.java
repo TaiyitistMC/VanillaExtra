@@ -32,6 +32,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                     }
                     if (blockDeferredHolder.get().getDescriptionId().contains("log")) {
                         tag(ItemTags.LOGS).add(blockDeferredHolder.get().asItem());
+                        tag(ItemTags.LOGS_THAT_BURN).add(blockDeferredHolder.get().asItem());
                     }
                     if (blockDeferredHolder.get().getDescriptionId().contains("leaves")) {
                         tag(ItemTags.LEAVES).add(blockDeferredHolder.get().asItem());

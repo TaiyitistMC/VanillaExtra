@@ -29,6 +29,10 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                     }
                     if (blockDeferredHolder.get().getDescriptionId().contains("log")) {
                         tag(BlockTags.LOGS).add(blockDeferredHolder.get());
+                        tag(BlockTags.LOGS_THAT_BURN).add(blockDeferredHolder.get());
+                    }
+                    if (blockDeferredHolder.get().getDescriptionId().contains("leaves")) {
+                        tag(BlockTags.LEAVES).add(blockDeferredHolder.get());
                     }
                 }
         );
