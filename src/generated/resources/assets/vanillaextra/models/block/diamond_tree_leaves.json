@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "vanillaextra:block/diamond_tree_leaves"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "vanillaextra:coal_tree_log"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:coal"
+  }
+}

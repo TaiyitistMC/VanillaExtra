@@ -10,6 +10,7 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.BiasedToBottomInt;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -32,6 +33,12 @@ public class ModConfiguredFeatureProvider {
             register("sago_palm_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> PEACH_TREE =
             register("peach_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> COAL_TREE =
+            register("coal_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> COPPER_TREE =
+            register("copper_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> DIAMOND_TREE =
+            register("diamond_tree");
 
     public static void configuredFeatures(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         FeatureUtils.register(
@@ -62,6 +69,9 @@ public class ModConfiguredFeatureProvider {
         );
         FeatureUtils.register(context, SAGO_PALM_TREE, Feature.TREE, createSagoPalmTree().build());
         FeatureUtils.register(context, PEACH_TREE, Feature.TREE, createPeachTree().build());
+        FeatureUtils.register(context, COAL_TREE, Feature.TREE, createOreTree(ModBlocks.COAL_TREE_LOG.get(), ModBlocks.COAL_TREE_LEAVES.get()).build());
+        FeatureUtils.register(context, COPPER_TREE, Feature.TREE, createOreTree(ModBlocks.COPPER_TREE_LOG.get(), ModBlocks.COPPER_TREE_LEAVES.get()).build());
+        FeatureUtils.register(context, DIAMOND_TREE, Feature.TREE, createOreTree(ModBlocks.DIAMOND_TREE_LOG.get(), ModBlocks.DIAMOND_TREE_LEAVES.get()).build());
     }
 
     private static ResourceKey<ConfiguredFeature<?, ?>> register(String name) {
@@ -74,6 +84,10 @@ public class ModConfiguredFeatureProvider {
 
     private static TreeConfiguration.TreeConfigurationBuilder createPeachTree() {
         return createStraightBlobTree(ModBlocks.PEACH_LOG.get(), ModBlocks.PEACH_LEAVES.get(), 4, 2, 0, 2).ignoreVines();
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createOreTree(Block log, Block leaves) {
+        return createStraightBlobTree(log, leaves, 6, 2, 0, 2).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block logBlock, Block leavesBlock, int baseHeight, int heightRandA, int heightRandB, int radius) {

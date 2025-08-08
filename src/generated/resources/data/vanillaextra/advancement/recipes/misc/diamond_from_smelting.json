@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_diamond_tree_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillaextra:diamond_tree_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillaextra:diamond_from_smelting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_diamond_tree_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillaextra:diamond_from_smelting"
+    ]
+  }
+}

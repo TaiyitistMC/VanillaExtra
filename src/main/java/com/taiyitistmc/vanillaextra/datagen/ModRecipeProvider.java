@@ -11,6 +11,7 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -58,6 +59,9 @@ public class ModRecipeProvider extends RecipeProvider {
         heatRecipe(ModItems.WILD_BOAR_MEAT.get(), RecipeCategory.FOOD, ModItems.COOKED_WILD_BOAR_MEAT.get(), 0.1F, 200, recipeOutput);
         heatRecipe(ModItems.OCELOT_MEAT.get(), RecipeCategory.FOOD, ModItems.COOKED_OCELOT_MEAT.get(), 0.1F, 200, recipeOutput);
         heatRecipe(ModItems.SPIDER_LEG.get(), RecipeCategory.FOOD, ModItems.COOKED_SPIDER_LEG.get(), 0.1F, 200, recipeOutput);
+        heatRecipe(ModBlocks.COAL_TREE_LOG.get(), RecipeCategory.MISC, Items.COAL, 0.1F, 200, recipeOutput);
+        heatRecipe(ModBlocks.COPPER_TREE_LOG.get(), RecipeCategory.MISC, Items.COPPER_INGOT, 0.1F, 200, recipeOutput);
+        heatRecipe(ModBlocks.DIAMOND_TREE_LOG.get(), RecipeCategory.MISC, Items.DIAMOND, 0.1F, 200, recipeOutput);
         swordFromMaterial(recipeOutput, ModItems.PEACH_WOOD_SWORD.get(), ModBlocks.PEACH_PLANKS.get());
         orePlantRecipe(recipeOutput, ModItems.GOLD_ORE_SEEDS, Items.GOLD_BLOCK);
         orePlantRecipe(recipeOutput, ModItems.IRON_ORE_SEEDS, Items.IRON_BLOCK);
@@ -69,12 +73,27 @@ public class ModRecipeProvider extends RecipeProvider {
         orePlantRecipe(recipeOutput, ModItems.COPPER_ORE_SEEDS, Items.COPPER_BLOCK);
         orePlantRecipe(recipeOutput, ModItems.ANCIENT_DEBRIS_SEEDS, Items.NETHERITE_BLOCK);
         orePlantRecipe(recipeOutput, ModItems.AMETHYST_SEEDS, Items.AMETHYST_BLOCK);
+        oreTreeSaplingRecipe(recipeOutput, ModBlocks.COAL_TREE_SAPLING, Items.COAL_BLOCK);
+        oreTreeSaplingRecipe(recipeOutput, ModBlocks.COPPER_TREE_SAPLING, Items.COPPER_BLOCK);
+        oreTreeSaplingRecipe(recipeOutput, ModBlocks.DIAMOND_TREE_SAPLING, Items.DIAMOND_BLOCK);
     }
 
     protected void orePlantRecipe(RecipeOutput recipeOutput, ItemLike seed, ItemLike gem) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, seed)
                 .define('S', gem)
                 .define('B', Items.WHEAT_SEEDS)
+                .pattern("SSS")
+                .pattern("SBS")
+                .pattern("SSS")
+                .unlockedBy("has_" + getItemName(gem), has(gem))
+                .save(recipeOutput,
+                        Helpers.identifier(getItemName(seed)));
+    }
+
+    protected void oreTreeSaplingRecipe(RecipeOutput recipeOutput, ItemLike seed, ItemLike gem) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, seed)
+                .define('S', gem)
+                .define('B', ItemTags.SAPLINGS)
                 .pattern("SSS")
                 .pattern("SBS")
                 .pattern("SSS")

@@ -8,6 +8,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
@@ -53,6 +54,9 @@ public class ModBlockLoot extends BlockLootSubProvider {
         this.stemDrop(ModBlocks.AMETHYST_STEM.get(), ModBlocks.ATTACHED_AMETHYST_STEM.get(), ModItems.AMETHYST_SEEDS);
         this.leavesDrop(ModBlocks.SAGO_PALM_LEAVES.get(), ModBlocks.SAGO_PALM_SAPLING.get());
         this.leavesWithFruitDrops(ModBlocks.PEACH_LEAVES.get(), ModBlocks.PEACH_SAPLING.get(), ModItems.PEACH.get());
+        this.leavesWithFruitDrops(ModBlocks.COAL_TREE_LEAVES.get(), ModBlocks.COAL_TREE_SAPLING.get(), Items.COAL);
+        this.leavesWithFruitDrops(ModBlocks.COPPER_TREE_LEAVES.get(), ModBlocks.COPPER_TREE_SAPLING.get(), Items.COPPER_INGOT);
+        this.leavesWithFruitDrops(ModBlocks.DIAMOND_TREE_LEAVES.get(), ModBlocks.DIAMOND_TREE_SAPLING.get(), Items.DIAMOND);
     }
 
     @Override

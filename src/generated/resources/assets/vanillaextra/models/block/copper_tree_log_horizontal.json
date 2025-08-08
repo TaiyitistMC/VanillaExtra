@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "vanillaextra:block/copper_tree_log_top",
+    "side": "vanillaextra:block/copper_tree_log"
+  }
+}

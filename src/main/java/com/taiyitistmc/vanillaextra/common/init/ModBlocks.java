@@ -40,14 +40,14 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SAGO_PALM_LOG = register("sago_palm_log", () -> log(MapColor.COLOR_ORANGE, MapColor.STONE));
     public static final DeferredBlock<Block> SAGO_PALM_PLANKS = register("sago_palm_planks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
-    public static final DeferredBlock<Block> SAGO_PALM_SAPLING = register("sago_palm_sapling", () -> sapling("sago_palm_sapling", ModConfiguredFeatureProvider.SAGO_PALM_TREE));
+    public static final DeferredBlock<Block> SAGO_PALM_SAPLING = register("sago_palm_sapling", () -> sapling("sago_palm_tree", ModConfiguredFeatureProvider.SAGO_PALM_TREE));
     public static final DeferredBlock<Block> STRIPPED_SAGO_PALM_LOG = register("stripped_sago_palm_log", () -> log(MapColor.COLOR_ORANGE, MapColor.STONE));
     public static final DeferredBlock<Block> PEACH_LEAVES = register("peach_leaves", () -> leaves(SoundType.GRASS));
     public static final DeferredBlock<Block> PEACH_LOG = register("peach_log", () -> log(MapColor.COLOR_ORANGE, MapColor.STONE));
     public static final DeferredBlock<Block> PEACH_PLANKS = register("peach_planks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
     public static final DeferredBlock<Block> PEACH_SAPLING =
-            register("peach_sapling", () -> sapling("peach_sapling", ModConfiguredFeatureProvider.PEACH_TREE));
+            register("peach_sapling", () -> sapling("peach_tree", ModConfiguredFeatureProvider.PEACH_TREE));
     public static final DeferredBlock<Block> IRON_ORE_STEM = register("iron_ore_stem",
             () -> new OreStemBlock("iron_ore", Blocks.IRON_ORE));
     public static final DeferredBlock<Block> ATTACHED_IRON_ORE_STEM = register("attached_iron_ore_stem",
@@ -88,6 +88,18 @@ public class ModBlocks {
             () -> new OreStemBlock("amethyst", Blocks.AMETHYST_BLOCK));
     public static final DeferredBlock<Block> ATTACHED_AMETHYST_STEM = register("attached_amethyst_stem",
             () -> new OreAttachedStemBlock("amethyst", Blocks.AMETHYST_BLOCK));
+    public static final DeferredBlock<Block> COAL_TREE_LEAVES = register("coal_tree_leaves", () -> leaves(SoundType.GRASS));
+    public static final DeferredBlock<Block> COAL_TREE_LOG = register("coal_tree_log", () -> log(MapColor.COLOR_BLACK, MapColor.STONE));
+    public static final DeferredBlock<Block> COAL_TREE_SAPLING =
+            register("coal_tree_sapling", () -> sapling("coal_tree", ModConfiguredFeatureProvider.COAL_TREE));
+    public static final DeferredBlock<Block> COPPER_TREE_LEAVES = register("copper_tree_leaves", () -> leaves(SoundType.GRASS));
+    public static final DeferredBlock<Block> COPPER_TREE_LOG = register("copper_tree_log", () -> log(MapColor.COLOR_BLACK, MapColor.STONE));
+    public static final DeferredBlock<Block> COPPER_TREE_SAPLING =
+            register("copper_tree_sapling", () -> sapling("copper_tree", ModConfiguredFeatureProvider.COPPER_TREE));
+    public static final DeferredBlock<Block> DIAMOND_TREE_LEAVES = register("diamond_tree_leaves", () -> leaves(SoundType.GRASS));
+    public static final DeferredBlock<Block> DIAMOND_TREE_LOG = register("diamond_tree_log", () -> log(MapColor.COLOR_BLACK, MapColor.STONE));
+    public static final DeferredBlock<Block> DIAMOND_TREE_SAPLING =
+            register("diamond_tree_sapling", () -> sapling("diamond_tree", ModConfiguredFeatureProvider.DIAMOND_TREE));
 
     public static DeferredBlock<Block> register(String name, BlockBehaviour.Properties properties) {
         var block = BLOCKS.registerSimpleBlock(name, properties);

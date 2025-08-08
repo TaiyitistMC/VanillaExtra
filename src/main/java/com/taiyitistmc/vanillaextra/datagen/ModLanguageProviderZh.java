@@ -93,6 +93,15 @@ public class ModLanguageProviderZh extends LanguageProvider {
         add(ModItems.COOKED_OCELOT_MEAT.get(), "熟豹猫肉");
         add(ModItems.SPIDER_LEG.get(), "蜘蛛腿");
         add(ModItems.COOKED_SPIDER_LEG.get(), "熟蜘蛛腿");
+        add(ModBlocks.COAL_TREE_LOG.get(), "煤炭树原木");
+        add(ModBlocks.COAL_TREE_LEAVES.get(), "煤炭树树叶");
+        add(ModBlocks.COAL_TREE_SAPLING.get(), "煤炭树树苗");
+        add(ModBlocks.COPPER_TREE_LOG.get(), "铜矿树原木");
+        add(ModBlocks.COPPER_TREE_LEAVES.get(), "铜矿树树叶");
+        add(ModBlocks.COPPER_TREE_SAPLING.get(), "铜矿树树苗");
+        add(ModBlocks.DIAMOND_TREE_LOG.get(), "钻石树原木");
+        add(ModBlocks.DIAMOND_TREE_LEAVES.get(), "钻石树树叶");
+        add(ModBlocks.DIAMOND_TREE_SAPLING.get(), "钻石树树苗");
         add("advancements.vanillaextra.story.obtain_land_kelp.title", "特殊的海带,陆生海带");
         add("advancements.vanillaextra.story.obtain_land_kelp.description", "一种登上陆地的特殊海带,可以长到6格高,是美味的农作物");
         add("advancements.vanillaextra.story.obtain_dried_land_kelp.title", "美味的陆生海带干,一种食物");

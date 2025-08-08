@@ -1,6 +1,9 @@
 {
   "values": [
     "vanillaextra:sago_palm_sapling",
-    "vanillaextra:peach_sapling"
+    "vanillaextra:peach_sapling",
+    "vanillaextra:coal_tree_sapling",
+    "vanillaextra:copper_tree_sapling",
+    "vanillaextra:diamond_tree_sapling"
   ]
 }

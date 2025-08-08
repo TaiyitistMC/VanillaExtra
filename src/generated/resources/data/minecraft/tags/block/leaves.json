@@ -1,6 +1,9 @@
 {
   "values": [
     "vanillaextra:sago_palm_leaves",
-    "vanillaextra:peach_leaves"
+    "vanillaextra:peach_leaves",
+    "vanillaextra:coal_tree_leaves",
+    "vanillaextra:copper_tree_leaves",
+    "vanillaextra:diamond_tree_leaves"
   ]
 }

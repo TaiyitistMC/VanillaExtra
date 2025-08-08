@@ -2,6 +2,9 @@
   "values": [
     "vanillaextra:sago_palm_log",
     "vanillaextra:stripped_sago_palm_log",
-    "vanillaextra:peach_log"
+    "vanillaextra:peach_log",
+    "vanillaextra:coal_tree_log",
+    "vanillaextra:copper_tree_log",
+    "vanillaextra:diamond_tree_log"
   ]
 }
