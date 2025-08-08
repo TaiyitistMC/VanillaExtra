@@ -2,7 +2,11 @@ package com.taiyitistmc.vanillaextra.common.entity;
 
 import com.taiyitistmc.vanillaextra.common.entity.ai.goal.GroupFollowAnimalCaravanGoal;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.server.level.ServerEntity;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.FollowParentGoal;
@@ -29,6 +33,14 @@ public abstract class GroupFollowAnimal extends Animal {
     }
 
     protected abstract SoundEvent getStepSound();
+
+    public abstract Packet<ClientGamePacketListener> getAddEntityPacket(ServerEntity entity);
+
+    protected abstract SoundEvent getAmbientSound();
+
+    protected abstract SoundEvent getHurtSound(DamageSource damageSource);
+
+    protected abstract SoundEvent getDeathSound();
 
     @Override
     protected void playStepSound(BlockPos pos, BlockState block) {

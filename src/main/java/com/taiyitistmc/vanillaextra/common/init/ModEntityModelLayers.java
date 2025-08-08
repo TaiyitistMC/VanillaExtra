@@ -8,6 +8,7 @@ public class ModEntityModelLayers {
     public static final ModelLayerLocation BLACK_DOG = register("black_dog");
     public static final ModelLayerLocation FRIENDLY_ZOMBIE = register("friendly_zombie");
     public static final ModelLayerLocation FRIENDLY_SKELETON = register("friendly_skeleton");
+    public static final ModelLayerLocation WILD_BOAR = register("wild_boar");
 
     private static ModelLayerLocation register(String name) {
         return register(name, "main");

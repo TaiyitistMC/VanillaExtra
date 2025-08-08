@@ -26,6 +26,7 @@ public class ModBiomeModiferProvider {
     public static final ResourceKey<BiomeModifier> ADD_PEACH_TREE = register("add_peach_tree");
 
     public static final ResourceKey<BiomeModifier> ADD_BLACK_DOG = register("add_black_dog");
+    public static final ResourceKey<BiomeModifier> ADD_WILD_BOAR = register("add_wild_boar");
 
     public static void addBiomeModifiers(BootstrapContext<BiomeModifier> context) {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
@@ -45,6 +46,10 @@ public class ModBiomeModiferProvider {
         context.register(ADD_BLACK_DOG, new BiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
                 List.of(new MobSpawnSettings.SpawnerData(ModEntities.BLACK_DOG.get(), 12, 1, 2))
+        ));
+        context.register(ADD_WILD_BOAR, new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_MOUNTAIN),
+                List.of(new MobSpawnSettings.SpawnerData(ModEntities.WILD_BOAR.get(), 12, 1, 2))
         ));
     }
 

@@ -31,6 +31,7 @@ public class ModEntityLoot extends EntityLootSubProvider {
     @Override
     public void generate() {
         dropMeat(ModEntities.BLACK_DOG.get(), ModItems.WOLF_MEAT);
+        dropMeat(ModEntities.WILD_BOAR.get(), ModItems.WILD_BOAR_MEAT);
         rottenDrop(ModEntities.FRIENDLY_ZOMBIE.get());
         this.add(ModEntities.FRIENDLY_SKELETON.get(), LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(Items.ARROW).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))).apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(0.0F, 1.0F))))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(Items.BONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))).apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(0.0F, 1.0F))))));
     }

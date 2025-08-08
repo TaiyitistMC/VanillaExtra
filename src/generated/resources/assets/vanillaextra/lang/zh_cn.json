@@ -37,6 +37,7 @@
   "entity.vanillaextra.black_dog": "黑狗",
   "entity.vanillaextra.friendly_skeleton": "友好的骷髅",
   "entity.vanillaextra.friendly_zombie": "友好的僵尸",
+  "entity.vanillaextra.wild_boar": "野猪",
   "item.vanillaextra.amethyst_debris_seeds": "紫水晶种子",
   "item.vanillaextra.ancient_debris_seeds": "远古残骸种子",
   "item.vanillaextra.bacon": "培根",
@@ -51,6 +52,7 @@
   "item.vanillaextra.cooked_horse_meat": "熟马肉",
   "item.vanillaextra.cooked_human_meat": "熟人肉",
   "item.vanillaextra.cooked_llama_meat": "熟羊驼肉",
+  "item.vanillaextra.cooked_wild_boar_meat": "熟野猪肉",
   "item.vanillaextra.cooked_wolf_meat": "熟狼肉",
   "item.vanillaextra.copper_ore_seeds": "铜矿石种子",
   "item.vanillaextra.diamond_ore_seeds": "钻石种子",
@@ -71,6 +73,8 @@
   "item.vanillaextra.sago": "西米",
   "item.vanillaextra.squid_cooked": "熟鱿鱼",
   "item.vanillaextra.squid_raw": "生鱿鱼",
+  "item.vanillaextra.wild_boar_meat": "野猪肉",
+  "item.vanillaextra.wild_boar_spawn_egg": "野猪刷怪蛋",
   "item.vanillaextra.wolf_meat": "狼肉",
   "itemGroup.vainllaextra": "Vanilla Extra"
 }

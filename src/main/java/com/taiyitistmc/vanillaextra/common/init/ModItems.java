@@ -62,6 +62,10 @@ public class ModItems {
             registerFood("enderman_meat", Foods.PORKCHOP);
     public static final DeferredItem<Item> COOKED_ENDERMAN_MEAT =
             registerFood("cooked_enderman_meat", Foods.COOKED_PORKCHOP);
+    public static final DeferredItem<Item> WILD_BOAR_MEAT =
+            registerFood("wild_boar_meat", Foods.PORKCHOP);
+    public static final DeferredItem<Item> COOKED_WILD_BOAR_MEAT =
+            registerFood("cooked_wild_boar_meat", Foods.COOKED_PORKCHOP);
 
     // Tools
     public static final DeferredItem<Item> PEACH_WOOD_SWORD =
@@ -74,6 +78,8 @@ public class ModItems {
             registerSpawnEgg("friendly_zombie_spawn_egg", ModEntities.FRIENDLY_ZOMBIE,44975, 7969893);
     public static final DeferredItem<Item> FRIENDLY_SKELETON_SPAWN_EGG =
             registerSpawnEgg("friendly_skeleton_spawn_egg", ModEntities.FRIENDLY_SKELETON,12698049, 4802889);
+    public static final DeferredItem<Item> WILD_BOAR_SPAWN_EGG =
+            registerSpawnEgg("wild_boar_spawn_egg", ModEntities.WILD_BOAR,7164733, 1444352);
 
     // Plants
     public static final DeferredItem<Item> DRIED_LAND_KELP =

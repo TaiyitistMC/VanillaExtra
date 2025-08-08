@@ -1,6 +1,10 @@
 package com.taiyitistmc.vanillaextra.common.entity;
 
 import com.taiyitistmc.vanillaextra.common.init.ModEntities;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
+import net.minecraft.server.level.ServerEntity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -123,5 +127,10 @@ public class FriendlySkeleton extends GroupFollowAnimal{
     @Override
     protected SoundEvent getStepSound() {
         return SoundEvents.SKELETON_STEP;
+    }
+
+    @Override
+    public Packet<ClientGamePacketListener> getAddEntityPacket(ServerEntity entity) {
+        return new ClientboundAddEntityPacket(this, entity);
     }
 }

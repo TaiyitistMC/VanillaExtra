@@ -4,12 +4,15 @@ import com.taiyitistmc.vanillaextra.VanillaExtra;
 import com.taiyitistmc.vanillaextra.client.model.BlackDogModel;
 import com.taiyitistmc.vanillaextra.client.model.FriendlySkeletonModel;
 import com.taiyitistmc.vanillaextra.client.model.FriendlyZombieModel;
+import com.taiyitistmc.vanillaextra.client.model.WildBoarModel;
 import com.taiyitistmc.vanillaextra.client.renderer.BlackDogRenderer;
 import com.taiyitistmc.vanillaextra.client.renderer.FriendlySkeletonRenderer;
 import com.taiyitistmc.vanillaextra.client.renderer.FriendlyZombieRenderer;
+import com.taiyitistmc.vanillaextra.client.renderer.WildBoarRenderer;
 import com.taiyitistmc.vanillaextra.common.entity.BlackDog;
 import com.taiyitistmc.vanillaextra.common.entity.FriendlySkeleton;
 import com.taiyitistmc.vanillaextra.common.entity.FriendlyZombie;
+import com.taiyitistmc.vanillaextra.common.entity.WildBoar;
 import com.taiyitistmc.vanillaextra.common.init.ModBlocks;
 import com.taiyitistmc.vanillaextra.common.init.ModEntities;
 import com.taiyitistmc.vanillaextra.common.init.ModEntityModelLayers;
@@ -110,6 +113,7 @@ public class VanillaExtraClient {
         event.put(ModEntities.BLACK_DOG.get(), BlackDog.registerAttributes().build());
         event.put(ModEntities.FRIENDLY_ZOMBIE.get(), FriendlyZombie.registerAttributes().build());
         event.put(ModEntities.FRIENDLY_SKELETON.get(), FriendlySkeleton.registerAttributes().build());
+        event.put(ModEntities.WILD_BOAR.get(), WildBoar.registerAttributes().build());
     }
 
     @SubscribeEvent
@@ -120,6 +124,8 @@ public class VanillaExtraClient {
                 FriendlyZombieRenderer::new);
         event.registerEntityRenderer(ModEntities.FRIENDLY_SKELETON.get(),
                 FriendlySkeletonRenderer::new);
+        event.registerEntityRenderer(ModEntities.WILD_BOAR.get(),
+                WildBoarRenderer::new);
     }
 
     @SubscribeEvent
@@ -127,6 +133,7 @@ public class VanillaExtraClient {
         event.registerLayerDefinition(ModEntityModelLayers.BLACK_DOG, () -> LayerDefinition.create(BlackDogModel.createBodyLayer(CubeDeformation.NONE), 64, 64));
         event.registerLayerDefinition(ModEntityModelLayers.FRIENDLY_ZOMBIE, () -> LayerDefinition.create(FriendlyZombieModel.createMesh(CubeDeformation.NONE, 0.0F), 64, 32));
         event.registerLayerDefinition(ModEntityModelLayers.FRIENDLY_SKELETON, FriendlySkeletonModel::createBodyLayer);
+        event.registerLayerDefinition(ModEntityModelLayers.WILD_BOAR, WildBoarModel::createBodyLayer);
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)

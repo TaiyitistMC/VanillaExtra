@@ -49,5 +49,6 @@ public class ModDataGenerator {
         ModBlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(pack, lookUp, helper);
         event.addProvider(blockTagsProvider);
         event.addProvider(new ModItemTagsProvider(pack, lookUp, blockTagsProvider.contentsGetter(), helper));
+        event.addProvider(new ModEntityTypeTagsProvider(pack, lookUp, helper));
     }
 }

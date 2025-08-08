@@ -85,6 +85,10 @@ public class ModLanguageProviderZh extends LanguageProvider {
         add(ModBlocks.AMETHYST_STEM.get(), "紫水晶茎");
         add(ModBlocks.ATTACHED_AMETHYST_STEM.get(), "附着的紫水晶茎");
         add(ModItems.AMETHYST_SEEDS.get(), "紫水晶种子");
+        add(ModEntities.WILD_BOAR.get(), "野猪");
+        add(ModItems.WILD_BOAR_SPAWN_EGG.get(), "野猪刷怪蛋");
+        add(ModItems.WILD_BOAR_MEAT.get(), "野猪肉");
+        add(ModItems.COOKED_WILD_BOAR_MEAT.get(), "熟野猪肉");
         add("advancements.vanillaextra.story.obtain_land_kelp.title", "特殊的海带,陆生海带");
         add("advancements.vanillaextra.story.obtain_land_kelp.description", "一种登上陆地的特殊海带,可以长到6格高,是美味的农作物");
         add("advancements.vanillaextra.story.obtain_dried_land_kelp.title", "美味的陆生海带干,一种食物");

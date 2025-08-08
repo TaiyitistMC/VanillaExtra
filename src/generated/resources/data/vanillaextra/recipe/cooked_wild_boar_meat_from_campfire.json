@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "vanillaextra:wild_boar_meat"
+  },
+  "result": {
+    "count": 1,
+    "id": "vanillaextra:cooked_wild_boar_meat"
+  }
+}

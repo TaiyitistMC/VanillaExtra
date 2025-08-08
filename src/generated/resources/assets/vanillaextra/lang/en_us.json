@@ -37,6 +37,7 @@
   "entity.vanillaextra.black_dog": "Black Dog",
   "entity.vanillaextra.friendly_skeleton": "Friendly Skeleton",
   "entity.vanillaextra.friendly_zombie": "Friendly Zombie",
+  "entity.vanillaextra.wild_boar": "Wild Boar",
   "item.vanillaextra.amethyst_debris_seeds": "Amethyst Debris Seeds",
   "item.vanillaextra.ancient_debris_seeds": "Ancient Debris Seeds",
   "item.vanillaextra.bacon": "Bacon",
@@ -51,6 +52,7 @@
   "item.vanillaextra.cooked_horse_meat": "Cooked Horse Meat",
   "item.vanillaextra.cooked_human_meat": "Cooked Human Meat",
   "item.vanillaextra.cooked_llama_meat": "Cooked Llama Meat",
+  "item.vanillaextra.cooked_wild_boar_meat": "Cooked Wild Boar Meat",
   "item.vanillaextra.cooked_wolf_meat": "Cooked Wolf Meat",
   "item.vanillaextra.copper_ore_seeds": "Copper Ore Seeds",
   "item.vanillaextra.diamond_ore_seeds": "Diamond Ore Seeds",
@@ -71,6 +73,8 @@
   "item.vanillaextra.sago": "Sago",
   "item.vanillaextra.squid_cooked": "Squid Cooked",
   "item.vanillaextra.squid_raw": "Squid Raw",
+  "item.vanillaextra.wild_boar_meat": "Wild Boar Meat",
+  "item.vanillaextra.wild_boar_spawn_egg": "Wild Boar Spawn Egg",
   "item.vanillaextra.wolf_meat": "Wolf Meat",
   "itemGroup.vainllaextra": "Vanilla Extra"
 }

@@ -4,6 +4,7 @@ import com.taiyitistmc.vanillaextra.VanillaExtra;
 import com.taiyitistmc.vanillaextra.common.entity.BlackDog;
 import com.taiyitistmc.vanillaextra.common.entity.FriendlySkeleton;
 import com.taiyitistmc.vanillaextra.common.entity.FriendlyZombie;
+import com.taiyitistmc.vanillaextra.common.entity.WildBoar;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -38,6 +39,11 @@ public class ModEntities {
                     .eyeHeight(1.74F)
                     .ridingOffset(-0.7F)
                     .clientTrackingRange(8));
+    public static final DeferredHolder<EntityType<? extends Entity>, EntityType<WildBoar>> WILD_BOAR =
+            register("wild_boar", EntityType.Builder.of(WildBoar::new, MobCategory.CREATURE)
+                    .sized(0.9F, 0.9F)
+                    .passengerAttachments(0.86875F)
+                    .clientTrackingRange(10));
 
     public static <E extends Entity> DeferredHolder<EntityType<? extends Entity>, EntityType<E>> register(String name, EntityType.Builder<E> builder) {
         return register(name, builder, true);
