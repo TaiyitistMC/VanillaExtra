@@ -7,10 +7,12 @@ import com.taiyitistmc.vanillaextra.client.model.FriendlyZombieModel;
 import com.taiyitistmc.vanillaextra.client.model.WildBoarModel;
 import com.taiyitistmc.vanillaextra.client.renderer.BlackDogRenderer;
 import com.taiyitistmc.vanillaextra.client.renderer.FriendlySkeletonRenderer;
+import com.taiyitistmc.vanillaextra.client.renderer.FriendlySpiderRenderer;
 import com.taiyitistmc.vanillaextra.client.renderer.FriendlyZombieRenderer;
 import com.taiyitistmc.vanillaextra.client.renderer.WildBoarRenderer;
 import com.taiyitistmc.vanillaextra.common.entity.BlackDog;
 import com.taiyitistmc.vanillaextra.common.entity.FriendlySkeleton;
+import com.taiyitistmc.vanillaextra.common.entity.FriendlySpider;
 import com.taiyitistmc.vanillaextra.common.entity.FriendlyZombie;
 import com.taiyitistmc.vanillaextra.common.entity.WildBoar;
 import com.taiyitistmc.vanillaextra.common.init.ModBlocks;
@@ -114,6 +116,7 @@ public class VanillaExtraClient {
         event.put(ModEntities.FRIENDLY_ZOMBIE.get(), FriendlyZombie.registerAttributes().build());
         event.put(ModEntities.FRIENDLY_SKELETON.get(), FriendlySkeleton.registerAttributes().build());
         event.put(ModEntities.WILD_BOAR.get(), WildBoar.registerAttributes().build());
+        event.put(ModEntities.FRIENDLY_SPIDER.get(), FriendlySpider.registerAttributes().build());
     }
 
     @SubscribeEvent
@@ -126,6 +129,8 @@ public class VanillaExtraClient {
                 FriendlySkeletonRenderer::new);
         event.registerEntityRenderer(ModEntities.WILD_BOAR.get(),
                 WildBoarRenderer::new);
+        event.registerEntityRenderer(ModEntities.FRIENDLY_SPIDER.get(),
+                FriendlySpiderRenderer::new);
     }
 
     @SubscribeEvent

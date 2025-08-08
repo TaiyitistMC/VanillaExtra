@@ -3,6 +3,7 @@ package com.taiyitistmc.vanillaextra.common.init;
 import com.taiyitistmc.vanillaextra.VanillaExtra;
 import com.taiyitistmc.vanillaextra.common.entity.BlackDog;
 import com.taiyitistmc.vanillaextra.common.entity.FriendlySkeleton;
+import com.taiyitistmc.vanillaextra.common.entity.FriendlySpider;
 import com.taiyitistmc.vanillaextra.common.entity.FriendlyZombie;
 import com.taiyitistmc.vanillaextra.common.entity.WildBoar;
 import net.minecraft.core.registries.Registries;
@@ -44,6 +45,10 @@ public class ModEntities {
                     .sized(0.9F, 0.9F)
                     .passengerAttachments(0.86875F)
                     .clientTrackingRange(10));
+    public static final DeferredHolder<EntityType<? extends Entity>, EntityType<FriendlySpider>> FRIENDLY_SPIDER =
+            register("friendly_spider", EntityType.Builder.of(FriendlySpider::new, MobCategory.CREATURE)
+                    .sized(0.7F, 0.5F)
+                    .eyeHeight(0.45F).clientTrackingRange(8));
 
     public static <E extends Entity> DeferredHolder<EntityType<? extends Entity>, EntityType<E>> register(String name, EntityType.Builder<E> builder) {
         return register(name, builder, true);

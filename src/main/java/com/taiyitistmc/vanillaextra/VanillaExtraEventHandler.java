@@ -2,6 +2,7 @@ package com.taiyitistmc.vanillaextra;
 
 import com.taiyitistmc.vanillaextra.common.entity.BlackDog;
 import com.taiyitistmc.vanillaextra.common.entity.FriendlySkeleton;
+import com.taiyitistmc.vanillaextra.common.entity.FriendlySpider;
 import com.taiyitistmc.vanillaextra.common.entity.FriendlyZombie;
 import com.taiyitistmc.vanillaextra.common.init.ModEntities;
 import com.taiyitistmc.vanillaextra.common.init.ModItems;
@@ -64,6 +65,10 @@ public class VanillaExtraEventHandler {
                     FriendlySkeleton skeleton = new FriendlySkeleton(ModEntities.FRIENDLY_SKELETON.get(), level);
                     skeleton.setPos(entity.position());
                     level.addFreshEntity(skeleton);
+                } else if (entity.getType() == EntityType.SPIDER) {
+                    FriendlySpider spider = new FriendlySpider(ModEntities.FRIENDLY_SPIDER.get(), level);
+                    spider.setPos(entity.position());
+                    level.addFreshEntity(spider);
                 }
             }
         }
@@ -105,6 +110,7 @@ public class VanillaExtraEventHandler {
         initEntitySimpleDropLootTable(event, EntityType.OCELOT, ModItems.OCELOT_MEAT, registries);
         initEntitySimpleDropLootTable(event, EntityType.SPIDER, ModItems.SPIDER_LEG, registries);
         initEntitySimpleDropLootTable(event, EntityType.CAVE_SPIDER, ModItems.SPIDER_LEG, registries);
+        initEntitySimpleDropLootTable(event, ModEntities.FRIENDLY_SPIDER.get(), ModItems.SPIDER_LEG, registries);
     }
 
     private static void initEntitySimpleDropLootTable(LootTableLoadEvent event, EntityType<?> entityType, ItemLike dropItem, HolderLookup.Provider registries) {

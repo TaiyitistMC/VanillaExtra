@@ -88,6 +88,8 @@ public class ModItems {
             registerSpawnEgg("friendly_skeleton_spawn_egg", ModEntities.FRIENDLY_SKELETON,12698049, 4802889);
     public static final DeferredItem<Item> WILD_BOAR_SPAWN_EGG =
             registerSpawnEgg("wild_boar_spawn_egg", ModEntities.WILD_BOAR,7164733, 1444352);
+    public static final DeferredItem<Item> FRIENDLY_SPIDER_SPAWN_EGG =
+            registerSpawnEgg("friendly_spider_spawn_egg", ModEntities.FRIENDLY_SPIDER,3419431, 11013646);
 
     // Plants
     public static final DeferredItem<Item> DRIED_LAND_KELP =

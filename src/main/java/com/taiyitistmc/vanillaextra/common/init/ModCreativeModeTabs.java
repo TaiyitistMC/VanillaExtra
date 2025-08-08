@@ -1,7 +1,6 @@
 package com.taiyitistmc.vanillaextra.common.init;
 
 import com.taiyitistmc.vanillaextra.VanillaExtra;
-import com.taiyitistmc.vanillaextra.common.block.LandKelpBlock;
 import com.taiyitistmc.vanillaextra.common.block.LandKelpPlantBlock;
 import com.taiyitistmc.vanillaextra.common.block.OreAttachedStemBlock;
 import com.taiyitistmc.vanillaextra.common.block.OreStemBlock;
@@ -10,7 +9,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
